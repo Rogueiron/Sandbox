@@ -1,11 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class FpsCap : MonoBehaviour
+public class follow : MonoBehaviour
 {
-    public Dropdown dropdown;
+    private float speed = 0.01f;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +14,6 @@ public class FpsCap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(dropdown.options == )
+        gameObject.transform.position = Vector3.MoveTowards(transform.position, GameObject.FindGameObjectWithTag("Core").transform.position, speed);
     }
 }
