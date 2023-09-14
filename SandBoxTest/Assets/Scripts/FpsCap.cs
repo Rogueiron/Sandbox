@@ -5,27 +5,29 @@ using UnityEngine.UI;
 
 public class FpsCap : MonoBehaviour
 {
-    private Dropdown dropdown;
+    public TMPro.TMP_Dropdown dropdown;
     // Start is called before the first frame update
     void Start()
     {
-        dropdown = GameObject.FindGameObjectWithTag("Dropdown").GetComponent<Dropdown>();
-    }
 
-    // Update is called once per frame
-    void Update()
+    }
+    private void Awake()
     {
-        if(dropdown.value == 1)
+        Application.targetFrameRate = 60;
+    }
+    public void fpsChange()
+    {
+        if (dropdown.value == 0)
         {
-            Application.targetFrameRate = 30;
+            Application.targetFrameRate = 120;
         }
-        if (dropdown.value == 2)
+        else if (dropdown.value == 1)
         {
             Application.targetFrameRate = 60;
         }
-        if (dropdown.value == 3)
+        else if (dropdown.value == 2)
         {
-            Application.targetFrameRate = 120;
+            Application.targetFrameRate = 30;
         }
     }
 }

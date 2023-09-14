@@ -6,14 +6,22 @@ public class follow : MonoBehaviour
 {
     private float speed = 0.01f;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        GameStateManager.Instance.OnPauseChange += OnGameStateChanged;
+    }
+    private void OnDestroy()
+    {
+        GameStateManager.Instance.OnPauseChange -= OnGameStateChanged; 
     }
 
     // Update is called once per frame
     void Update()
     {
         gameObject.transform.position = Vector3.MoveTowards(transform.position, GameObject.FindGameObjectWithTag("Core").transform.position, speed);
+    }
+    private void OnGameStateChanged(GameState state)
+    {
+        enabled = state == GameState.Gameplay;
     }
 }
