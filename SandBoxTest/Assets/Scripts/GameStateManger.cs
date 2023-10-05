@@ -7,12 +7,13 @@ public class GameStateManager
         {
             if (_instance == null)
                 _instance = new GameStateManager();
+
             return _instance;
         }
     }
     public GameState CurrentGameState { get; private set; }
-    public delegate void GameStateManagerChangeHandler(GameState newGameState);
-    public event GameStateManagerChangeHandler OnPauseChange;
+    public delegate void GameStateChangeHandler(GameState newGameState);
+    public event GameStateChangeHandler OnPauseChange;
     // Start is called before the first frame update
     private GameStateManager()
     {
