@@ -7,7 +7,7 @@ public class PauseManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape))
         {
             GameState currentGameState = GameStateManager.Instance.CurrentGameState;
             GameState newGameState = currentGameState == GameState.Gameplay
