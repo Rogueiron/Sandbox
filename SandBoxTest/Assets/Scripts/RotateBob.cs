@@ -21,10 +21,18 @@ public class RotateBob : MonoBehaviour
     {
         Quaternion lookRotation = Quaternion.LookRotation(target.position - transform.position);
         float time = 0;
-        while (time < 1)
+        if(Time.timeScale == 0)
         {
-            transform.rotation= Quaternion.Slerp(transform.rotation, lookRotation, time);
-            time += Time.deltaTime * turnspeed;
+            yield return null;
+        }
+        else
+        {
+            while (time < 1)
+            {
+                transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, time);
+                time += Time.deltaTime * turnspeed;
+            }
+
         }
         yield return null;
     }
