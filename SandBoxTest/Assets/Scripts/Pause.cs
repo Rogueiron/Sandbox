@@ -11,14 +11,16 @@ public class Pause : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.Escape)) 
         {
-            Time.timeScale = 0f;
+            
             canvas.enabled = true;
+            Time.timeScale = 0f;
         }
         else
         {
-            Time.timeScale = 1;
+            
             canvas.enabled = false;
+            Time.timeScale = 1f;
         }
-        
+
     }
 }

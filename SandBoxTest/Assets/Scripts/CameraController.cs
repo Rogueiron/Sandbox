@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
@@ -25,9 +26,12 @@ public class CameraController : MonoBehaviour
     public Vector3 rotateStartPosition;
     public Vector3 rotateCurrentPosition;
 
+    public float zoom = 10;
+
     // Start is called before the first frame update
     void Start()
     {
+
         instance = this;
 
         newPosition = transform.position;
@@ -56,9 +60,24 @@ public class CameraController : MonoBehaviour
 
     void HandleMouseInput()
     {
-        if(Input.mouseScrollDelta.y != 0)
+        if (zoom > 5 && zoom < 20)
+        {
+            if (Input.mouseScrollDelta.y != 0)
+            {
+                newZoom += Input.mouseScrollDelta.y * zoomAmount;
+            }
+        }
+        else if(zoom < 5 && Input.mouseScrollDelta.y < 0)
         {
             newZoom += Input.mouseScrollDelta.y * zoomAmount;
+        }
+        else if (zoom > 20 && Input.mouseScrollDelta.y > 0)
+        {
+            newZoom += Input.mouseScrollDelta.y * zoomAmount;
+        }
+        else
+        {
+            return;
         }
 
         if (Input.GetMouseButtonDown(0))
@@ -109,7 +128,6 @@ public class CameraController : MonoBehaviour
 
         }
     }
-
     void HandleMovementInput()
     {
         if (Input.GetKey(KeyCode.LeftShift))
@@ -147,7 +165,7 @@ public class CameraController : MonoBehaviour
             newRotation *= Quaternion.Euler(Vector3.up * -rotationAmount);
         }
 
-        if (Input.GetKey(KeyCode.R))
+        if (Input.GetKey(KeyCode.G))
         {
             newZoom += zoomAmount;
         }

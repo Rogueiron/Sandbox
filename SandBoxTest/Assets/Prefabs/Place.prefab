@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3134024353258002337}
   - component: {fileID: 2185446659474933665}
   - component: {fileID: 4387196026634193768}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Place
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,4 +118,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7f859e446dffe4597c8431e9e1f3c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1835056350152397118, guid: 4fbaa88cdb0de874a86faa454117031c, type: 3}
+  prefab: {fileID: 7806395455854871824, guid: f974c822c064e154c95e5da0dd339e1c, type: 3}
