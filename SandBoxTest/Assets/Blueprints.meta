@@ -1,6 +1,10 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:SandBoxTest/Assets/Blueprints.meta
 guid: 9b01bf3c9856bbe468eb454b3f2f6452
 folderAsset: yes
+=======
+guid: 9fc55ab57afebbd41b250257094d0aec
+>>>>>>> Stashed changes:SandBoxTest/Assets/Buildings/Manor.prefab.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
