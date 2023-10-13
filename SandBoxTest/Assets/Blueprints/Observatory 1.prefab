@@ -6681,9 +6681,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5680244529363182196}
-  - component: {fileID: 5177868221041827418}
+  - component: {fileID: 4596575713557644127}
   m_Layer: 2
-  m_Name: Observatory_Blueprint
+  m_Name: Observatory 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6705,7 +6705,7 @@ Transform:
   - {fileID: 7246047122726930556}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5177868221041827418
+--- !u!114 &4596575713557644127
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6717,7 +6717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7f859e446dffe4597c8431e9e1f3c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8235402274398879333, guid: 1271680474c376641adcf38fa1ef2ec8, type: 3}
+  prefab: {fileID: 8235402274398879333, guid: 5cfc8292e3064cb47b6b60019fe90239, type: 3}
 --- !u!1 &8377468052295996340
 GameObject:
   m_ObjectHideFlags: 0
@@ -7352,6 +7352,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9044704689257900474, guid: b39885897e8decd458f0dfbe140078a3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 273d6fe59dd86ef41b2c0fec69af47fc, type: 2}
+    - target: {fileID: 9072495716155719218, guid: b39885897e8decd458f0dfbe140078a3, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 273d6fe59dd86ef41b2c0fec69af47fc, type: 2}

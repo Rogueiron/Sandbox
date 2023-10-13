@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Core
   - Dropdown
-  - Buildingmode
   layers:
   - Default
   - TransparentFX

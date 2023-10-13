@@ -1338,9 +1338,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4735188439722901223}
-  - component: {fileID: 7631398439852931902}
+  - component: {fileID: 4877596945726207468}
   m_Layer: 2
-  m_Name: Manor_Blueprint
+  m_Name: Manor 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1367,7 +1367,7 @@ Transform:
   - {fileID: 6791018064856319787}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7631398439852931902
+--- !u!114 &4877596945726207468
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1379,7 +1379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7f859e446dffe4597c8431e9e1f3c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 7806395455854871824, guid: f974c822c064e154c95e5da0dd339e1c, type: 3}
+  prefab: {fileID: 7806395455854871824, guid: 6d7678d39045693418deab6b13855d17, type: 3}
 --- !u!1001 &1544535370750921370
 PrefabInstance:
   m_ObjectHideFlags: 0
