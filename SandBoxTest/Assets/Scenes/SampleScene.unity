@@ -2019,11 +2019,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1262129096}
   m_CullTransparentMesh: 1
+<<<<<<< Updated upstream
 --- !u!1 &1419340312
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
+=======
+--- !u!223 &1272307134 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 2332458072599691107, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
+  m_PrefabInstance: {fileID: 8363966980372161688}
+>>>>>>> Stashed changes
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
@@ -2152,6 +2159,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 656275325}
+<<<<<<< Updated upstream
+=======
+--- !u!114 &1441236890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441236886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8fc4333c8a282c498a92c78ddeadbb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildmode: {fileID: 1272307134}
+>>>>>>> Stashed changes
 --- !u!1001 &1454330744
 PrefabInstance:
   m_ObjectHideFlags: 0
