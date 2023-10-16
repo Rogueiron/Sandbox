@@ -12,7 +12,7 @@ public class OutlineBuild : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray,out hit))
         {
-            transform.position = hit.point;
+            transform.position = movePoint;
         }
     }
     private void Update()
@@ -20,12 +20,19 @@ public class OutlineBuild : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit))
         {
-            transform.position = hit.point;
+            movePoint = hit.point;
+            movePoint.y += 0.8f;
+            transform.position = movePoint;
+        }
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            Vector3 rotationToAdd = new Vector3(0, 90, 0);
+            transform.Rotate(rotationToAdd);
         }
 
         if (Input.GetMouseButton(0))
         {
-            Instantiate(prefab, transform.position, transform.rotation);
+            Instantiate(prefab, movePoint, transform.rotation);
             Destroy(gameObject);
         }
     }
