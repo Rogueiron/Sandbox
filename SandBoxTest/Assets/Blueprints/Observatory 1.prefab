@@ -6681,7 +6681,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5680244529363182196}
-  - component: {fileID: 4596575713557644127}
+  - component: {fileID: -8358806994968481645}
   m_Layer: 2
   m_Name: Observatory 1
   m_TagString: Untagged
@@ -6705,7 +6705,7 @@ Transform:
   - {fileID: 7246047122726930556}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4596575713557644127
+--- !u!114 &-8358806994968481645
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
