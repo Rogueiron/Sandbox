@@ -21,7 +21,7 @@ public class OutlineBuild : MonoBehaviour
         if (Physics.Raycast(ray, out hit))
         {
             movePoint = hit.point;
-            movePoint.y += 0.8f;
+            movePoint.y += 0.5f;
             transform.position = movePoint;
         }
         if(Input.GetKeyDown(KeyCode.R))

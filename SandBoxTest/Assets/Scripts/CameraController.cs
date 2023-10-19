@@ -56,9 +56,24 @@ public class CameraController : MonoBehaviour
 
     void HandleMouseInput()
     {
-        if(Input.mouseScrollDelta.y != 0)
+        if (Input.mouseScrollDelta.y != 0)
         {
-            newZoom += Input.mouseScrollDelta.y * zoomAmount;
+            if (newZoom.y <= -10)
+            {
+                newZoom.y = -10;
+                newZoom.z = 10;
+                newZoom += Input.mouseScrollDelta.y * zoomAmount;
+            }
+            else if (newZoom.y >= 20)
+            {
+                newZoom.y = 20;
+                newZoom.z = -20;
+                newZoom += Input.mouseScrollDelta.y * zoomAmount;
+            }
+            else
+            {
+                newZoom += Input.mouseScrollDelta.y * zoomAmount;
+            }
         }
 
         if (Input.GetMouseButtonDown(0))
