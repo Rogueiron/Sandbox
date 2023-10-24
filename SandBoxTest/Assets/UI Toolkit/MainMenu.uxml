@@ -1,2 +1,9 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/UnityThemes/MainMenuStyle.uss?fileID=7433441132597879392&amp;guid=dc7fd075eaa40a1499d479c7c16bcf90&amp;type=3#MainMenuStyle" />
+    <ui:VisualElement style="flex-grow: 1; width: 50%; align-items: center; cursor: initial;">
+        <ui:VisualElement style="flex-grow: 1; -unity-background-scale-mode: scale-and-crop; background-color: rgb(84, 73, 73); height: 666px; justify-content: space-around; -unity-slice-left: 0; -unity-slice-top: 0; -unity-slice-right: 0; -unity-slice-bottom: 0; -unity-slice-scale: 42.1px; border-top-left-radius: 15px; border-top-right-radius: 15px; border-bottom-right-radius: 15px; border-bottom-left-radius: 15px; border-top-width: 5px; border-right-width: 5px; border-bottom-width: 5px; border-left-width: 5px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); opacity: 0.75; overflow: visible; position: absolute; top: 30%; left: 15%; width: 70%; align-items: center;">
+            <ui:Button text="Start" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Game-Start" enable-rich-text="true" class="ButtonStyle" style="overflow: visible;" />
+            <ui:Button text="Exit" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Game-Exit" class="ButtonStyle" />
+        </ui:VisualElement>
+    </ui:VisualElement>
 </ui:UXML>
