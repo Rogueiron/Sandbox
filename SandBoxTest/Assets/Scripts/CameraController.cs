@@ -33,6 +33,7 @@ public class CameraController : MonoBehaviour
         newPosition = transform.position;
         newRotation = transform.rotation;
         newZoom = cameraTransform.localPosition;
+        Camera.main.cullingMask = Camera.main.cullingMask ^ (~7);
     }
 
     // Update is called once per frame
