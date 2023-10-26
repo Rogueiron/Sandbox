@@ -15,7 +15,7 @@ public class OutlineBuild : MonoBehaviour
             transform.position = movePoint;
         }
     }
-    private void Update()
+    private void FixedUpdate()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit))

@@ -9,7 +9,7 @@ public class RotateBob : MonoBehaviour
 
     private Coroutine LookCoroutine;
     // Start is called before the first frame update
-    void Update()
+    private void FixedUpdate()
     {
         if(LookCoroutine != null)
         {
