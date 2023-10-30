@@ -18,7 +18,7 @@ public class OutlineBuild : MonoBehaviour
     private void FixedUpdate()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit, 500 ,layerMask: ~LayerMask.GetMask("Buildings", "Ignore Raycast")))
         {
             movePoint = hit.point;
             movePoint.y += 0.5f;
