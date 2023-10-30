@@ -33,7 +33,7 @@ public class CameraController : MonoBehaviour
         newPosition = transform.position;
         newRotation = transform.rotation;
         newZoom = cameraTransform.localPosition;
-        Camera.main.cullingMask = Camera.main.cullingMask ^ (~7);
+        Camera.main.cullingMask = Camera.main.cullingMask ^ (LayerMask.GetMask("Minimap"));
     }
 
     // Update is called once per frame
@@ -75,54 +75,6 @@ public class CameraController : MonoBehaviour
             {
                 newZoom += Input.mouseScrollDelta.y * zoomAmount;
             }
-        }
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            Plane plane = new Plane(Vector3.up, Vector3.zero);
-
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            float entry;
-
-            if(plane.Raycast(ray, out entry))
-            {
-                dragStartPosition = ray.GetPoint(entry);
-            }
-
-        }
-        if (Input.GetMouseButton(0))
-        {
-            Plane plane = new Plane(Vector3.up, Vector3.zero);
-
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            float entry;
-
-            if (plane.Raycast(ray, out entry))
-            {
-                dragCurrentPosition = ray.GetPoint(entry);
-
-                newPosition = transform.position + dragStartPosition - dragCurrentPosition;
-            }
-
-        }
-
-        if (Input.GetMouseButtonDown(2))
-        {
-            rotateStartPosition = Input.mousePosition;
-        }
-        if (Input.GetMouseButton(2))
-        {
-            rotateCurrentPosition = Input.mousePosition;
-
-            Vector3 difference = rotateStartPosition - rotateCurrentPosition;
-
-            rotateStartPosition = rotateCurrentPosition;
-
-            newRotation *= Quaternion.Euler(Vector3.up * (-difference.x / 5f));
-
-
         }
     }
 
