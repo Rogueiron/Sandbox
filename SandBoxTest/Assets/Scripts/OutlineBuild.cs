@@ -21,7 +21,7 @@ public class OutlineBuild : MonoBehaviour
         if (Physics.Raycast(ray, out hit, 500 ,layerMask: ~LayerMask.GetMask("Buildings", "Ignore Raycast")))
         {
             movePoint = hit.point;
-            movePoint.y += 0.5f;
+            movePoint.y += 1f;
             transform.position = movePoint;
         }
         if(Input.GetKeyDown(KeyCode.R))

@@ -46,7 +46,7 @@ public class UnitSelect : MonoBehaviour
     }
     public void DragSelect(GameObject unitToAdd)
     {
-        if(!unitList.Contains(unitToAdd)) 
+        if(!unitSelected.Contains(unitToAdd)) 
         {
             unitSelected.Add(unitToAdd); 
             unitToAdd.transform.GetChild(0).gameObject.SetActive(true);

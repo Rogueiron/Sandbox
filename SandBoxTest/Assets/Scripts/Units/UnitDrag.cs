@@ -70,19 +70,21 @@ public class UnitDrag : MonoBehaviour
         }
         if (Input.mousePosition.y < startPos.y)
         {
-            selectionBox.xMin = Input.mousePosition.y;
-            selectionBox.xMax = startPos.y;
+            selectionBox.yMin = Input.mousePosition.y;
+            selectionBox.yMax = startPos.y;
         }
         else
         {
-            selectionBox.xMin = startPos.y;
-            selectionBox.xMax = Input.mousePosition.y;
+            selectionBox.yMin = startPos.y;
+            selectionBox.yMax = Input.mousePosition.y;
         }
     }
     void selectUnits()
     {
         foreach(var unit in UnitSelect.instance.unitList)
         {
+            Debug.Log(myCam.WorldToScreenPoint(unit.transform.position));
+
             if(selectionBox.Contains(myCam.WorldToScreenPoint(unit.transform.position)))
             {
                 UnitSelect.instance.DragSelect(unit);
