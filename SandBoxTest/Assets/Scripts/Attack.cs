@@ -11,9 +11,7 @@ public class Attack : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
     }
-
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         agent.SetDestination(GameObject.FindGameObjectWithTag("Core").transform.position);
     }

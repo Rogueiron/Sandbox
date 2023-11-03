@@ -33,10 +33,11 @@ public class CameraController : MonoBehaviour
         newPosition = transform.position;
         newRotation = transform.rotation;
         newZoom = cameraTransform.localPosition;
+        Camera.main.cullingMask = Camera.main.cullingMask ^ (LayerMask.GetMask("Minimap"));
     }
 
     // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         if (followTransform != null)
         {
@@ -56,57 +57,24 @@ public class CameraController : MonoBehaviour
 
     void HandleMouseInput()
     {
-        if(Input.mouseScrollDelta.y != 0)
+        if (Input.mouseScrollDelta.y != 0)
         {
-            newZoom += Input.mouseScrollDelta.y * zoomAmount;
-        }
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            Plane plane = new Plane(Vector3.up, Vector3.zero);
-
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            float entry;
-
-            if(plane.Raycast(ray, out entry))
+            if (newZoom.y <= -10)
             {
-                dragStartPosition = ray.GetPoint(entry);
+                newZoom.y = -10;
+                newZoom.z = 10;
+                newZoom += Input.mouseScrollDelta.y * zoomAmount;
             }
-
-        }
-        if (Input.GetMouseButton(0))
-        {
-            Plane plane = new Plane(Vector3.up, Vector3.zero);
-
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            float entry;
-
-            if (plane.Raycast(ray, out entry))
+            else if (newZoom.y >= 20)
             {
-                dragCurrentPosition = ray.GetPoint(entry);
-
-                newPosition = transform.position + dragStartPosition - dragCurrentPosition;
+                newZoom.y = 20;
+                newZoom.z = -20;
+                newZoom += Input.mouseScrollDelta.y * zoomAmount;
             }
-
-        }
-
-        if (Input.GetMouseButtonDown(2))
-        {
-            rotateStartPosition = Input.mousePosition;
-        }
-        if (Input.GetMouseButton(2))
-        {
-            rotateCurrentPosition = Input.mousePosition;
-
-            Vector3 difference = rotateStartPosition - rotateCurrentPosition;
-
-            rotateStartPosition = rotateCurrentPosition;
-
-            newRotation *= Quaternion.Euler(Vector3.up * (-difference.x / 5f));
-
-
+            else
+            {
+                newZoom += Input.mouseScrollDelta.y * zoomAmount;
+            }
         }
     }
 

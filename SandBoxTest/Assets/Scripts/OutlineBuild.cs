@@ -15,25 +15,40 @@ public class OutlineBuild : MonoBehaviour
             transform.position = movePoint;
         }
     }
-    private void Update()
+    private void FixedUpdate()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit, 500, layerMask: ~LayerMask.GetMask("Buildings", "Ignore Raycast")))
         {
             movePoint = hit.point;
-            movePoint.y += 0.8f;
+            movePoint.y += 1f;
             transform.position = movePoint;
         }
-        if(Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             Vector3 rotationToAdd = new Vector3(0, 90, 0);
             transform.Rotate(rotationToAdd);
         }
-
         if (Input.GetMouseButton(0))
         {
             Instantiate(prefab, movePoint, transform.rotation);
             Destroy(gameObject);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Buildings")
+        {
+            return;
+        }
+        else
+        {
+            if (Input.GetMouseButton(0))
+            {
+                Instantiate(prefab, movePoint, transform.rotation);
+                Destroy(gameObject);
+            }
         }
     }
 }

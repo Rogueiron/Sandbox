@@ -11,10 +11,9 @@ public class InputController : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        if(Input.GetKey(KeyCode.B))
+        if (Input.GetKey(KeyCode.B))
         {
             buildmode.enabled = true;
         }
