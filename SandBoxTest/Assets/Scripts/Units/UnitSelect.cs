@@ -27,7 +27,7 @@ public class UnitSelect : MonoBehaviour
         DeSelectAll();
         unitSelected.Add(unitToAdd);
         unitToAdd.transform.GetChild(0).gameObject.SetActive(true);
-        unitToAdd.GetComponent<EnemyAiWaypoint>().enabled = true;
+        unitToAdd.GetComponent<AiMovementPlayer>().enabled = true;
     }
     public void ShiftClickSelect(GameObject unitToAdd)
     {
@@ -35,30 +35,31 @@ public class UnitSelect : MonoBehaviour
         { 
             unitSelected.Add(unitToAdd);
             unitToAdd.transform.GetChild(0).gameObject.SetActive(true);
-            unitToAdd.GetComponent<EnemyAiWaypoint>().enabled = true;
+            unitToAdd.GetComponent<AiMovementPlayer>().enabled = true;
         }
         else
         {
-            unitToAdd.GetComponent<EnemyAiWaypoint>().enabled = false;
+            unitToAdd.GetComponent<AiMovementPlayer>().enabled = false;
             unitToAdd.transform.GetChild(0).gameObject.SetActive(false);
             unitSelected.Remove(unitToAdd);
         }
     }
     public void DragSelect(GameObject unitToAdd)
     {
-        if(!unitList.Contains(unitToAdd)) 
+        if(!unitSelected.Contains(unitToAdd)) 
         {
             unitSelected.Add(unitToAdd); 
             unitToAdd.transform.GetChild(0).gameObject.SetActive(true);
-            unitToAdd.GetComponent<EnemyAiWaypoint>().enabled = true;
+            unitToAdd.GetComponent<AiMovementPlayer>().enabled = true;
+            unitToAdd.GetComponent<AiMovementPlayer>().listnumber = unitSelected.IndexOf(unitToAdd);
         }
     }
     public void DeSelectAll()
     {   foreach(var unit in unitSelected) 
         {
-            if (unit.GetComponent<EnemyAiWaypoint>() != null)
+            if (unit.GetComponent<AiMovementPlayer>() != null)
             {
-                unit.GetComponent<EnemyAiWaypoint>().enabled = false;
+                unit.GetComponent<AiMovementPlayer>().enabled = false;
                 unit.transform.GetChild(0).gameObject.SetActive(false);
             }
         }
