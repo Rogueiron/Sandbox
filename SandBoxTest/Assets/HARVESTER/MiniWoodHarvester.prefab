@@ -1976,7 +1976,7 @@ GameObject:
   - component: {fileID: 8384202601168715280}
   - component: {fileID: 8098082304203735963}
   - component: {fileID: 2185842130585020338}
-  - component: {fileID: 5858874016749259593}
+  - component: {fileID: 9111548465407999310}
   m_Layer: 0
   m_Name: MiniWoodHarvester
   m_TagString: Untagged
@@ -2074,7 +2074,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5858874016749259593
+--- !u!114 &9111548465407999310
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2083,17 +2083,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1986042837862581056}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f93ea3f5b31ecaa4fa6de1ba762363d9, type: 3}
+  m_Script: {fileID: 11500000, guid: 03f8f573276e1294a9f2db84a82acc19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   targetOBJ: {fileID: 0}
   storageManager: {fileID: 0}
   storage: 0
   maxStorage: 2
-  harvestTime: 15
-  harvestTimeReset: 15
+  harvestTime: 0
+  harvestTimeReset: 30
   selected: 0
-  resourceWasSelected: 1
+  resourceWasSelected: 0
   empty: 1
   navigation: {fileID: 8384202601168715280}
   tag: Tree

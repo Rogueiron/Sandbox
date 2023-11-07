@@ -8,6 +8,9 @@ TagManager:
   - Dropdown
   - Edge
   - Waterpump
+  - Iron
+  - Tree
+  - Storage
   layers:
   - Default
   - TransparentFX
