@@ -56,7 +56,7 @@ public class GoToNearestResource : MonoBehaviour
         if (storage >= 1 && other.gameObject.CompareTag("Storage"))
         {
             storage -= 1;
-            Wood += 5;
+            WoodStorage += 5;
 
         }
     }
