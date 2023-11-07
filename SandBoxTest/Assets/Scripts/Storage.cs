@@ -12,6 +12,10 @@ public class Storage : MonoBehaviour
 
     private void Update()
     {
-
+        Debug.Log(WoodStorage);
+        Debug.Log(IronStorage);
+        Debug.Log(WaterStorage);
+        Debug.Log(PopCapStorage);
+        Debug.Log(researchStorage);
     }
 }

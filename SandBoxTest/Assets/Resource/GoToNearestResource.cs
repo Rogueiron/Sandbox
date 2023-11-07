@@ -30,6 +30,10 @@ public class GoToNearestResource : MonoBehaviour
         {
             GetClosestResource();
         }
+        else if(targetOBJ == null)
+        {
+            Store();
+        }
         else
         {
             Store();
@@ -67,8 +71,11 @@ public class GoToNearestResource : MonoBehaviour
         {
             targetOBJ = GameObject.FindGameObjectWithTag(tag);
         }
-
-        navigation.destination = targetOBJ.transform.position;
+        else
+        {
+            navigation.destination = targetOBJ.transform.position;
+            navigation.stoppingDistance = 1.5f;
+        }
     }
 
     private void Store()
@@ -76,6 +83,7 @@ public class GoToNearestResource : MonoBehaviour
         targetOBJ = GameObject.FindGameObjectWithTag("Storage");
 
         navigation.destination = targetOBJ.transform.position;
+        navigation.stoppingDistance = 0f;
     }
 
 }
