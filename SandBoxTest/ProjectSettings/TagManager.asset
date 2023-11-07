@@ -6,11 +6,13 @@ TagManager:
   tags:
   - Core
   - Dropdown
+  - Edge
+  - Waterpump
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Edge
   - Water
   - UI
   - Buildings
