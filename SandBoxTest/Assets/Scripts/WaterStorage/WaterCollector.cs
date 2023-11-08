@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static Storage;
+using static WaterStorage;
 
 public class WaterCollector : MonoBehaviour
 {
@@ -11,8 +11,7 @@ public class WaterCollector : MonoBehaviour
     {
         if (timer <= 0)
         {
-            WaterStorage += 1;
-            Debug.Log(WaterStorage);
+            Waterstorage += 1;
             timer = 1;
         }
         else

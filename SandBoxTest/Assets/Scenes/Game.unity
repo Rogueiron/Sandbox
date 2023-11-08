@@ -206,7 +206,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1417232986}
+      - m_Target: {fileID: 1417232987}
         m_TargetAssemblyTypeName: BuildIng, Assembly-CSharp
         m_MethodName: build
         m_Mode: 1
@@ -2266,11 +2266,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1152688211}
   m_CullTransparentMesh: 1
---- !u!1 &1239622014 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2340836579080300076, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
-  m_PrefabInstance: {fileID: 1381159157}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1252226122
 GameObject:
   m_ObjectHideFlags: 0
@@ -2864,6 +2859,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -373
       objectReference: {fileID: 0}
+    - target: {fileID: 8341921045483170995, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
+      propertyPath: building
+      value: 
+      objectReference: {fileID: 2384249654004609789, guid: 8bad4572c671bcf428e285f3b31bbd84, type: 3}
     - target: {fileID: 8432759186774933641, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 400
@@ -2890,17 +2889,14 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 549363143859734417, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2340012}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2340836579080300076, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1417232986}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
 --- !u!114 &1381159158 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7142870473932272130, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
   m_PrefabInstance: {fileID: 1381159157}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1239622014}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ccbe176a59c687438470460447aac27, type: 3}
@@ -2911,7 +2907,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2204776057608319076, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
   m_PrefabInstance: {fileID: 1381159157}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1239622014}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ccbe176a59c687438470460447aac27, type: 3}
@@ -2983,21 +2979,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 549363143859734417, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
   m_PrefabInstance: {fileID: 1381159157}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1417232986
+--- !u!114 &1417232987 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 8341921045483170995, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
+  m_PrefabInstance: {fileID: 1381159157}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1239622014}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ccbe176a59c687438470460447aac27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  building: {fileID: 5577265627923590318, guid: 698a98c7ad2e1e64fa83a15dae56dc9a, type: 3}
-  woodsNeeded: 0
-  ironNeeded: 0
 --- !u!1 &1421407720 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7342855658915744305, guid: 2c519d2d96e3e9d48be0d7e79dda3cdb, type: 3}
