@@ -58,15 +58,15 @@ public class GoToNearestResource : MonoBehaviour
             storage -= 1;
             if(TAG == "Wood")
             {
-                Wood += 5;
+                WoodStorage += 5;
             }
             else if(TAG == "Iron")
             {
-                Iron += 2;
+                IronStorage += 2;
             }
             else if(TAG == "Stone")
             {
-                Stone += 2;
+
             }
 
         }
