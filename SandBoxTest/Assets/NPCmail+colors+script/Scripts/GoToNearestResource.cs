@@ -22,17 +22,13 @@ public class GoToNearestResource : MonoBehaviour
 
     public NavMeshAgent navigation;
 
-    public string tag;
+    public string TAG;
 
     private void Update()
     {
         if (storage < maxStorage)
         {
             GetClosestResource();
-        }
-        else if(targetOBJ == null)
-        {
-            Store();
         }
         else
         {
@@ -43,7 +39,7 @@ public class GoToNearestResource : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if(storage < maxStorage && other.gameObject.CompareTag(tag))
+        if(storage < maxStorage && other.gameObject.CompareTag(TAG))
         {
             if(navigation.remainingDistance <= 1)
             {
@@ -60,22 +56,38 @@ public class GoToNearestResource : MonoBehaviour
         if (storage >= 1 && other.gameObject.CompareTag("Storage"))
         {
             storage -= 1;
-            WoodStorage += 5;
+            if(TAG == "Wood")
+            {
+                WoodStorage += 5;
+            }
+            else if(TAG == "Iron")
+            {
+                IronStorage += 2;
+            }
+            else if(TAG == "Stone")
+            {
+
+            }
 
         }
     }
 
     private void GetClosestResource()
     {
-        if (targetOBJ == null || !targetOBJ.gameObject.CompareTag(tag))
+        if (targetOBJ == null || !targetOBJ.gameObject.CompareTag(TAG))
         {
-            targetOBJ = GameObject.FindGameObjectWithTag(tag);
+            targetOBJ = GameObject.FindGameObjectWithTag(TAG);
+        }
+
+        if(targetOBJ != null)
+        {
+            navigation.destination = targetOBJ.transform.position;
         }
         else
         {
-            navigation.destination = targetOBJ.transform.position;
-            navigation.stoppingDistance = 1.5f;
+            navigation.destination = this.transform.position;
         }
+        
     }
 
     private void Store()
@@ -83,7 +95,6 @@ public class GoToNearestResource : MonoBehaviour
         targetOBJ = GameObject.FindGameObjectWithTag("Storage");
 
         navigation.destination = targetOBJ.transform.position;
-        navigation.stoppingDistance = 0f;
     }
 
 }
