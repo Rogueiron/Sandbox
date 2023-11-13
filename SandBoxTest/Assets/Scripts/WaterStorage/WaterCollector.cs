@@ -1,0 +1,22 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using static WaterStorage;
+
+public class WaterCollector : MonoBehaviour
+{
+    public float timer = 1f;
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        if (timer <= 0)
+        {
+            Waterstorage += 1;
+            timer = 1;
+        }
+        else
+        {
+            timer -= Time.deltaTime;
+        }
+    }
+}

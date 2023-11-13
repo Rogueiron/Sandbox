@@ -9,9 +9,8 @@ TagManager:
   - Edge
   - Waterpump
   - Iron
-  - Tree
   - Storage
-  - Unit
+  - Wood
   layers:
   - Default
   - TransparentFX
