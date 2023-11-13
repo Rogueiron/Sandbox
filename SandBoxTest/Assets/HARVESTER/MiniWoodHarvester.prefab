@@ -2083,7 +2083,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1986042837862581056}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03f8f573276e1294a9f2db84a82acc19, type: 3}
+  m_Script: {fileID: 11500000, guid: 948975fdeb2326140b674550c6121636, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   targetOBJ: {fileID: 0}
@@ -2096,7 +2096,7 @@ MonoBehaviour:
   resourceWasSelected: 0
   empty: 1
   navigation: {fileID: 8384202601168715280}
-  tag: Tree
+  TAG: Wood
 --- !u!1 &1997915231408216851
 GameObject:
   m_ObjectHideFlags: 0
