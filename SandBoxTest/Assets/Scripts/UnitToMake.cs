@@ -11,6 +11,15 @@ public class UnitToMake : MonoBehaviour
     [SerializeField] GameObject unitToSpawn;
     public GameObject maker;
 
+    public int getWoodCost()
+    {
+        return woodCost;
+    }
+    public int getIronCost()
+    {
+        return ironCost;
+    }
+
     public void Make()
     {
         spawnLocation = maker.GetComponent<Transform>().transform.position;
