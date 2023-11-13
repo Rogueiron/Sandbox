@@ -210,9 +210,9 @@ GameObject:
   m_Component:
   - component: {fileID: 9174124370149859232}
   - component: {fileID: 7290215666037369223}
-  - component: {fileID: 1247270429008168974}
   - component: {fileID: 4498659205735270229}
   - component: {fileID: 6225096621441505}
+  - component: {fileID: 5224431229109775143}
   m_Layer: 8
   m_Name: WaypointPrefab
   m_TagString: Untagged
@@ -259,18 +259,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1247270429008168974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4330537755979449092}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37f0961f2d1b3ab4f8f186716fbda43c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4498659205735270229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,6 +294,19 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &5224431229109775143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4330537755979449092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37f0961f2d1b3ab4f8f186716fbda43c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listnumber: 0
 --- !u!1 &5109661099492910547
 GameObject:
   m_ObjectHideFlags: 0
@@ -5203,7 +5204,7 @@ GameObject:
   - component: {fileID: 7576088767778646090}
   m_Layer: 0
   m_Name: Main
-  m_TagString: Untagged
+  m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
