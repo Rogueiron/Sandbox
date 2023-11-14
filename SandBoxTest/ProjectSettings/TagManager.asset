@@ -11,6 +11,8 @@ TagManager:
   - Iron
   - Storage
   - Wood
+  - Unit
+  - StorageManager
   layers:
   - Default
   - TransparentFX
