@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Storage;
 
 public class UnitToMake : MonoBehaviour
 {
@@ -22,8 +23,11 @@ public class UnitToMake : MonoBehaviour
 
     public void Make()
     {
-        spawnLocation = maker.GetComponent<Transform>().transform.position;
-        maker.GetComponent<UnitMaker>().makeunit(woodCost, ironCost, spawnLocation, unitToSpawn, spawnRotations);
+        if (ironCost <= IronStorage && woodCost <= WoodStorage)
+        {
+            spawnLocation = maker.GetComponent<Transform>().transform.position;
+            maker.GetComponent<UnitMaker>().makeunit(woodCost, ironCost, spawnLocation, unitToSpawn, spawnRotations);
+        }
     }
 
 }
