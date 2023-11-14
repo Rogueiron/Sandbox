@@ -20,6 +20,7 @@ public class Storage : MonoBehaviour
     private void Update()
     {
         UpdateStorageDisplay();
+        cap();
     }
     private void UpdateStorageDisplay()
     {
@@ -27,5 +28,24 @@ public class Storage : MonoBehaviour
         storageTextI.text = IronStorage.ToString();
         storageTextWa.text = WaterStorage.ToString();
         storageTextC.text = CoalStorage.ToString();
+    }
+    private void cap()
+    {
+        if(WoodStorage < 0)
+        {
+            WoodStorage = 0;
+        }
+        if (IronStorage < 0)
+        {
+            IronStorage = 0;
+        }
+        if (WaterStorage < 0)
+        {
+            WaterStorage = 0;
+        }
+        if (CoalStorage < 0)
+        {
+            CoalStorage = 0;
+        }
     }
 }
