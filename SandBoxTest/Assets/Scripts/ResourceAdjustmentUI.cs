@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using static Storage;
+using static WaterStorage;
 
 public class ResourceAdjustmentUI : MonoBehaviour
 {
@@ -30,7 +31,7 @@ public class ResourceAdjustmentUI : MonoBehaviour
         // water
         else if (resource == 2)
         {
-            if (Storage.WaterStorage > 100)
+            if (Waterstorage > 100)
             {
 
             }

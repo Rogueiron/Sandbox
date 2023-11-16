@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using static WaterStorage;
 
 public class Storage : MonoBehaviour
 {
     public static int WoodStorage = 30;
     public static int IronStorage = 20;
-    public static int WaterStorage = 50;
     public static int CoalStorage = 100;
     public static int PopCapStorage = 0;
     public static int researchStorage = 0;
@@ -26,7 +26,7 @@ public class Storage : MonoBehaviour
     {
         storageTextWo.text = WoodStorage.ToString();
         storageTextI.text = IronStorage.ToString();
-        storageTextWa.text = WaterStorage.ToString();
+        storageTextWa.text = Waterstorage.ToString();
         storageTextC.text = CoalStorage.ToString();
     }
     private void cap()
@@ -39,9 +39,9 @@ public class Storage : MonoBehaviour
         {
             IronStorage = 0;
         }
-        if (WaterStorage < 0)
+        if (Waterstorage < 0)
         {
-            WaterStorage = 0;
+            Waterstorage = 0;
         }
         if (CoalStorage < 0)
         {

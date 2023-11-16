@@ -2090,8 +2090,8 @@ MonoBehaviour:
   storageManager: {fileID: 0}
   storage: 0
   maxStorage: 2
-  harvestTime: 0
-  harvestTimeReset: 30
+  harvestTime: 15
+  harvestTimeReset: 15
   selected: 0
   resourceWasSelected: 0
   empty: 1
