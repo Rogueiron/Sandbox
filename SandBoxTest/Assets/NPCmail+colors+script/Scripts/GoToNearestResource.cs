@@ -4,6 +4,7 @@ using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Rendering;
 using static Storage;
 
 public class GoToNearestResource : MonoBehaviour
@@ -23,6 +24,11 @@ public class GoToNearestResource : MonoBehaviour
     public NavMeshAgent navigation;
 
     public string TAG;
+
+    private void Start()
+    {
+        storageManager = GameObject.FindGameObjectWithTag("StorageManager");
+    }
 
     private void Update()
     {
