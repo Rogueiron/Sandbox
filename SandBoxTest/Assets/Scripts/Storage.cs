@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class Storage : MonoBehaviour
 {
-    public static int WoodStorage = 30;
-    public static int IronStorage = 20;
-    public static int WaterStorage = 50;
-    public static int CoalStorage = 100;
+    public static int WoodStorage = 70;
+    public static int IronStorage = 100;
+    public static int WaterStorage = 70;
+    public static int CoalStorage = 200;
     public static int PopCapStorage = 0;
     public static int researchStorage = 0;
 
