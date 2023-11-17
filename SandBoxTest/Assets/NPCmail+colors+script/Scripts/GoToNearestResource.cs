@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
@@ -23,18 +24,30 @@ public class GoToNearestResource : MonoBehaviour
 
     public NavMeshAgent navigation;
 
+    List<GameObject> StoreResource = new();
+
+    Queue<GameObject> StoreResourceQueue = new();
+
+    GameObject resorce;
+
     public string TAG;
 
     private void Start()
     {
         storageManager = GameObject.FindGameObjectWithTag("StorageManager");
+        foreach(GameObject Resoure in GameObject.FindGameObjectsWithTag(TAG))
+        {
+            StoreResource.Add(Resoure);
+        }
     }
 
     private void Update()
     {
         if (storage < maxStorage)
         {
-            GetClosestResource();
+            resorce = GetClosestResource();
+            targetOBJ = resorce;
+            navigation.destination = targetOBJ.transform.position;
         }
         else
         {
@@ -55,6 +68,8 @@ public class GoToNearestResource : MonoBehaviour
             if (harvestTime <= 0)
             {
                 Destroy(targetOBJ);
+                StoreResourceQueue.Dequeue();
+                StoreResource.Remove(targetOBJ);
                 harvestTime = harvestTimeReset;
                 storage += 1;
             }
@@ -64,35 +79,23 @@ public class GoToNearestResource : MonoBehaviour
             storage -= 1;
             if(TAG == "Wood")
             {
-                WoodStorage += 5;
+                WoodStorage += 10;
             }
             else if(TAG == "Iron")
             {
-                IronStorage += 2;
+                IronStorage += 5;
             }
-            else if(TAG == "Stone")
-            {
-
-            }
-
         }
     }
 
-    private void GetClosestResource()
+    private GameObject GetClosestResource()
     {
-        if (targetOBJ == null || !targetOBJ.gameObject.CompareTag(TAG))
-        {
-            targetOBJ = GameObject.FindGameObjectWithTag(TAG);
+        List<GameObject> queueitems = StoreResource.OrderBy(storage => Vector3.Distance(transform.position, storage.transform.position)).ToList();
+        foreach(GameObject item in queueitems) 
+        { 
+            StoreResourceQueue.Enqueue(item);
         }
-
-        if(targetOBJ != null)
-        {
-            navigation.destination = targetOBJ.transform.position;
-        }
-        else
-        {
-            navigation.destination = this.transform.position;
-        }
+        return StoreResourceQueue.ToArray()[1];
         
     }
 
