@@ -204,7 +204,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 5bf7e1b73324f3246827fc20cd72d912, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1007,7 +1007,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 48910a5bbc3e95644a6a614a70fda414, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1033,7 +1033,7 @@ MonoBehaviour:
   ironCost: 25
   spawnLocation: {x: 2, y: 2, z: 0}
   spawnRotations: {x: 0, y: 0, z: 0, w: 0}
-  unitToSpawn: {fileID: 3601205759075999804, guid: 051e4ab19a5524747a3d5c07c96af230, type: 3}
+  unitToSpawn: {fileID: 7895197331257113379, guid: e2a7bb46712e5384e8fdcdd6b7cb9a24, type: 3}
   maker: {fileID: 5217224619217676979}
 --- !u!114 &3211550910109141426
 MonoBehaviour:
