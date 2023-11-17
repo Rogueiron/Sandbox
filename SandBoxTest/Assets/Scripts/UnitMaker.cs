@@ -6,17 +6,6 @@ using static Storage;
 public class UnitMaker : MonoBehaviour
 {
     public Canvas canvas;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void makeunit(int woodsNeeded, int ironNeeded, Vector3 spawnLocation, GameObject unitToSpawn, Quaternion spawnRoto
         )
