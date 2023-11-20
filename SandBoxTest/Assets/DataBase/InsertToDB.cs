@@ -18,7 +18,7 @@ public class InsertToDB : MonoBehaviour
         connction.Open();
         using (var command = connction.CreateCommand())
         {
-            command.CommandText = "INSERT INTO User (Name) VALUES ('" + nameInput.text + "' );";
+            command.CommandText = "INSERT INTO user (Name) VALUES ('" + nameInput.text + "' );";
             command.ExecuteNonQuery();
         }
         connction.Close();
