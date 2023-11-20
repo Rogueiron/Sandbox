@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
@@ -24,11 +25,12 @@ public class GoToNearestResource : MonoBehaviour
 
     public NavMeshAgent navigation;
 
-    List<GameObject> StoreResource = new();
+    public static List<GameObject> StoreResource = new();
 
     Queue<GameObject> StoreResourceQueue = new();
 
-    GameObject resorce;
+    private float timer = 5;
+
 
     public string TAG;
 
@@ -39,15 +41,16 @@ public class GoToNearestResource : MonoBehaviour
         {
             StoreResource.Add(Resoure);
         }
+        StoreResourceQueue = GetResourceQueue();
+        targetOBJ = StoreResourceQueue.Dequeue();
+        navigation.destination = targetOBJ.transform.position;
     }
 
     private void Update()
     {
         if (storage < maxStorage)
         {
-            resorce = GetClosestResource();
-            targetOBJ = resorce;
-            navigation.destination = targetOBJ.transform.position;
+            
         }
         else
         {
@@ -68,10 +71,11 @@ public class GoToNearestResource : MonoBehaviour
             if (harvestTime <= 0)
             {
                 Destroy(targetOBJ);
-                StoreResourceQueue.Dequeue();
-                StoreResource.Remove(targetOBJ);
                 harvestTime = harvestTimeReset;
                 storage += 1;
+                targetOBJ = StoreResourceQueue.Dequeue();
+                StoreResource.Remove(targetOBJ);
+                navigation.destination = targetOBJ.transform.position;
             }
         }
         if (storage >= 1 && other.gameObject.CompareTag("Storage"))
@@ -86,16 +90,25 @@ public class GoToNearestResource : MonoBehaviour
                 IronStorage += 5;
             }
         }
+        else if(storage == 0 && targetOBJ == other.gameObject.CompareTag("Storage") && timer <= 0)
+        {
+            timer = 5;
+             targetOBJ = StoreResourceQueue.Dequeue();
+             StoreResource.Remove(targetOBJ);
+             navigation.destination = targetOBJ.transform.position;
+        }
+        else
+        {
+            timer -= Time.deltaTime;
+        }
     }
 
-    private GameObject GetClosestResource()
+    private Queue<GameObject> GetResourceQueue()
     {
-        List<GameObject> queueitems = StoreResource.OrderBy(storage => Vector3.Distance(transform.position, storage.transform.position)).ToList();
-        foreach(GameObject item in queueitems) 
-        { 
-            StoreResourceQueue.Enqueue(item);
-        }
-        return StoreResourceQueue.ToArray()[1];
+        Queue<GameObject> resources = new();
+        StoreResource.OrderBy(storage => Vector3.Distance(transform.position, storage.transform.position)).ToList().ForEach(obj=>resources.Enqueue(obj));
+        return resources;
+        
         
     }
 
