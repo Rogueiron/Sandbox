@@ -14,23 +14,20 @@ public class GoToNearestResource : MonoBehaviour
     public GameObject targetOBJ;
     public GameObject storageManager;
 
+    public GameObject nextResource;
+
     public int storage;
-    public int maxStorage = 2;
+    public int maxStorage;
 
-    public float harvestTime, harvestTimeReset = 30;
-
-    public bool selected = false;
-    public bool resourceWasSelected = false;
-    public bool empty = true;
+    public float harvestTime, harvestTimeReset = 15;
 
     public NavMeshAgent navigation;
 
-    public static List<GameObject> StoreResource = new();
+    public List<GameObject> StoreResource = new();
 
     Queue<GameObject> StoreResourceQueue = new();
 
     private float timer = 5;
-
 
     public string TAG;
 
@@ -46,39 +43,32 @@ public class GoToNearestResource : MonoBehaviour
         navigation.destination = targetOBJ.transform.position;
     }
 
-    private void Update()
-    {
-        if (storage < maxStorage)
-        {
-            
-        }
-        else
-        {
-            Store();
-        }
-        
-    } 
-
     private void OnTriggerStay(Collider other)
     {
         if(storage < maxStorage && other.gameObject.CompareTag(TAG))
         {
-            if(navigation.remainingDistance <= 1)
-            {
-                navigation.destination = this.transform.position;
-            }
             harvestTime -= Time.deltaTime;
-            if (harvestTime <= 0)
+            if (harvestTime <= 0 && storage != maxStorage -1)
             {
                 Destroy(targetOBJ);
                 harvestTime = harvestTimeReset;
                 storage += 1;
-                targetOBJ = StoreResourceQueue.Dequeue();
+                nextResource = StoreResourceQueue.Dequeue();
+                targetOBJ = nextResource;
                 StoreResource.Remove(targetOBJ);
                 navigation.destination = targetOBJ.transform.position;
             }
+            else if(harvestTime <=0)
+            {
+                Destroy(targetOBJ);
+                harvestTime = harvestTimeReset;
+                storage += 1;
+                if (storage >= maxStorage)
+                    Store();
+
+            }
         }
-        if (storage >= 1 && other.gameObject.CompareTag("Storage"))
+        else if (storage >= 1 && other.gameObject.CompareTag("Storage"))
         {
             storage -= 1;
             if(TAG == "Wood")
@@ -93,23 +83,27 @@ public class GoToNearestResource : MonoBehaviour
         else if(storage == 0 && targetOBJ == other.gameObject.CompareTag("Storage") && timer <= 0)
         {
             timer = 5;
-             targetOBJ = StoreResourceQueue.Dequeue();
-             StoreResource.Remove(targetOBJ);
-             navigation.destination = targetOBJ.transform.position;
+            nextResource = StoreResourceQueue.Dequeue();
+            targetOBJ = nextResource;
+            StoreResource.Remove(targetOBJ);
+            navigation.destination = targetOBJ.transform.position;
         }
         else
         {
             timer -= Time.deltaTime;
         }
     }
+    private void OnTriggerExit(Collider other)
+    {
+        if(storage >= maxStorage)
+            Store();
+    }
 
     private Queue<GameObject> GetResourceQueue()
     {
         Queue<GameObject> resources = new();
         StoreResource.OrderBy(storage => Vector3.Distance(transform.position, storage.transform.position)).ToList().ForEach(obj=>resources.Enqueue(obj));
-        return resources;
-        
-        
+        return resources;     
     }
 
     private void Store()
