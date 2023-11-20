@@ -1,0 +1,122 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
+using TMPro;
+using UnityEditor;
+using UnityEngine;
+using UnityEngine.AI;
+using UnityEngine.Rendering;
+using static Storage;
+
+public class GoToNearestResource : MonoBehaviour
+{
+    public GameObject targetOBJ;
+    public GameObject storageManager;
+
+    public int storage;
+    public int maxStorage = 2;
+
+    public float harvestTime, harvestTimeReset = 30;
+
+    public bool selected = false;
+    public bool resourceWasSelected = false;
+    public bool empty = true;
+
+    public NavMeshAgent navigation;
+
+    public static List<GameObject> StoreResource = new();
+
+    Queue<GameObject> StoreResourceQueue = new();
+
+    private float timer = 5;
+
+
+    public string TAG;
+
+    private void Start()
+    {
+        storageManager = GameObject.FindGameObjectWithTag("StorageManager");
+        foreach(GameObject Resoure in GameObject.FindGameObjectsWithTag(TAG))
+        {
+            StoreResource.Add(Resoure);
+        }
+        StoreResourceQueue = GetResourceQueue();
+        targetOBJ = StoreResourceQueue.Dequeue();
+        navigation.destination = targetOBJ.transform.position;
+    }
+
+    private void Update()
+    {
+        if (storage < maxStorage)
+        {
+            
+        }
+        else
+        {
+            Store();
+        }
+        
+    } 
+
+    private void OnTriggerStay(Collider other)
+    {
+        if(storage < maxStorage && other.gameObject.CompareTag(TAG))
+        {
+            if(navigation.remainingDistance <= 1)
+            {
+                navigation.destination = this.transform.position;
+            }
+            harvestTime -= Time.deltaTime;
+            if (harvestTime <= 0)
+            {
+                Destroy(targetOBJ);
+                harvestTime = harvestTimeReset;
+                storage += 1;
+                targetOBJ = StoreResourceQueue.Dequeue();
+                StoreResource.Remove(targetOBJ);
+                navigation.destination = targetOBJ.transform.position;
+            }
+        }
+        if (storage >= 1 && other.gameObject.CompareTag("Storage"))
+        {
+            storage -= 1;
+            if(TAG == "Wood")
+            {
+                WoodStorage += 10;
+            }
+            else if(TAG == "Iron")
+            {
+                IronStorage += 5;
+            }
+        }
+        else if(storage == 0 && targetOBJ == other.gameObject.CompareTag("Storage") && timer <= 0)
+        {
+            timer = 5;
+             targetOBJ = StoreResourceQueue.Dequeue();
+             StoreResource.Remove(targetOBJ);
+             navigation.destination = targetOBJ.transform.position;
+        }
+        else
+        {
+            timer -= Time.deltaTime;
+        }
+    }
+
+    private Queue<GameObject> GetResourceQueue()
+    {
+        Queue<GameObject> resources = new();
+        StoreResource.OrderBy(storage => Vector3.Distance(transform.position, storage.transform.position)).ToList().ForEach(obj=>resources.Enqueue(obj));
+        return resources;
+        
+        
+    }
+
+    private void Store()
+    {
+        targetOBJ = GameObject.FindGameObjectWithTag("Storage");
+
+        navigation.destination = targetOBJ.transform.position;
+    }
+
+}

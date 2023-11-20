@@ -3,12 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Data;
 using Mono.Data.Sqlite;
-using UnityEngine.UI;
-using TMPro;
 
 public class InsertToDB : MonoBehaviour
 {
-    public TMP_InputField nameInput;
     private string dbName = "URI=file:game.db";
 
 
@@ -18,7 +15,7 @@ public class InsertToDB : MonoBehaviour
         connction.Open();
         using (var command = connction.CreateCommand())
         {
-            command.CommandText = "INSERT INTO user (Name) VALUES ('" + nameInput.text + "' );";
+            command.CommandText = "INSERT INTO User (UserID) VALUES (UserID INTEGER '0',  xloc REAL , yloc REAL, zloc REAL, );";
             command.ExecuteNonQuery();
         }
         connction.Close();
@@ -41,7 +38,7 @@ public class InsertToDB : MonoBehaviour
         connction.Open();
         using (var command = connction.CreateCommand())
         {
-            command.CommandText = "INSERT INTO Building (Id INT NOT NULL UNIQUE, UserID INT NOT NULL,  Name VARCHAR(20), type INT NOT NULL, cost INT NOT NULL, descripton  VARCHAR(50) NOT NULL UNIQUE, PRIMARY KEY(id AUTOINCREMENT)') VALUES ();";
+            command.CommandText = "INSERT INTO Building (Id INT NOT NULL UNIQUE, UserID INT NOT NULL,  Name VARCHAR(20), type INT NOT NULL, cost INT NOT NULL, descripton  VARCHAR(50) NOT NULL UNIQUE, PRIMARY KEY(id AUTOINCREMENT)') VALUES ('0');";
             command.ExecuteNonQuery();
         }
         connction.Close();

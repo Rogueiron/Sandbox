@@ -6,18 +6,25 @@ TagManager:
   tags:
   - Core
   - Dropdown
+  - Edge
+  - Waterpump
+  - Iron
+  - Storage
+  - Wood
+  - Unit
+  - StorageManager
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Edge
   - Water
   - UI
   - Buildings
   - Minimap
   - Clickable
   - Ground
-  - 
+  - Cloud
   - 
   - 
   - 
