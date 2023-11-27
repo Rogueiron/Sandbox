@@ -1979,7 +1979,7 @@ GameObject:
   - component: {fileID: 9111548465407999310}
   m_Layer: 0
   m_Name: MiniWoodHarvester
-  m_TagString: Untagged
+  m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2088,14 +2088,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetOBJ: {fileID: 0}
   storageManager: {fileID: 0}
+  nextResource: {fileID: 0}
   storage: 0
   maxStorage: 2
   harvestTime: 15
   harvestTimeReset: 15
-  selected: 0
-  resourceWasSelected: 0
-  empty: 1
   navigation: {fileID: 8384202601168715280}
+  StoreResource: []
   TAG: Wood
 --- !u!1 &1997915231408216851
 GameObject:
