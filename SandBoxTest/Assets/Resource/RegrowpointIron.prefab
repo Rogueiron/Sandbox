@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5159577648576276343
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7345163483782118335}
+  - component: {fileID: 6256140525329594762}
+  m_Layer: 0
+  m_Name: RegrowpointIron
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7345163483782118335
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5159577648576276343}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 7809488802321273065}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &6256140525329594762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5159577648576276343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f8bd988d10fe9f45bb19e5e2551cfda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 50
+  Resource: {fileID: 7434088510638803539}
+--- !u!1001 &7635659921853702396
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7345163483782118335}
+    m_Modifications:
+    - target: {fileID: 402984816142118933, guid: 7405b9dfae707a74e9d9a341ebf4b6f0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 402984816142118933, guid: 7405b9dfae707a74e9d9a341ebf4b6f0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 402984816142118933, guid: 7405b9dfae707a74e9d9a341ebf4b6f0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 402984816142118933, guid: 7405b9dfae707a74e9d9a341ebf4b6f0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 402984816142118933, guid: 7405b9dfae707a74e9d9a341ebf4b6f0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 402984816142118933, guid: 7405b9dfae707a74e9d9a341ebf4b6f0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 402984816142118933, guid: 7405b9dfae707a74e9d9a341ebf4b6f0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 402984816142118933, guid: 7405b9dfae707a74e9d9a341ebf4b6f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 402984816142118933, guid: 7405b9dfae707a74e9d9a341ebf4b6f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 402984816142118933, guid: 7405b9dfae707a74e9d9a341ebf4b6f0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1070836513685023407, guid: 7405b9dfae707a74e9d9a341ebf4b6f0, type: 3}
+      propertyPath: m_Name
+      value: Iron (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7405b9dfae707a74e9d9a341ebf4b6f0, type: 3}
+--- !u!1 &7434088510638803539 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1070836513685023407, guid: 7405b9dfae707a74e9d9a341ebf4b6f0, type: 3}
+  m_PrefabInstance: {fileID: 7635659921853702396}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7809488802321273065 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 402984816142118933, guid: 7405b9dfae707a74e9d9a341ebf4b6f0, type: 3}
+  m_PrefabInstance: {fileID: 7635659921853702396}
+  m_PrefabAsset: {fileID: 0}

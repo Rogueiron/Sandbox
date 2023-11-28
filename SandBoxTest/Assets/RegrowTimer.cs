@@ -5,15 +5,15 @@ using UnityEngine;
 public class RegrowTimer : MonoBehaviour
 {
     [SerializeField] private float timer = 50;
-    [SerializeField] private GameObject tree;
+    [SerializeField] private GameObject Resource;
 
     public void time()
     {
-        Invoke(nameof(SpawnTree), 50);
+        Invoke(nameof(SpawnResource), timer);
     }
 
-    public void SpawnTree()
+    public void SpawnResource()
     {
-        Instantiate(gameObject, new Vector3(0, 0, 0), Quaternion.identity);
+        Instantiate(Resource, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
     }
 }
