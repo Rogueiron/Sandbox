@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 50
-  Resource: {fileID: 0}
+  Resource: {fileID: 922786706312269859, guid: bfe6e4c4cf6769841a4521a75500246e, type: 3}
 --- !u!1001 &5107990648209399624
 PrefabInstance:
   m_ObjectHideFlags: 0
