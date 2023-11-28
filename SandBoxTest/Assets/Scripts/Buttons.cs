@@ -5,17 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Buttons : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void startonClick()
     {
         SceneManager.LoadScene("Game");
@@ -26,6 +15,6 @@ public class Buttons : MonoBehaviour
     }
     public void menuonClick()
     {
-        SceneManager.LoadScene("MainmMenu");
+        SceneManager.LoadScene("MainMenu");
     }
 }
