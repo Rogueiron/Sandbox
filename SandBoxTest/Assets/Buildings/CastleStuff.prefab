@@ -37,7 +37,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -13.648829, y: 4.8876133}
+  m_AnchoredPosition: {x: -0.11, y: 6.75}
   m_SizeDelta: {x: 14.225, y: 6.8887}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &4260476132407428679
@@ -714,6 +714,8 @@ GameObject:
   - component: {fileID: 2783154707931106306}
   - component: {fileID: 6801067559125763753}
   - component: {fileID: 854312617110859049}
+  - component: {fileID: 5120267005360567721}
+  - component: {fileID: 6576366979408886063}
   m_Layer: 0
   m_Name: CastleStuff
   m_TagString: Untagged
@@ -729,7 +731,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7239094926857272079}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 28.209099, y: 7.4, z: -32.370483}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -788,6 +790,35 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5120267005360567721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7239094926857272079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc6e286ec58401a4c86399118957162a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 4260476132407428679}
+--- !u!208 &6576366979408886063
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7239094926857272079}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 3.7400002, y: 1.7590001, z: 3.8120003}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.095000006, y: 1.669, z: 1.008}
+  m_TimeToStationary: 0.5
 --- !u!1 &7529741003404205190
 GameObject:
   m_ObjectHideFlags: 0
@@ -962,7 +993,7 @@ Transform:
   m_GameObject: {fileID: 7985962294255875713}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.6088295, y: -1.9124875, z: -1.3108978}
+  m_LocalPosition: {x: -0.03, y: 0.3, z: -2.91}
   m_LocalScale: {x: 1, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1063,7 +1094,7 @@ MonoBehaviour:
   ironCost: 0
   spawnLocation: {x: 2, y: 2, z: 0}
   spawnRotations: {x: 0, y: 0, z: 0, w: 0}
-  unitToSpawn: {fileID: 7895197331257113379, guid: de4fa720e24e3064786872ce5f9cf016, type: 3}
+  unitToSpawn: {fileID: 7895197331257113379, guid: 3d9f3c4d070a9984f9465f114788e7fc, type: 3}
   maker: {fileID: 7239094926857272079}
 --- !u!114 &4527091377979338069
 MonoBehaviour:
