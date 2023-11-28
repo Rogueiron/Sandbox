@@ -2105,6 +2105,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ResourceCollectorPlatform
       objectReference: {fileID: 0}
+    - target: {fileID: 4638980750094684841, guid: 051e4ab19a5524747a3d5c07c96af230, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 08c578919b889104c963f11747ade0a0, type: 2}
     - target: {fileID: 6883953906444075421, guid: 051e4ab19a5524747a3d5c07c96af230, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
