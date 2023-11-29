@@ -11,6 +11,7 @@ public class Storage : MonoBehaviour
     public static int CoalStorage = 150;
     public static int PopCapStorage = 0;
     public static int researchStorage = 0;
+    public static int Population = 0;
 
     [SerializeField] TextMeshProUGUI storageTextWo;
     [SerializeField] TextMeshProUGUI storageTextI;

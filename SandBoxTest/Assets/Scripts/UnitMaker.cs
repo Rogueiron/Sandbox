@@ -13,6 +13,8 @@ public class UnitMaker : MonoBehaviour
         WoodStorage -= woodsNeeded;
         IronStorage -= ironNeeded;
         Instantiate(unitToSpawn, spawnLocation, spawnRoto);
+        Population += 1;
+
     }
     public void ShowUi()
     {
