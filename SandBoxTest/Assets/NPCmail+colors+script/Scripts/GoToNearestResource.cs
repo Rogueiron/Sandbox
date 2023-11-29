@@ -34,10 +34,7 @@ public class GoToNearestResource : MonoBehaviour
     private void Start()
     {
         storageManager = GameObject.FindGameObjectWithTag("StorageManager");
-        foreach(GameObject Resoure in GameObject.FindGameObjectsWithTag(TAG))
-        {
-            StoreResource.Add(Resoure);
-        }
+        restart();
         StoreResourceQueue = GetResourceQueue();
         targetOBJ = StoreResourceQueue.Dequeue();
         navigation.destination = targetOBJ.transform.position;
@@ -53,6 +50,7 @@ public class GoToNearestResource : MonoBehaviour
                 Destroy(targetOBJ);
                 harvestTime = harvestTimeReset;
                 storage += 1;
+                restart();
                 nextResource = StoreResourceQueue.Dequeue();
                 targetOBJ = nextResource;
                 StoreResource.Remove(targetOBJ);
@@ -83,6 +81,7 @@ public class GoToNearestResource : MonoBehaviour
         else if(storage == 0 && targetOBJ == other.gameObject.CompareTag("Storage") && timer <= 0)
         {
             timer = 5;
+            restart();
             nextResource = StoreResourceQueue.Dequeue();
             targetOBJ = nextResource;
             StoreResource.Remove(targetOBJ);
@@ -112,5 +111,11 @@ public class GoToNearestResource : MonoBehaviour
 
         navigation.destination = targetOBJ.transform.position;
     }
-
+    private void restart()
+    {
+        foreach (GameObject Resoure in GameObject.FindGameObjectsWithTag(TAG))
+        {
+            StoreResource.Add(Resoure);
+        }
+    }
 }
