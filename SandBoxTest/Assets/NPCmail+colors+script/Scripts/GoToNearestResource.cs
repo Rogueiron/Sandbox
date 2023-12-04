@@ -10,6 +10,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Rendering;
 using static Storage;
+using static Upgrades;
 
 public class GoToNearestResource : MonoBehaviour
 {
@@ -35,6 +36,8 @@ public class GoToNearestResource : MonoBehaviour
 
     public string TAG;
 
+    private bool UpgradedSpeed = false;
+
     private void Start()
     {
         storageManager = GameObject.FindGameObjectWithTag("StorageManager");
@@ -50,6 +53,11 @@ public class GoToNearestResource : MonoBehaviour
             restart();
             targetOBJ = StoreResourceQueue.Dequeue();
             speration();
+        }
+        if(Speed == true && UpgradedSpeed == false)
+        {
+            harvestTimeReset = harvestTimeReset / 2;
+            UpgradedSpeed = true;
         }
     }
 
@@ -95,6 +103,7 @@ public class GoToNearestResource : MonoBehaviour
         else if(storage == 0 && targetOBJ == other.gameObject.CompareTag("Storage") && timer <= 0)
         {
             timer = 5;
+            restart();
             nextResource = StoreResourceQueue.Dequeue();
             targetOBJ = nextResource;
             StoreResource.Remove(targetOBJ);
