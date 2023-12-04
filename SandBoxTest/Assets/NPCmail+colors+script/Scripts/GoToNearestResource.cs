@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading;
 using TMPro;
+using Unity.VisualScripting.FullSerializer;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
@@ -27,6 +29,8 @@ public class GoToNearestResource : MonoBehaviour
 
     Queue<GameObject> StoreResourceQueue = new();
 
+    public static List<GameObject> listcheck = new();
+
     private float timer = 5;
 
     public string TAG;
@@ -37,7 +41,16 @@ public class GoToNearestResource : MonoBehaviour
         restart();
         StoreResourceQueue = GetResourceQueue();
         targetOBJ = StoreResourceQueue.Dequeue();
-        navigation.destination = targetOBJ.transform.position;
+        speration();
+    }
+    public void FixedUpdate()
+    {
+        if (targetOBJ == null)
+        {
+            restart();
+            targetOBJ = StoreResourceQueue.Dequeue();
+            speration();
+        }
     }
 
     private void OnTriggerStay(Collider other)
@@ -47,17 +60,18 @@ public class GoToNearestResource : MonoBehaviour
             harvestTime -= Time.deltaTime;
             if (harvestTime <= 0 && storage != maxStorage -1)
             {
+                listcheck.Remove(targetOBJ);
                 Destroy(targetOBJ);
                 harvestTime = harvestTimeReset;
                 storage += 1;
-                restart();
                 nextResource = StoreResourceQueue.Dequeue();
                 targetOBJ = nextResource;
                 StoreResource.Remove(targetOBJ);
-                navigation.destination = targetOBJ.transform.position;
+                speration();
             }
             else if(harvestTime <=0)
             {
+                listcheck.Remove(targetOBJ);
                 Destroy(targetOBJ);
                 harvestTime = harvestTimeReset;
                 storage += 1;
@@ -81,11 +95,10 @@ public class GoToNearestResource : MonoBehaviour
         else if(storage == 0 && targetOBJ == other.gameObject.CompareTag("Storage") && timer <= 0)
         {
             timer = 5;
-            restart();
             nextResource = StoreResourceQueue.Dequeue();
             targetOBJ = nextResource;
             StoreResource.Remove(targetOBJ);
-            navigation.destination = targetOBJ.transform.position;
+            speration();
         }
         else
         {
@@ -94,7 +107,7 @@ public class GoToNearestResource : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if(storage >= maxStorage)
+        if (storage >= maxStorage)
             Store();
     }
 
@@ -117,5 +130,18 @@ public class GoToNearestResource : MonoBehaviour
         {
             StoreResource.Add(Resoure);
         }
+    }
+
+    private void speration()
+    {
+        if(listcheck.Contains(targetOBJ))
+        {
+            targetOBJ = StoreResourceQueue.Dequeue();
+        }
+        else
+        {
+            listcheck.Add(targetOBJ);
+        }
+        navigation.destination = targetOBJ.transform.position;
     }
 }
