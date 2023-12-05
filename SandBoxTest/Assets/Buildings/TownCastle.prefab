@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7792012002576366700}
   - component: {fileID: 1472892718436449790}
   - component: {fileID: 5781573861950035772}
+  - component: {fileID: 5301745350516126671}
   m_Layer: 0
   m_Name: TownCastle
   m_TagString: Untagged
@@ -26,12 +27,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 405120116716913715}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.2, z: 0}
   m_LocalScale: {x: 1, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2276802034921190207}
+  - {fileID: 5983151503396775154}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1472892718436449790
@@ -84,6 +86,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5301745350516126671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405120116716913715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc6e286ec58401a4c86399118957162a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 8516003023387760320}
 --- !u!1 &668430708518550261
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,7 +410,6 @@ GameObject:
   - component: {fileID: 8873849938934041029}
   - component: {fileID: 564201573906493377}
   - component: {fileID: 5834792869429142984}
-  - component: {fileID: 4948582274198949295}
   m_Layer: 5
   m_Name: WoodHarvester
   m_TagString: Untagged
@@ -478,8 +492,8 @@ MonoBehaviour:
   ironCost: 10
   spawnLocation: {x: 2, y: 2, z: 0}
   spawnRotations: {x: 0, y: 0, z: 0, w: 0}
-  unitToSpawn: {fileID: 7895197331257113379, guid: 7a50aba40460e9f4cb1d0e9ff3797357, type: 3}
-  maker: {fileID: 4445350679234121466}
+  unitToSpawn: {fileID: 1986042837862581056, guid: 0de98106c53c9e04c90a43df428f9579, type: 3}
+  maker: {fileID: 405120116716913715}
 --- !u!114 &5834792869429142984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -523,21 +537,50 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8873849938934041029}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
---- !u!114 &4948582274198949295
-MonoBehaviour:
+      m_Calls:
+      - m_Target: {fileID: 564201573906493377}
+        m_TargetAssemblyTypeName: UnitToMake, Assembly-CSharp
+        m_MethodName: Make
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!1 &3465675745528160480
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2589127148553453232}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 476260bfd54faa740b3f4f05b794873d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isWood: 0
-  ValueGrabber: {fileID: 5834792869429142984}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5983151503396775154}
+  m_Layer: 0
+  m_Name: Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5983151503396775154
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3465675745528160480}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -4.67}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7792012002576366700}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4424375847783668665
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,8 +676,8 @@ MonoBehaviour:
   ironCost: 0
   spawnLocation: {x: 2, y: 2, z: 0}
   spawnRotations: {x: 0, y: 0, z: 0, w: 0}
-  unitToSpawn: {fileID: 7895197331257113379, guid: b4b181724c7757e4fa40081cffe12e5a, type: 3}
-  maker: {fileID: 4445350679234121466}
+  unitToSpawn: {fileID: 7895197331257113379, guid: de4fa720e24e3064786872ce5f9cf016, type: 3}
+  maker: {fileID: 405120116716913715}
 --- !u!114 &1686496809518821617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -678,7 +721,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5863408994437227993}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4368002318269592321}
+        m_TargetAssemblyTypeName: UnitToMake, Assembly-CSharp
+        m_MethodName: Make
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4445350679234121466
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,7 +746,6 @@ GameObject:
   - component: {fileID: 8516003023387760320}
   - component: {fileID: 1365953038784318119}
   - component: {fileID: 4136659571077530637}
-  - component: {fileID: 3941537969161243749}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -783,19 +837,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &3941537969161243749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4445350679234121466}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc6e286ec58401a4c86399118957162a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canvas: {fileID: 8516003023387760320}
 --- !u!1 &5633312354667159176
 GameObject:
   m_ObjectHideFlags: 0

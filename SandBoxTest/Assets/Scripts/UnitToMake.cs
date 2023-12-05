@@ -10,7 +10,7 @@ public class UnitToMake : MonoBehaviour
     public Vector3 spawnLocation = new Vector3(0, 0, 0);
     [SerializeField] Quaternion spawnRotations = new Quaternion(0, 0, 0, 0);
     [SerializeField] GameObject unitToSpawn;
-    public GameObject maker;
+    [SerializeField] GameObject maker;
 
     public int getWoodCost()
     {
@@ -23,9 +23,9 @@ public class UnitToMake : MonoBehaviour
 
     public void Make()
     {
-        if (ironCost <= IronStorage && woodCost <= WoodStorage)
+        if (ironCost <= IronStorage && woodCost <= WoodStorage && Population < PopCapStorage)
         {
-            spawnLocation = maker.GetComponent<Transform>().transform.position;
+            spawnLocation = maker.transform.GetChild(1).transform.position;
             maker.GetComponent<UnitMaker>().makeunit(woodCost, ironCost, spawnLocation, unitToSpawn, spawnRotations);
         }
     }

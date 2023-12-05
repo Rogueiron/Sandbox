@@ -1,84 +1,94 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading;
 using TMPro;
+using Unity.VisualScripting.FullSerializer;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Rendering;
 using static Storage;
+using static Upgrades;
 
 public class GoToNearestResource : MonoBehaviour
 {
     public GameObject targetOBJ;
     public GameObject storageManager;
 
+    public GameObject nextResource;
+
     public int storage;
-    public int maxStorage = 2;
+    public int maxStorage;
 
-    public float harvestTime, harvestTimeReset = 30;
-
-    public bool selected = false;
-    public bool resourceWasSelected = false;
-    public bool empty = true;
+    public float harvestTime, harvestTimeReset = 15;
 
     public NavMeshAgent navigation;
 
-    public static List<GameObject> StoreResource = new();
+    public List<GameObject> StoreResource = new();
 
     Queue<GameObject> StoreResourceQueue = new();
 
+    public static List<GameObject> listcheck = new();
+
     private float timer = 5;
 
-
     public string TAG;
+
+    private bool UpgradedSpeed = false;
 
     private void Start()
     {
         storageManager = GameObject.FindGameObjectWithTag("StorageManager");
-        foreach(GameObject Resoure in GameObject.FindGameObjectsWithTag(TAG))
-        {
-            StoreResource.Add(Resoure);
-        }
+        restart();
         StoreResourceQueue = GetResourceQueue();
         targetOBJ = StoreResourceQueue.Dequeue();
-        navigation.destination = targetOBJ.transform.position;
+        speration();
     }
-
-    private void Update()
+    public void FixedUpdate()
     {
-        if (storage < maxStorage)
+        if (targetOBJ == null)
         {
-            
+            restart();
+            targetOBJ = StoreResourceQueue.Dequeue();
+            speration();
         }
-        else
+        if(Speed == true && UpgradedSpeed == false)
         {
-            Store();
+            harvestTimeReset = harvestTimeReset / 2;
+            UpgradedSpeed = true;
         }
-        
-    } 
+    }
 
     private void OnTriggerStay(Collider other)
     {
         if(storage < maxStorage && other.gameObject.CompareTag(TAG))
         {
-            if(navigation.remainingDistance <= 1)
-            {
-                navigation.destination = this.transform.position;
-            }
             harvestTime -= Time.deltaTime;
-            if (harvestTime <= 0)
+            if (harvestTime <= 0 && storage != maxStorage -1)
             {
+                listcheck.Remove(targetOBJ);
                 Destroy(targetOBJ);
                 harvestTime = harvestTimeReset;
                 storage += 1;
-                targetOBJ = StoreResourceQueue.Dequeue();
+                nextResource = StoreResourceQueue.Dequeue();
+                targetOBJ = nextResource;
                 StoreResource.Remove(targetOBJ);
-                navigation.destination = targetOBJ.transform.position;
+                speration();
+            }
+            else if(harvestTime <=0)
+            {
+                listcheck.Remove(targetOBJ);
+                Destroy(targetOBJ);
+                harvestTime = harvestTimeReset;
+                storage += 1;
+                if (storage >= maxStorage)
+                    Store();
+
             }
         }
-        if (storage >= 1 && other.gameObject.CompareTag("Storage"))
+        else if (storage >= 1 && other.gameObject.CompareTag("Storage"))
         {
             storage -= 1;
             if(TAG == "Wood")
@@ -93,23 +103,28 @@ public class GoToNearestResource : MonoBehaviour
         else if(storage == 0 && targetOBJ == other.gameObject.CompareTag("Storage") && timer <= 0)
         {
             timer = 5;
-             targetOBJ = StoreResourceQueue.Dequeue();
-             StoreResource.Remove(targetOBJ);
-             navigation.destination = targetOBJ.transform.position;
+            restart();
+            nextResource = StoreResourceQueue.Dequeue();
+            targetOBJ = nextResource;
+            StoreResource.Remove(targetOBJ);
+            speration();
         }
         else
         {
             timer -= Time.deltaTime;
         }
     }
+    private void OnTriggerExit(Collider other)
+    {
+        if (storage >= maxStorage)
+            Store();
+    }
 
     private Queue<GameObject> GetResourceQueue()
     {
         Queue<GameObject> resources = new();
         StoreResource.OrderBy(storage => Vector3.Distance(transform.position, storage.transform.position)).ToList().ForEach(obj=>resources.Enqueue(obj));
-        return resources;
-        
-        
+        return resources;     
     }
 
     private void Store()
@@ -118,5 +133,24 @@ public class GoToNearestResource : MonoBehaviour
 
         navigation.destination = targetOBJ.transform.position;
     }
+    private void restart()
+    {
+        foreach (GameObject Resoure in GameObject.FindGameObjectsWithTag(TAG))
+        {
+            StoreResource.Add(Resoure);
+        }
+    }
 
+    private void speration()
+    {
+        if(listcheck.Contains(targetOBJ))
+        {
+            targetOBJ = StoreResourceQueue.Dequeue();
+        }
+        else
+        {
+            listcheck.Add(targetOBJ);
+        }
+        navigation.destination = targetOBJ.transform.position;
+    }
 }
