@@ -9,14 +9,16 @@ public class ResearchBack : MonoBehaviour
     public Canvas research;
     void Update()
     {
-        Time.timeScale = 0f;
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape) && research.enabled == true)
         {
             Time.timeScale = 1f;
             main.enabled = true;
             pause.enabled = true;
             research.enabled = false;
-
+        }
+        else if(research.enabled == true) 
+        {
+            Time.timeScale = 0f;
         }
     }
 }

@@ -36,7 +36,12 @@ public class GoToNearestResource : MonoBehaviour
 
     public string TAG;
 
+    //all upgrade bools
     private bool UpgradedSpeed = false;
+    private bool UpgradedAmount = false;
+
+    private int harvestAmountWood = 10;
+    private int harvestAmountIron = 5;
 
     private void Start()
     {
@@ -58,6 +63,12 @@ public class GoToNearestResource : MonoBehaviour
         {
             harvestTimeReset = harvestTimeReset / 2;
             UpgradedSpeed = true;
+        }
+        if (Amount == true && UpgradedAmount == false)
+        {
+            harvestAmountWood = 15;
+            harvestAmountIron = 10;
+            UpgradedAmount = true;
         }
     }
 
@@ -93,11 +104,11 @@ public class GoToNearestResource : MonoBehaviour
             storage -= 1;
             if(TAG == "Wood")
             {
-                WoodStorage += 10;
+                WoodStorage += harvestAmountWood;
             }
             else if(TAG == "Iron")
             {
-                IronStorage += 5;
+                IronStorage += harvestAmountIron;
             }
         }
         else if(storage == 0 && targetOBJ == other.gameObject.CompareTag("Storage") && timer <= 0)
