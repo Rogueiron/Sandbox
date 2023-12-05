@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading;
 using TMPro;
+using Unity.VisualScripting.FullSerializer;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Rendering;
 using static Storage;
+using static Upgrades;
 
 public class GoToNearestResource : MonoBehaviour
 {
@@ -27,20 +30,35 @@ public class GoToNearestResource : MonoBehaviour
 
     Queue<GameObject> StoreResourceQueue = new();
 
+    public static List<GameObject> listcheck = new();
+
     private float timer = 5;
 
     public string TAG;
 
+    private bool UpgradedSpeed = false;
+
     private void Start()
     {
         storageManager = GameObject.FindGameObjectWithTag("StorageManager");
-        foreach(GameObject Resoure in GameObject.FindGameObjectsWithTag(TAG))
-        {
-            StoreResource.Add(Resoure);
-        }
+        restart();
         StoreResourceQueue = GetResourceQueue();
         targetOBJ = StoreResourceQueue.Dequeue();
-        navigation.destination = targetOBJ.transform.position;
+        speration();
+    }
+    public void FixedUpdate()
+    {
+        if (targetOBJ == null)
+        {
+            restart();
+            targetOBJ = StoreResourceQueue.Dequeue();
+            speration();
+        }
+        if(Speed == true && UpgradedSpeed == false)
+        {
+            harvestTimeReset = harvestTimeReset / 2;
+            UpgradedSpeed = true;
+        }
     }
 
     private void OnTriggerStay(Collider other)
@@ -50,16 +68,18 @@ public class GoToNearestResource : MonoBehaviour
             harvestTime -= Time.deltaTime;
             if (harvestTime <= 0 && storage != maxStorage -1)
             {
+                listcheck.Remove(targetOBJ);
                 Destroy(targetOBJ);
                 harvestTime = harvestTimeReset;
                 storage += 1;
                 nextResource = StoreResourceQueue.Dequeue();
                 targetOBJ = nextResource;
                 StoreResource.Remove(targetOBJ);
-                navigation.destination = targetOBJ.transform.position;
+                speration();
             }
             else if(harvestTime <=0)
             {
+                listcheck.Remove(targetOBJ);
                 Destroy(targetOBJ);
                 harvestTime = harvestTimeReset;
                 storage += 1;
@@ -83,10 +103,11 @@ public class GoToNearestResource : MonoBehaviour
         else if(storage == 0 && targetOBJ == other.gameObject.CompareTag("Storage") && timer <= 0)
         {
             timer = 5;
+            restart();
             nextResource = StoreResourceQueue.Dequeue();
             targetOBJ = nextResource;
             StoreResource.Remove(targetOBJ);
-            navigation.destination = targetOBJ.transform.position;
+            speration();
         }
         else
         {
@@ -95,7 +116,7 @@ public class GoToNearestResource : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if(storage >= maxStorage)
+        if (storage >= maxStorage)
             Store();
     }
 
@@ -112,5 +133,24 @@ public class GoToNearestResource : MonoBehaviour
 
         navigation.destination = targetOBJ.transform.position;
     }
+    private void restart()
+    {
+        foreach (GameObject Resoure in GameObject.FindGameObjectsWithTag(TAG))
+        {
+            StoreResource.Add(Resoure);
+        }
+    }
 
+    private void speration()
+    {
+        if(listcheck.Contains(targetOBJ))
+        {
+            targetOBJ = StoreResourceQueue.Dequeue();
+        }
+        else
+        {
+            listcheck.Add(targetOBJ);
+        }
+        navigation.destination = targetOBJ.transform.position;
+    }
 }

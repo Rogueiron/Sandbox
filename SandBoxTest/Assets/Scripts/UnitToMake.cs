@@ -23,7 +23,7 @@ public class UnitToMake : MonoBehaviour
 
     public void Make()
     {
-        if (ironCost <= IronStorage && woodCost <= WoodStorage)
+        if (ironCost <= IronStorage && woodCost <= WoodStorage && Population < PopCapStorage)
         {
             spawnLocation = maker.transform.GetChild(1).transform.position;
             maker.GetComponent<UnitMaker>().makeunit(woodCost, ironCost, spawnLocation, unitToSpawn, spawnRotations);
