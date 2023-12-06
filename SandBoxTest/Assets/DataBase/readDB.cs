@@ -17,7 +17,7 @@ public class readDB : MonoBehaviour
         connction.Open();
         using (var command = connction.CreateCommand())
         {
-            command.CommandText = "'SELECT * FROM User WHERE name='"  + InputName.text + "'; ";
+            command.CommandText = "SELECT * FROM User WHERE name= '" + InputName.text + "';";
             command.ExecuteNonQuery();
         }
         connction.Close();

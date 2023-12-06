@@ -9,12 +9,22 @@ public class Buttons : MonoBehaviour
     {
         SceneManager.LoadScene("Game");
     }
+    public void newsaveonClick()
+    {
+        SceneManager.LoadScene("newSave");
+    }
+    public void loadsaveonClick()
+    {
+        SceneManager.LoadScene("SaveScene");
+    }
+
+
     public void Quit()
     {
         Application.Quit();
     }
     public void menuonClick()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("MainMenu"); 
     }
 }

@@ -36,22 +36,12 @@ public class InsertToDB : MonoBehaviour
     {
         using var connction = new SqliteConnection(dbName);
         connction.Open();
-        if (InputName == null) 
-        { 
         using (var command = connction.CreateCommand())
         {
-                command.CommandText = "INSERT INTO User (xloc, yloc, zloc) VALUES ('" + position[0] + "' , '" + position[1] + "' , '" + position[2] + "' ); ";
+                command.CommandText = "INSERT INTO User (name, xloc, yloc, zloc) VALUES ('" + InputName.text + "' , '" + position[0] + "' , '" + position[1] + "' , '" + position[2] + "' ); ";
                 command.ExecuteNonQuery();
-            }
+            
         }   
-        else
-        {
-            using (var command = connction.CreateCommand())
-        {
-                command.CommandText = "INSERT INTO User (name) VALUES ('" + InputName.text + "' ); ";
-                command.ExecuteNonQuery();
-            }
-        }
         connction.Close();
     }
     public void Unit()
@@ -72,7 +62,7 @@ public class InsertToDB : MonoBehaviour
         connction.Open();
         using (var command = connction.CreateCommand())
         {
-            command.CommandText = "INSERT INTO Building (Id, Name, xloc, yloc, zloc )') VALUES ('" + name + "' , '" + movePoint[0] + "' , '" + movePoint[1] + "' , '" + movePoint[3] + "');";
+            command.CommandText = "INSERT INTO Building ( Name, xloc, yloc, zloc ) VALUES ('" + name + "' , '" + movePoint[0] + "' , '" + movePoint[1] + "' , '" + movePoint[2] + "');";
             command.ExecuteNonQuery();
         }
         connction.Close();
@@ -84,15 +74,15 @@ public class InsertToDB : MonoBehaviour
         connction.Open();
         using (var command = connction.CreateCommand())
         {
-            command.CommandText = "INSERT INTO resorces (Stored) VALUES ('" + WoodStorage + "') WHERE name == wood;";
+            command.CommandText = "INSERT INTO resorces ( name, Stored ) VALUES ('wood'," + WoodStorage + ");";
             command.ExecuteNonQuery();
-            command.CommandText = "INSERT INTO resorces (Stored) VALUES ('" + IronStorage + "') WHERE name == Iron;";
+            command.CommandText = "INSERT INTO resorces ( name, Stored ) VALUES ('Iron'," + IronStorage + ");";
             command.ExecuteNonQuery();
-            command.CommandText = "INSERT INTO resorces (Stored) VALUES ('" + CoalStorage + "') WHERE name == Coal;";
+            command.CommandText = "INSERT INTO resorces ( name, Stored ) VALUES ('Coal'," + CoalStorage + ");";
             command.ExecuteNonQuery();
-            command.CommandText = "INSERT INTO resorces (Stored) VALUES (''" + PopCapStorage + "') WHERE name == MaxPopulation;";
+            command.CommandText = "INSERT INTO resorces ( name, Stored ) VALUES ('maxpop'," + PopCapStorage + ");";
             command.ExecuteNonQuery();
-            command.CommandText = "INSERT INTO resorces (Stored) VALUES ('" + researchStorage + "')WHERE name == research;";
+            command.CommandText = "INSERT INTO resorces ( name, Stored ) VALUES ('research'," + researchStorage + ");";
             command.ExecuteNonQuery();
         }
         connction.Close();

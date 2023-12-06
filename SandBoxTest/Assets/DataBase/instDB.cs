@@ -17,7 +17,7 @@ public class instDB : MonoBehaviour
         using var connection = new SqliteConnection(dbName);
         connection.Open();
         using var command = connection.CreateCommand();
-        command.CommandText = "CREATE TABLE IF NOT EXISTS user (UserID INTEGER NOT NULL UNIQUE, name UNIQUE, xloc REAL, yloc REAL, zloc REAL, PRIMARY KEY(UserID AUTOINCREMENT));";
+        command.CommandText = "CREATE TABLE IF NOT EXISTS user (UserID INTEGER NOT NULL UNIQUE, name TEXT UNIQUE, xloc REAL, yloc REAL, zloc REAL, PRIMARY KEY(UserID AUTOINCREMENT));";
         command.ExecuteNonQuery();
         command.CommandText = "CREATE TABLE IF NOT EXISTS resorces (name VARCHAR(20) NOT NULL UNIQUE, Stored INTEGER NOT NULL);";
         command.ExecuteNonQuery();

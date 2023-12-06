@@ -363,7 +363,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 194.6, y: 434}
+  m_AnchoredPosition: {x: 194.6, y: 153.4}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &672761337
@@ -378,7 +378,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d7ce7c79d0c97647b8a7202337b7318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DB: {fileID: 0}
 --- !u!114 &672761338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -911,7 +910,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 194.6, y: 335}
+  m_AnchoredPosition: {x: 194.6, y: 105.2}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1280675565
@@ -926,7 +925,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d7ce7c79d0c97647b8a7202337b7318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DB: {fileID: 0}
 --- !u!114 &1280675566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -973,7 +971,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2136923853}
         m_TargetAssemblyTypeName: Buttons, Assembly-CSharp
-        m_MethodName: loadonClick
+        m_MethodName: loadsaveonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1236,7 +1234,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 194.6, y: 386}
+  m_AnchoredPosition: {x: 194.6, y: 204.4}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1598037227
@@ -1251,7 +1249,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d7ce7c79d0c97647b8a7202337b7318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DB: {fileID: 1315220045}
 --- !u!114 &1598037228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1604,7 +1601,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d7ce7c79d0c97647b8a7202337b7318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DB: {fileID: 0}
 --- !u!114 &2136923854
 MonoBehaviour:
   m_ObjectHideFlags: 0
