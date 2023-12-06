@@ -61,7 +61,14 @@ public class GoToNearestResource : MonoBehaviour
         }
         if(Speed == true && UpgradedSpeed == false)
         {
-            harvestTimeReset = harvestTimeReset / 2;
+            if(TAG == "Wood")
+            {
+                harvestTimeReset = 5;
+            }
+            if (TAG == "Iron")
+            {
+                harvestTimeReset = 10;
+            }
             UpgradedSpeed = true;
         }
         if (Amount == true && UpgradedAmount == false)

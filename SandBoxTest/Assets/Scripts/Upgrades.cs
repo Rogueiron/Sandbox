@@ -16,7 +16,7 @@ public class Upgrades : MonoBehaviour
     }
     private void Update()
     {
-
+        
     }
     public void SpeedBought()
     {

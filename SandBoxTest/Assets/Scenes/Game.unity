@@ -728,7 +728,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1373812829}
         m_TargetAssemblyTypeName: Upgrades, Assembly-CSharp
-        m_MethodName: SpeedBought
+        m_MethodName: AmountBought
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
