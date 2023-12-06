@@ -7,7 +7,7 @@ public class UnitToMake : MonoBehaviour
 {
     [SerializeField] int woodCost;
     [SerializeField] int ironCost;
-    [SerializeField] Vector3 spawnLocation = new Vector3(0, 0, 0);
+    public Vector3 spawnLocation = new Vector3(0, 0, 0);
     [SerializeField] Quaternion spawnRotations = new Quaternion(0, 0, 0, 0);
     [SerializeField] GameObject unitToSpawn;
     [SerializeField] GameObject maker;

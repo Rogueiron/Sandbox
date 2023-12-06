@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using UnityEngine; 
 
 public class OutlineBuild : MonoBehaviour
 {
     RaycastHit hit;
-    Vector3 movePoint;
+    public static Vector3 movePoint;
     public GameObject prefab;
     private void Start()
     {
