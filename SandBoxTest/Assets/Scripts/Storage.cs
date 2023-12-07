@@ -19,6 +19,7 @@ public class Storage : MonoBehaviour
     [SerializeField] TextMeshProUGUI storageTextI;
     [SerializeField] TextMeshProUGUI storageTextWa;
     [SerializeField] TextMeshProUGUI storageTextC;
+    [SerializeField] TextMeshProUGUI storageTextR;
 
     private bool start = false;
 
@@ -51,6 +52,7 @@ public class Storage : MonoBehaviour
         storageTextI.text = IronStorage.ToString();
         storageTextWa.text = Waterstorage.ToString();
         storageTextC.text = CoalStorage.ToString();
+        storageTextR.text = researchStorage.ToString();
     }
     private void cap()
     {
