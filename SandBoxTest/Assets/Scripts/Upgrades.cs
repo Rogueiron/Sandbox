@@ -5,7 +5,8 @@ using static Storage;
 
 public class Upgrades : MonoBehaviour
 {
-    [SerializeField] private int ResearchNeeded;
+    [SerializeField] private int SResearchNeeded;
+    [SerializeField] private int AResearchNeeded;
     public static bool Speed;
     public static bool Amount;
 
@@ -20,15 +21,16 @@ public class Upgrades : MonoBehaviour
     }
     public void SpeedBought()
     {
-        if(researchStorage >= ResearchNeeded)
+        if(researchStorage >= SResearchNeeded)
         {
+            researchStorage -= SResearchNeeded;
             Speed = true;
         }
 
     }
     public void AmountBought()
     {
-        if (researchStorage >= ResearchNeeded)
+        if (researchStorage >= AResearchNeeded)
         {
             Amount = true;
         }
