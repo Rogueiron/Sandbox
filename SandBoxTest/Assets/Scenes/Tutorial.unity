@@ -1486,7 +1486,7 @@ PrefabInstance:
     - target: {fileID: 4158915310260595351, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
       propertyPath: unitToSpawn
       value: 
-      objectReference: {fileID: 7895197331257113379, guid: 46692a08e75667e4c81217c1e369c8bf, type: 3}
+      objectReference: {fileID: 7895197331257113379, guid: de4fa720e24e3064786872ce5f9cf016, type: 3}
     - target: {fileID: 4309313765436322476, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -0.15
