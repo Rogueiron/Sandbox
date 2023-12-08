@@ -1,9 +1,12 @@
 using UnityEngine;
 using Mono.Data.Sqlite;
 using TMPro;
+using System.IO;
 using static Storage;
 using static Player;
 using static OutlineBuild;
+using System.Data;
+
 
 public class InsertToDB : MonoBehaviour
 {
@@ -38,9 +41,11 @@ public class InsertToDB : MonoBehaviour
         connction.Open();
         using (var command = connction.CreateCommand())
         {
-                command.CommandText = "INSERT INTO User (name, xloc, yloc, zloc) VALUES ('" + InputName.text + "' , '" + position[0] + "' , '" + position[1] + "' , '" + position[2] + "' ); ";
-                command.ExecuteNonQuery();
-            
+            command.CommandText = "INSERT INTO user (name, xloc, yloc, zloc) VALUES ('" + InputName.text + "' , '" + position[0] + "' , '" + position[1] + "' , '" + position[2] + "');";
+            command.ExecuteNonQuery();     
+
+
+
         }   
         connction.Close();
     }
@@ -50,8 +55,13 @@ public class InsertToDB : MonoBehaviour
         connction.Open();
         using (var command = connction.CreateCommand())
         {
-           command.CommandText = "INSERT INTO Unit (Name, xloc, yloc, zloc ) VALUES ('" + name + "' , '" + unitToMake.spawnLocation[0] + "' , '" + unitToMake.spawnLocation[1] + "' , '" + unitToMake.spawnLocation[2] + "' ));";
-           command.ExecuteNonQuery();
+            foreach(var unit in GameObject.FindGameObjectsWithTag("Unit"))
+            {
+                command.CommandText = "INSERT INTO unit (Name, xloc, yloc, zloc ) VALUES ('" + Randomname() + "' , '" + unit.transform.position.x + "' , '" + unit.transform.position.y + "' , '" + unit.transform.position.z + "' );";
+                command.ExecuteNonQuery();
+
+            }
+           
         }
         connction.Close();
     }
@@ -62,7 +72,7 @@ public class InsertToDB : MonoBehaviour
         connction.Open();
         using (var command = connction.CreateCommand())
         {
-            command.CommandText = "INSERT INTO Building ( Name, xloc, yloc, zloc ) VALUES ('" + name + "' , '" + movePoint[0] + "' , '" + movePoint[1] + "' , '" + movePoint[2] + "');";
+            command.CommandText = "INSERT INTO building ( Name, xloc, yloc, zloc ) VALUES ('" + Randomname() + "' , '" + movePoint[0] + "' , '" + movePoint[1] + "' , '" + movePoint[2] + "');";
             command.ExecuteNonQuery();
         }
         connction.Close();
@@ -87,9 +97,37 @@ public class InsertToDB : MonoBehaviour
         }
         connction.Close();
     }
+    public void DBupdate()
 
+    {
+        using var connction = new SqliteConnection(dbName);
+        connction.Open();
+        using (var command = connction.CreateCommand())
+        {
+           
+               
+                command.CommandText = "UPDATE resorces SET Stored=" + WoodStorage + " WHERE ROWID = 1;";
+                command.ExecuteNonQuery();
+                command.CommandText = "UPDATE resorces SET Stored=" + IronStorage + "' WHERE name=Iron;";
+                command.ExecuteNonQuery();
+                command.CommandText = "UPDATE resorces SET Stored=" + CoalStorage + "' WHERE name=Coal;";
+                command.ExecuteNonQuery();
+                command.CommandText = "UPDATE resorces SET Stored=" + PopCapStorage + "' WHERE name=maxpop;";
+                command.ExecuteNonQuery();
+                command.CommandText = "UPDATE resorces SET Stored='" + researchStorage + "' WHERE name=research;";
+                command.ExecuteNonQuery();
+            //foreach (var unit in GameObject.FindGameObjectsWithTag("Unit"))
+            //{
+                //command.CommandText = "UPDATE unit SET (xloc= '" + unit.transform.position.x + "', yloc='" + unit.transform.position.y + "', zloc='" + unit.transform.position.z + "'WHERE name='" + InputName.text + ")';";
+              // command.ExecuteNonQuery();
+            //}
+            command.CommandText = "UPDATE building SET (xloc= '" + movePoint[0] + "', yloc='" + movePoint[1] + "', zloc='" + movePoint[2] + "');";
+            command.ExecuteNonQuery();
 
+        }
+            
+        
 
-
+    }
 
 }

@@ -13,12 +13,6 @@ public class Buttons : MonoBehaviour
     {
         SceneManager.LoadScene("newSave");
     }
-    public void loadsaveonClick()
-    {
-        SceneManager.LoadScene("SaveScene");
-    }
-
-
     public void Quit()
     {
         Application.Quit();
