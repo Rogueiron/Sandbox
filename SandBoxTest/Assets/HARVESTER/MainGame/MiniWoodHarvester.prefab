@@ -129,7 +129,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 2
-  m_Speed: 3.5
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -207,9 +207,9 @@ MonoBehaviour:
   storageManager: {fileID: 0}
   nextResource: {fileID: 0}
   storage: 0
-  maxStorage: 2
-  harvestTime: 15
-  harvestTimeReset: 15
+  maxStorage: 1
+  harvestTime: 7.5
+  harvestTimeReset: 7.5
   navigation: {fileID: 8384202601168715280}
   StoreResource: []
   TAG: Wood
