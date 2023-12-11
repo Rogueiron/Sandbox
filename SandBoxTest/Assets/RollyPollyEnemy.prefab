@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4631341903383788902}
+  - component: {fileID: 4795055267285475243}
+  - component: {fileID: 3018191794886345271}
   m_Layer: 0
   m_Name: RollyPollyEnemy
   m_TagString: Untagged
@@ -33,6 +35,49 @@ Transform:
   - {fileID: 4312423296941679068}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!195 &4795055267285475243
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853442033309099700}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!135 &3018191794886345271
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853442033309099700}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4897982260854313559
 GameObject:
   m_ObjectHideFlags: 0
@@ -43,7 +88,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3689726904361845308}
   - component: {fileID: 1342816627082939140}
-  - component: {fileID: 8682460319941078329}
   - component: {fileID: 4188300672730471768}
   - component: {fileID: 9179788261579072569}
   m_Layer: 0
@@ -89,28 +133,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.1201448, y: 3.081201, z: 7.5089507}
   m_Center: {x: 0, y: 1.5383813, z: -1.088464}
---- !u!195 &8682460319941078329
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4897982260854313559}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!114 &4188300672730471768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,7 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetOBJ: {fileID: 0}
-  agent: {fileID: 8682460319941078329}
+  agent: {fileID: 4795055267285475243}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 512
@@ -133,10 +155,10 @@ MonoBehaviour:
     m_Bits: 2048
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 7
-  timeBetweenAttacks: 0
-  strength: 10
-  sightRange: 15
-  attackRange: 3.75
+  timeBetweenAttacks: 10
+  strength: 5
+  sightRange: 12
+  attackRange: 3.25
   targetInSightRange: 0
   targetInAttackRange: 0
 --- !u!114 &9179788261579072569
@@ -263,6 +285,26 @@ PrefabInstance:
     - target: {fileID: 4245312604832938686, guid: e2b38fcfeacb4da4981052f37b41b323, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -31.035004
+      objectReference: {fileID: 0}
+    - target: {fileID: 8712284515055964524, guid: e2b38fcfeacb4da4981052f37b41b323, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8712284515055964524, guid: e2b38fcfeacb4da4981052f37b41b323, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8712284515055964524, guid: e2b38fcfeacb4da4981052f37b41b323, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8712284515055964524, guid: e2b38fcfeacb4da4981052f37b41b323, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8712284515055964524, guid: e2b38fcfeacb4da4981052f37b41b323, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
