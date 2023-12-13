@@ -51,7 +51,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: d7fe73a1aaa4893439d55d071a8df677, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 273d6fe59dd86ef41b2c0fec69af47fc, type: 2}
+      objectReference: {fileID: 2100000, guid: 153856ebc472a4d47b69a00265a19b78, type: 2}
     - target: {fileID: 919132149155446097, guid: d7fe73a1aaa4893439d55d071a8df677, type: 3}
       propertyPath: m_Name
       value: WaterPump
@@ -86,3 +86,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 2384249654004609789, guid: 5a3fe1b6f26b203459c7c65d70333715, type: 3}
+  material: {fileID: 2100000, guid: 153856ebc472a4d47b69a00265a19b78, type: 2}

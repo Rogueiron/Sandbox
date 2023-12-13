@@ -9,8 +9,9 @@ using static Storage;
 public class tutorial : MonoBehaviour
 {
     public static int step = 0;
-    private bool Bool = false;
+    public static bool Bool = false;
     private float Timer = 20;
+    private int invisable = 1;
 
     [SerializeField] private GameObject manor;
     [SerializeField] private GameObject WaterPump;
@@ -97,7 +98,39 @@ public class tutorial : MonoBehaviour
                     RTutorialtext.text = "Get the harvest speed upgrade to decrease the time it takes to destory tree and iron.";
                 }
                 break;
-        
+            case 5:
+                if (ResearchCanvas.enabled == true)
+                {
+                    RTutorialtext.color = Color.white;
+                    RTutorialtext.text = "Hit escape to go back to the game view.";
+                }
+                if(ResearchCanvas.enabled == false && Bool == false)
+                {
+                    Tutorialtext.text = "Now Watches those bots work.";
+                    Bool = true;
+                }
+                if(IronStorage >= 10 && WoodStorage >= 20)
+                {
+                    WaterPump.SetActive(true);
+                    Tutorialtext.text = "Now you can make a water pump.";
+                }
+                else if(invisable != 1)
+                {
+                    if(Input.GetMouseButtonDown(0)) 
+                    {
+                        step = 6;
+                    }
+                    Tutorialtext.text = "Water pumps collect water from he clouds so place it on the edge. The waterpump will show up blue when it is able to be placed try placing it.";
+                }
+                if(WoodStorage >= 20 && IronStorage >= 10)
+                {
+                    invisable = 0;
+                }
+                break;
+            case 6:
+                Tutorialtext.text = "Thats the end of the tutorial you may mess around for a bit. Once finished Hold down Escape and go back to the main menu.";
+                break;
+
         }
     }
 }

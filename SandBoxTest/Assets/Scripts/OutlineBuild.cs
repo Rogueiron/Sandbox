@@ -7,6 +7,7 @@ public class OutlineBuild : MonoBehaviour
     RaycastHit hit;
     public static Vector3 movePoint;
     public GameObject prefab;
+    [SerializeField] private Material material;
     private void Start()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -60,6 +61,14 @@ public class OutlineBuild : MonoBehaviour
         {
             Instantiate(prefab, movePoint, transform.rotation);
             Destroy(gameObject);
+        }
+        if(hit.transform.gameObject.layer != LayerMask.NameToLayer("Edge"))
+        {
+            material.color = new Color(1, 0, 0, .3f);
+        }
+        else
+        {
+            material.color = new Color(0, 0, 1, .3f);
         }
 
     }
