@@ -28,7 +28,7 @@ public class EnemyAiMK2 : MonoBehaviour
     public bool targetInSightRange, targetInAttackRange;
     private void Start()
     {
-        GetComponent<SphereCollider>().radius = sightRange;
+        GetComponentInChildren<SphereCollider>().radius = sightRange;
     }
 
     // Update is called once per frame
@@ -36,6 +36,7 @@ public class EnemyAiMK2 : MonoBehaviour
     {
         targetInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsTarget);
         targetInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsTarget);
+        
         
         if (!targetInSightRange && !targetInAttackRange)
         {
@@ -81,8 +82,8 @@ public class EnemyAiMK2 : MonoBehaviour
 
         if (!alreadyAttacked)
         {
-            Debug.Log("ATTACKED");
             targetOBJ.GetComponent<Stats>().health -= strength;
+            Debug.Log("ATTACKED");
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
