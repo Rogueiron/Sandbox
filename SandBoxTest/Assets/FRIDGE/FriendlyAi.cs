@@ -11,6 +11,8 @@ public class FriendlyAi : MonoBehaviour
 
     public LayerMask whatIsGround, whatIsTarget;
 
+    public string targetType;
+
     //Attacking
     public float timeBetweenAttacks;
     bool alreadyAttacked;
@@ -48,7 +50,7 @@ public class FriendlyAi : MonoBehaviour
 
     private void AttackTarget()
     {
-        //Make sure enemy doesn't move
+        //Make sure this unit doesn't move
         agent.SetDestination(transform.position);
 
         transform.LookAt(targetOBJ.transform);
@@ -70,7 +72,7 @@ public class FriendlyAi : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Enemy") && targetOBJ == null)
+        if (other.CompareTag(targetType) && targetOBJ == null)
         {
             targetOBJ = other.gameObject;
         }

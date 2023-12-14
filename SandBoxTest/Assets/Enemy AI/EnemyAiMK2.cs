@@ -10,6 +10,9 @@ public class EnemyAiMK2 : MonoBehaviour
     public NavMeshAgent agent;
 
     public LayerMask whatIsGround, whatIsTarget;
+
+    public string targetType;
+
     //Patrolling
     public Vector3 walkPoint;
     bool walkPointSet;
@@ -107,7 +110,7 @@ public class EnemyAiMK2 : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Unit") && targetOBJ == null)
+        if (other.CompareTag(targetType) && targetOBJ == null)
         {
             targetOBJ = other.gameObject;
         }

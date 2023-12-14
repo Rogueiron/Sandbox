@@ -7,10 +7,13 @@ using static Storage;
 
 public class CompleteLevel : MonoBehaviour
 {
+    [SerializeField] private int wood;
+    [SerializeField] private int iron;
+
     public void NextLevel()
     {
         Debug.Log("Pressed");
-        if (WoodStorage >= 1 && IronStorage >= 1)
+        if (WoodStorage >= wood && IronStorage >= iron)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }

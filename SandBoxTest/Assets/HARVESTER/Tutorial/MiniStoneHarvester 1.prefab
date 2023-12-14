@@ -1692,6 +1692,7 @@ GameObject:
   - component: {fileID: 4687267017170633457}
   - component: {fileID: 8782637748359632309}
   - component: {fileID: 5059939069712093491}
+  - component: {fileID: 3577124399825971091}
   m_Layer: 0
   m_Name: MiniStoneHarvester 1
   m_TagString: Untagged
@@ -1783,7 +1784,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1809,6 +1810,19 @@ MonoBehaviour:
   navigation: {fileID: 7200603737263088257}
   StoreResource: []
   TAG: Iron
+--- !u!114 &3577124399825971091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7895197331257113379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad4b9687fe04b874884fa7fdfa74cfbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 15
 --- !u!1 &8614900021668865569
 GameObject:
   m_ObjectHideFlags: 0
