@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static Storage;
+using static tutorial;
 
 public class Upgrades : MonoBehaviour
 {
-    [SerializeField] private int ResearchNeeded;
+    [SerializeField] private int SResearchNeeded;
+    [SerializeField] private int AResearchNeeded;
     public static bool Speed;
     public static bool Amount;
 
@@ -20,15 +24,21 @@ public class Upgrades : MonoBehaviour
     }
     public void SpeedBought()
     {
-        if(researchStorage >= ResearchNeeded)
+        if(researchStorage >= SResearchNeeded)
         {
+            researchStorage -= SResearchNeeded;
             Speed = true;
+        }
+        if(SceneManager.GetActiveScene().name == "Tutorial")
+        {
+            Bool = false;
+            step = 5;
         }
 
     }
     public void AmountBought()
     {
-        if (researchStorage >= ResearchNeeded)
+        if (researchStorage >= AResearchNeeded)
         {
             Amount = true;
         }

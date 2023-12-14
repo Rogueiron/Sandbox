@@ -209,7 +209,7 @@ MonoBehaviour:
   storage: 0
   maxStorage: 1
   harvestTime: 7.5
-  harvestTimeReset: 5
+  harvestTimeReset: 7.5
   navigation: {fileID: 8384202601168715280}
   StoreResource: []
   TAG: Wood
