@@ -9,12 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 20f71ef1392a30048b7bb3b9d7da5d3b
   - enabled: 1
-    path: Assets/Scenes/Game.unity
-    guid: 592ba4be1f7c03c48bb504461a4e09ab
-  - enabled: 1
     path: Assets/Scenes/newsave.unity
     guid: d77202744af526742a77269d32ba9241
   - enabled: 1
     path: Assets/Scenes/saveselect.unity
     guid: 7a60471ae055ac34393f5fb5e5506c74
+  - enabled: 1
+    path: Assets/Scenes/Game.unity
+    guid: 592ba4be1f7c03c48bb504461a4e09ab
+  - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: 93874c7f5f9e68e4c8f5ffc8650ab4e1
   m_configObjects: {}

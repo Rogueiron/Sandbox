@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2691001137751137895}
   - component: {fileID: 8448504859019338252}
   - component: {fileID: 6550358668772738716}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8606399207550744382}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Legs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6435028824017325020}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Legs (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 5208813939850636640}
   - component: {fileID: 4928051888912479989}
   - component: {fileID: 4827030240012990015}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -249,7 +249,7 @@ GameObject:
   - component: {fileID: 1160911529192853036}
   - component: {fileID: 7907505786163960988}
   - component: {fileID: 1179513709007754801}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -333,7 +333,7 @@ GameObject:
   - component: {fileID: 1436702045232654869}
   - component: {fileID: 5973718257979575316}
   - component: {fileID: 1244721438272297074}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -443,7 +443,7 @@ GameObject:
   - component: {fileID: 1432957001335417568}
   - component: {fileID: 4018718727491078898}
   - component: {fileID: 8656097938386735224}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Joint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -526,7 +526,7 @@ GameObject:
   - component: {fileID: 1480520277957158091}
   - component: {fileID: 5579000863854573922}
   - component: {fileID: 6452901089774565596}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -609,9 +609,12 @@ GameObject:
   - component: {fileID: 6883953906444075421}
   - component: {fileID: 6270609746170180729}
   - component: {fileID: 1059268828113516407}
-  m_Layer: 0
+  - component: {fileID: 300840800832002396}
+  - component: {fileID: 6428665002562046830}
+  - component: {fileID: 2432351180543431175}
+  m_Layer: 11
   m_Name: BuilderBot
-  m_TagString: Untagged
+  m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -676,6 +679,66 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &300840800832002396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3601205759075999804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad4b9687fe04b874884fa7fdfa74cfbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+--- !u!114 &6428665002562046830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3601205759075999804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e8659485bda2d74eb8911b5ba2bba96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetOBJ: {fileID: 0}
+  agent: {fileID: 1059268828113516407}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 512
+  whatIsTarget:
+    serializedVersion: 2
+    m_Bits: 4096
+  timeBetweenAttacks: 20
+  strength: 1
+  sightRange: 1.25
+  attackRange: 1
+  targetInSightRange: 0
+  targetInAttackRange: 0
+--- !u!135 &2432351180543431175
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3601205759075999804}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3930292740035933173
 GameObject:
   m_ObjectHideFlags: 0
@@ -686,7 +749,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5606274200807264311}
   - component: {fileID: 6822100682944024887}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -746,7 +809,7 @@ GameObject:
   - component: {fileID: 1244188630804737348}
   - component: {fileID: 4531567411780615642}
   - component: {fileID: 1074195882089221090}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -827,7 +890,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6980772222521453849}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WeldAffectPoint
   m_TagString: Untagged
   m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
@@ -860,7 +923,7 @@ GameObject:
   - component: {fileID: 8377258964178689626}
   - component: {fileID: 8918825940040989206}
   - component: {fileID: 2706053864693268034}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clothes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -943,7 +1006,7 @@ GameObject:
   - component: {fileID: 8745976878647352062}
   - component: {fileID: 8499302216822598562}
   - component: {fileID: 5053763288115063103}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1026,7 +1089,7 @@ GameObject:
   - component: {fileID: 2939351100899216430}
   - component: {fileID: 3170351744158670782}
   - component: {fileID: 5677663784736856554}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1107,7 +1170,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6028311134681292808}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1142,7 +1205,7 @@ GameObject:
   - component: {fileID: 736249127987085398}
   - component: {fileID: 2792969129261387256}
   - component: {fileID: 2716888559760288016}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Joint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1225,7 +1288,7 @@ GameObject:
   - component: {fileID: 7644720709268647925}
   - component: {fileID: 4254698580624796824}
   - component: {fileID: 4772028573076148481}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MouthJoint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1309,7 +1372,7 @@ GameObject:
   - component: {fileID: 2935911900732212815}
   - component: {fileID: 948364488953521864}
   - component: {fileID: 4245920626353536380}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1392,7 +1455,7 @@ GameObject:
   - component: {fileID: 795135777049582865}
   - component: {fileID: 6564747496876714238}
   - component: {fileID: 5990471419505649508}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1475,7 +1538,7 @@ GameObject:
   - component: {fileID: 816963590641064331}
   - component: {fileID: 817082589399469543}
   - component: {fileID: 946069560114124718}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1558,7 +1621,7 @@ GameObject:
   - component: {fileID: 6351455511769369548}
   - component: {fileID: 4938311056257523830}
   - component: {fileID: 3855032835589772600}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MouthJoint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1642,7 +1705,7 @@ GameObject:
   - component: {fileID: 1774725427814093950}
   - component: {fileID: 7730358229513607975}
   - component: {fileID: 5811586915919158348}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1725,7 +1788,7 @@ GameObject:
   - component: {fileID: 4492902718890020685}
   - component: {fileID: 913159486413981836}
   - component: {fileID: 804508964354420588}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1808,7 +1871,7 @@ GameObject:
   - component: {fileID: 8936613351264526015}
   - component: {fileID: 691269441587188707}
   - component: {fileID: 5827675421646955566}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MandibleRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1891,7 +1954,7 @@ GameObject:
   - component: {fileID: 2104511269573404974}
   - component: {fileID: 5594833156827390048}
   - component: {fileID: 3640221868236637735}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1974,7 +2037,7 @@ GameObject:
   - component: {fileID: 6612789992789894909}
   - component: {fileID: 3679852367861140586}
   - component: {fileID: 3297092813902639929}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Joint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2057,7 +2120,7 @@ GameObject:
   - component: {fileID: 5942617538516562820}
   - component: {fileID: 7323856891953903330}
   - component: {fileID: 4577180204151253058}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2139,7 +2202,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5097613589833529374}
   - component: {fileID: 6825883767145296774}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: AllLegs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2196,7 +2259,7 @@ GameObject:
   - component: {fileID: 5469212467055048473}
   - component: {fileID: 1772943562428683561}
   - component: {fileID: 3614050587163826814}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2279,7 +2342,7 @@ GameObject:
   - component: {fileID: 2783300282124118234}
   - component: {fileID: 2006994659502104582}
   - component: {fileID: 5014914633215043672}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2362,7 +2425,7 @@ GameObject:
   - component: {fileID: 1933741466625144967}
   - component: {fileID: 6307219669344731553}
   - component: {fileID: 7883080815159443287}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MandibleLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2445,7 +2508,7 @@ GameObject:
   - component: {fileID: 7059803542953721634}
   - component: {fileID: 7457837277354825465}
   - component: {fileID: 2853862259261778596}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2526,7 +2589,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7419904823821963295}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Legs (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2561,6 +2624,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6812907904418147320}
     m_Modifications:
+    - target: {fileID: 217855820194571942, guid: 32b2e9b497188584fac0f2af59eba23f, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 418676525392816080, guid: 32b2e9b497188584fac0f2af59eba23f, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 418676525392816080, guid: 32b2e9b497188584fac0f2af59eba23f, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -2621,9 +2692,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Steam_Pipe_1
       objectReference: {fileID: 0}
+    - target: {fileID: 2392585900952921733, guid: 32b2e9b497188584fac0f2af59eba23f, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729707783408933141, guid: 32b2e9b497188584fac0f2af59eba23f, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5395373432759220810, guid: 32b2e9b497188584fac0f2af59eba23f, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 5395373432759220810, guid: 32b2e9b497188584fac0f2af59eba23f, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6889672495063020055, guid: 32b2e9b497188584fac0f2af59eba23f, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
