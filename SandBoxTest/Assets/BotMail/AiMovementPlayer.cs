@@ -6,12 +6,19 @@ using UnityEngine.AI;
 
 public class AiMovementPlayer : MonoBehaviour
 {
-    NavMeshAgent agent;
+    private NavMeshAgent agent;
     public int listnumber;
     // Start is called before the first frame update
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
+        if(GetComponent<NavMeshAgent>() != null)
+        {
+            agent = GetComponent<NavMeshAgent>();
+        }
+        else
+        {
+            agent = GetComponentInParent<NavMeshAgent>();
+        }
     }
 
     // Update is called once per frame

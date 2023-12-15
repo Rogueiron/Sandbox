@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class UnitSelect : MonoBehaviour
 {
@@ -24,14 +25,20 @@ public class UnitSelect : MonoBehaviour
 
     public void ClickSelect(GameObject unitToAdd)
     {
-        if(unitToAdd.tag != "Uint")
+        if (!unitSelected.Contains(unitToAdd))
         {
-            return;
+            if (unitToAdd.tag == "Unit")
+            {
+                unitSelected.Add(unitToAdd);
+                if (unitToAdd.GetComponentInParent<EnemyAiMK2>() != null)
+                {
+                    unitToAdd.GetComponentInParent<EnemyAiMK2>().walkPointRange = 0f;
+                }
+                unitToAdd.transform.GetChild(0).gameObject.SetActive(true);
+                unitToAdd.GetComponent<AiMovementPlayer>().enabled = true;
+            }
+            DeSelectAll();
         }
-        DeSelectAll();
-        unitSelected.Add(unitToAdd);
-        unitToAdd.transform.GetChild(0).gameObject.SetActive(true);
-        unitToAdd.GetComponent<AiMovementPlayer>().enabled = true;
     }
     public void ShiftClickSelect(GameObject unitToAdd)
     {
@@ -52,25 +59,34 @@ public class UnitSelect : MonoBehaviour
     {
         if(!unitSelected.Contains(unitToAdd)) 
         {
-            unitSelected.Add(unitToAdd); 
-            unitToAdd.transform.GetChild(0).gameObject.SetActive(true);
-            unitToAdd.GetComponent<AiMovementPlayer>().enabled = true;
-            unitToAdd.GetComponent<AiMovementPlayer>().listnumber = unitSelected.IndexOf(unitToAdd);
+            if(unitToAdd.tag == "Unit")
+            {
+                if (unitToAdd.GetComponentInParent<EnemyAiMK2>() != null)
+                {
+                    unitToAdd.GetComponentInParent<EnemyAiMK2>().walkPointRange = 0f;
+                }
+                unitSelected.Add(unitToAdd);
+                unitToAdd.transform.GetChild(0).gameObject.SetActive(true);
+                unitToAdd.GetComponent<AiMovementPlayer>().enabled = true;
+                unitToAdd.GetComponent<AiMovementPlayer>().listnumber = unitSelected.IndexOf(unitToAdd);
+            }
         }
     }
     public void DeSelectAll()
-    {   foreach(var unit in unitSelected) 
+    {   
+        foreach(GameObject unit in unitSelected) 
         {
             if (unit.GetComponent<AiMovementPlayer>() != null)
             {
+                if(unit.GetComponentInParent<EnemyAiMK2>() != null)
+                {
+                    unit.GetComponentInParent<EnemyAiMK2>().walkPointRange = 10f;
+                }
                 unit.GetComponent<AiMovementPlayer>().enabled = false;
                 unit.transform.GetChild(0).gameObject.SetActive(false);
             }
         }
         unitSelected.Clear();
-    }
-    public void DeSelect(GameObject unitToDeselect)
-    {
 
     }
 }

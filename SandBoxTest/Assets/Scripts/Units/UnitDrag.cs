@@ -83,7 +83,6 @@ public class UnitDrag : MonoBehaviour
     {
         foreach(var unit in UnitSelect.instance.unitList)
         {
-            Debug.Log(myCam.WorldToScreenPoint(unit.transform.position));
 
             if(selectionBox.Contains(myCam.WorldToScreenPoint(unit.transform.position)))
             {

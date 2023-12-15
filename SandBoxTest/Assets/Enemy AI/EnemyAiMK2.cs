@@ -11,7 +11,7 @@ public class EnemyAiMK2 : MonoBehaviour
 
     public LayerMask whatIsGround, whatIsTarget;
 
-    public string targetType;
+    public LayerMask targetType;
 
     //Patrolling
     public bool patrol = true;
@@ -112,7 +112,7 @@ public class EnemyAiMK2 : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag(targetType) && targetOBJ == null)
+        if (other.gameObject.layer == targetType && targetOBJ == null)
         {
             targetOBJ = other.gameObject;
         }
