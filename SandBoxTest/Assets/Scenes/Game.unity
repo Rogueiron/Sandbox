@@ -8050,7 +8050,7 @@ PrefabInstance:
     - target: {fileID: 4158915310260595351, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
       propertyPath: unitToSpawn
       value: 
-      objectReference: {fileID: 7895197331257113379, guid: 7c2f5c5010d214c43a9602d55329a8db, type: 3}
+      objectReference: {fileID: 7895197331257113379, guid: 3cbddbf82e3978842a400ddbf341f4e1, type: 3}
     - target: {fileID: 4309313765436322476, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -0.15
