@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyAiMK2 : MonoBehaviour
+public class FriendlyAi : MonoBehaviour
 {
     public GameObject targetOBJ;
 
@@ -12,11 +12,6 @@ public class EnemyAiMK2 : MonoBehaviour
     public LayerMask whatIsGround, whatIsTarget;
 
     public string targetType;
-
-    //Patrolling
-    public Vector3 walkPoint;
-    bool walkPointSet;
-    public float walkPointRange;
 
     //Attacking
     public float timeBetweenAttacks;
@@ -28,7 +23,7 @@ public class EnemyAiMK2 : MonoBehaviour
     public bool targetInSightRange, targetInAttackRange;
     private void Start()
     {
-        GetComponentInChildren<SphereCollider>().radius = sightRange;
+        GetComponent<SphereCollider>().radius = sightRange;
     }
 
     // Update is called once per frame
@@ -36,33 +31,13 @@ public class EnemyAiMK2 : MonoBehaviour
     {
         targetInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsTarget);
         targetInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsTarget);
-        
-        
+
         if (!targetInSightRange && !targetInAttackRange)
         {
-            Patrolling();
             targetOBJ = null;
         }
         if (targetInSightRange && !targetInAttackRange) ChaseTarget();
         if (targetInSightRange && targetInAttackRange) AttackTarget();
-    }
-    
-    private void Patrolling()
-    {
-        if (!walkPointSet) SearchWalkPoint();
-        
-        if (walkPointSet)
-        {
-            agent.SetDestination(walkPoint);
-        }
-        
-        Vector3 distanceToWalkPoint = transform.position - walkPoint;
-
-        //WalkPoint reached
-        if (distanceToWalkPoint.magnitude < .75f)
-        {
-            walkPointSet = false;
-        }
     }
 
     private void ChaseTarget()
@@ -75,15 +50,15 @@ public class EnemyAiMK2 : MonoBehaviour
 
     private void AttackTarget()
     {
-        //Make sure enemy doesn't move
+        //Make sure this unit doesn't move
         agent.SetDestination(transform.position);
 
         transform.LookAt(targetOBJ.transform);
 
         if (!alreadyAttacked)
         {
-            targetOBJ.GetComponent<Stats>().health -= strength;
             Debug.Log("ATTACKED");
+            targetOBJ.GetComponent<Stats>().health -= strength;
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
@@ -95,20 +70,6 @@ public class EnemyAiMK2 : MonoBehaviour
         Debug.Log("RELOADED");
     }
 
-    private void SearchWalkPoint()
-    {
-        //Calculate random point in range
-        float randomZ = Random.Range(-walkPointRange, walkPointRange);
-        float randomX = Random.Range(-walkPointRange, walkPointRange);
-
-        walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
-
-        if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
-        {
-            walkPointSet = true;
-        }
-    }
-
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag(targetType) && targetOBJ == null)
@@ -118,7 +79,7 @@ public class EnemyAiMK2 : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if(other.gameObject == targetOBJ)
+        if (other.gameObject == targetOBJ)
         {
             targetOBJ = null;
         }
@@ -130,8 +91,5 @@ public class EnemyAiMK2 : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, attackRange);
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, sightRange);
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, walkPointRange);
     }
-
 }

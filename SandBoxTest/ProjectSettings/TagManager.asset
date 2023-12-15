@@ -13,6 +13,7 @@ TagManager:
   - Wood
   - Unit
   - StorageManager
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -26,8 +27,8 @@ TagManager:
   - Ground
   - Cloud
   - Unit
-  - 
-  - 
+  - Enemy
+  - Model
   - 
   - 
   - 

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6250996605438493216}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 4299053208979306745}
   - component: {fileID: 4332253928710395633}
   - component: {fileID: 4628222092553479862}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 5702702316302888870}
   - component: {fileID: 9194412721666463418}
   - component: {fileID: 7963770801199405040}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -256,7 +256,7 @@ GameObject:
   - component: {fileID: 6826574657647588107}
   - component: {fileID: 3239922596105513595}
   - component: {fileID: 5246190062857259240}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -362,9 +362,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8212761871504061108}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: NPC
-  m_TagString: Untagged
+  m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

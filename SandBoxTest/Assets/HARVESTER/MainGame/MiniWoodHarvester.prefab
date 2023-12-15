@@ -188,7 +188,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -208,7 +208,7 @@ MonoBehaviour:
   storageManager: {fileID: 0}
   nextResource: {fileID: 0}
   storage: 0
-  maxStorage: 1
+  maxStorage: 2
   harvestTime: 7.5
   harvestTimeReset: 7.5
   navigation: {fileID: 8384202601168715280}

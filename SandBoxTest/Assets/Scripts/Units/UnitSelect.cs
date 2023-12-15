@@ -24,6 +24,10 @@ public class UnitSelect : MonoBehaviour
 
     public void ClickSelect(GameObject unitToAdd)
     {
+        if(unitToAdd.tag != "Uint")
+        {
+            return;
+        }
         DeSelectAll();
         unitSelected.Add(unitToAdd);
         unitToAdd.transform.GetChild(0).gameObject.SetActive(true);
