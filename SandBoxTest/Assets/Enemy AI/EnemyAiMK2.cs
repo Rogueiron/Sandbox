@@ -14,6 +14,7 @@ public class EnemyAiMK2 : MonoBehaviour
     public string targetType;
 
     //Patrolling
+    public bool patrol = true;
     public Vector3 walkPoint;
     bool walkPointSet;
     public float walkPointRange;
@@ -38,7 +39,7 @@ public class EnemyAiMK2 : MonoBehaviour
         targetInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsTarget);
         
         
-        if (!targetInSightRange && !targetInAttackRange)
+        if (!targetInSightRange && !targetInAttackRange && patrol)
         {
             Patrolling();
             targetOBJ = null;
