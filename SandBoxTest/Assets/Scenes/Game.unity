@@ -1098,10 +1098,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7345163483782118335, guid: 85a9bb21ce5fa9146b1c9b3150f0cd22, type: 3}
   m_PrefabInstance: {fileID: 331210546}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &344162036 stripped
+--- !u!114 &344162036
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4158915310260595351, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
-  m_PrefabInstance: {fileID: 4815968430845305087}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -1109,6 +1110,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9907aed215fd8b74b8c9e4d0112c8048, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  woodCost: 0
+  ironCost: 0
+  spawnLocation: {x: 0, y: 0, z: 0}
+  spawnRotations: {x: 0, y: 0, z: 0, w: 0}
+  unitToSpawn: {fileID: 0}
+  maker: {fileID: 0}
 --- !u!1 &346757818
 GameObject:
   m_ObjectHideFlags: 0
@@ -4690,7 +4697,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 902006522}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8235,6 +8242,46 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4158915310260595351, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
+      propertyPath: unitToSpawn
+      value: 
+      objectReference: {fileID: 7895197331257113379, guid: 3cbddbf82e3978842a400ddbf341f4e1, type: 3}
+    - target: {fileID: 4309313765436322476, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4527091377979338069, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 344162036}
+    - target: {fileID: 4527091377979338069, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Make
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028708930424335763, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.1499986
+      objectReference: {fileID: 0}
+    - target: {fileID: 5747736830548851798, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5747736830548851798, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5747736830548851798, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 7.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 6576366979408886063, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
+      propertyPath: m_Carve
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7239094926857272079, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
+      propertyPath: m_Name
+      value: CastleStuff
+      objectReference: {fileID: 0}
     - target: {fileID: 3401400497951348983, guid: 2b7838a5dd66a9c4385bec7eb72d29bd, type: 3}
       propertyPath: m_Name
       value: TownCastle
@@ -8278,46 +8325,6 @@ PrefabInstance:
     - target: {fileID: 6011530634441780400, guid: 2b7838a5dd66a9c4385bec7eb72d29bd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4158915310260595351, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
-      propertyPath: unitToSpawn
-      value: 
-      objectReference: {fileID: 7895197331257113379, guid: 3cbddbf82e3978842a400ddbf341f4e1, type: 3}
-    - target: {fileID: 4309313765436322476, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4527091377979338069, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 344162036}
-    - target: {fileID: 4527091377979338069, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Make
-      objectReference: {fileID: 0}
-    - target: {fileID: 5028708930424335763, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.1499986
-      objectReference: {fileID: 0}
-    - target: {fileID: 5747736830548851798, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 5747736830548851798, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5747736830548851798, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 7.84
-      objectReference: {fileID: 0}
-    - target: {fileID: 6576366979408886063, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
-      propertyPath: m_Carve
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7239094926857272079, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
-      propertyPath: m_Name
-      value: CastleStuff
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8370,5 +8377,5 @@ SceneRoots:
   - {fileID: 1161596346}
   - {fileID: 733393013}
   - {fileID: 1373812828}
-  - {fileID: 1772576652}
   - {fileID: 397082828002107081}
+  - {fileID: 1191713079}

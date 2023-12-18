@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 5224431229109775143}
   m_Layer: 8
   m_Name: WaypointPrefab
-  m_TagString: Untagged
+  m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
