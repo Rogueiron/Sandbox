@@ -33,6 +33,10 @@ PrefabInstance:
       value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1360797182132393822, guid: 05c2734b5518eb74e97a27b8b1d8cf36, type: 3}
+      propertyPath: targetType.m_Bits
+      value: 4096
+      objectReference: {fileID: 0}
+    - target: {fileID: 1360797182132393822, guid: 05c2734b5518eb74e97a27b8b1d8cf36, type: 3}
       propertyPath: timeBetweenAttacks
       value: 1
       objectReference: {fileID: 0}
