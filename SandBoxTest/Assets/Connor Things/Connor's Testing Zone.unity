@@ -135,10 +135,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeleeAIUnit 1
       objectReference: {fileID: 0}
-    - target: {fileID: 703683882174845357, guid: 5b5751618d87708439b56c859afbfb2d, type: 3}
-      propertyPath: strength
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 8646277028139189709, guid: 5b5751618d87708439b56c859afbfb2d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.3235235

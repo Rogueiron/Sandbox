@@ -11,9 +11,10 @@ public class EnemyAiMK2 : MonoBehaviour
 
     public LayerMask whatIsGround, whatIsTarget;
 
-    public string targetType;
+    public LayerMask targetType;
 
     //Patrolling
+    public bool patrol = true;
     public Vector3 walkPoint;
     bool walkPointSet;
     public float walkPointRange;
@@ -38,7 +39,7 @@ public class EnemyAiMK2 : MonoBehaviour
         targetInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsTarget);
         
         
-        if (!targetInSightRange && !targetInAttackRange)
+        if (!targetInSightRange && !targetInAttackRange && patrol)
         {
             Patrolling();
             targetOBJ = null;
@@ -111,7 +112,7 @@ public class EnemyAiMK2 : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag(targetType) && targetOBJ == null)
+        if (other.gameObject.layer == targetType && targetOBJ == null)
         {
             targetOBJ = other.gameObject;
         }
