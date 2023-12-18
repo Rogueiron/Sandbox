@@ -1101,7 +1101,7 @@ Transform:
 --- !u!114 &344162036
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 4158915310260595351, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
