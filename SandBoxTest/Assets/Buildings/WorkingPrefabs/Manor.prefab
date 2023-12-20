@@ -1347,7 +1347,7 @@ GameObject:
   - component: {fileID: 6166806611065277751}
   m_Layer: 6
   m_Name: Manor
-  m_TagString: Unit
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

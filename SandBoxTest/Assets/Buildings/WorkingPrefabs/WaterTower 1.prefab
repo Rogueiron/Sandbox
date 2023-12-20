@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -2656281154224828917}
   m_Layer: 6
   m_Name: WaterTower 1
-  m_TagString: Unit
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

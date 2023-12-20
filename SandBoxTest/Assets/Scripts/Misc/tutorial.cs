@@ -23,6 +23,7 @@ public class tutorial : MonoBehaviour
     [SerializeField] TextMeshProUGUI RTutorialtext;
     void Update()
     {
+        //uses a switch to keep track of all the steps int the tutorial
         switch(step) 
         {
             case 0:

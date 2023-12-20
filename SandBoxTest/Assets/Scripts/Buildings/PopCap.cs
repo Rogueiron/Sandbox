@@ -7,6 +7,7 @@ public class PopCap : MonoBehaviour
 {
     public void Start()
     {
-        PopCapStorage += 20;
+        //when manor is placed increase make population
+        PopCapStorage += 5;
     }
 }

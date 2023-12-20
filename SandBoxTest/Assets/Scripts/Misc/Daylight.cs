@@ -15,6 +15,7 @@ public class Daylight : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
+        //rotate the directional light aka the sun to make a day night cycle
         if(Time.timeScale <= 0)
         {
             return;

@@ -15,7 +15,7 @@ public class EndGame : MonoBehaviour
     private void CheckEnd()
     {
         
-        if(GameObject.FindWithTag("TownCastle"))
+        if(!GameObject.FindWithTag("TownCastle"))
         {
             SceneManager.LoadScene("FailedGame");
         }
