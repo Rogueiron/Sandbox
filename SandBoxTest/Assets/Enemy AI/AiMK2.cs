@@ -119,7 +119,7 @@ public class AiMK2 : MonoBehaviour
         }
     }
 
-    // Sets target when
+    // Sets target when an applicable unit or enemy is within range
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.layer == targetType && targetOBJ == null)

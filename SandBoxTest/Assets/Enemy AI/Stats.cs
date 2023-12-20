@@ -13,6 +13,7 @@ public class Stats : MonoBehaviour
         die();
     }
 
+    // Removes gameObject when health becomes zero
     private void die()
     {
         if(health <= 0)
