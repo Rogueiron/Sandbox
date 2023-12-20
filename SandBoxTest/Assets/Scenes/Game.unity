@@ -5701,6 +5701,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: BuildIng, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 1516837153907270767, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
+      propertyPath: tipToShow
+      value: 'Manor - This building supports additional units{units supported}. 10
+        wood: 0 Iron'
+      objectReference: {fileID: 0}
     - target: {fileID: 1562164355167845251, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -5724,6 +5729,11 @@ PrefabInstance:
     - target: {fileID: 3472991303183067193, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 45.205933
+      objectReference: {fileID: 0}
+    - target: {fileID: 3827127804234582477, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
+      propertyPath: tipToShow
+      value: 'Observatory - This building increases the rate that you research. 10
+        Wood: 10 Iron'
       objectReference: {fileID: 0}
     - target: {fileID: 4427568719898101219, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5757,10 +5767,38 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 89.1
       objectReference: {fileID: 0}
+    - target: {fileID: 6599704974911482020, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599704974911482020, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 109.7475
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599704974911482020, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 40.2088
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599704974911482020, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.00000071526
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599704974911482020, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.0000076293945
+      objectReference: {fileID: 0}
     - target: {fileID: 7142870473932272130, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
       propertyPath: building
       value: 
       objectReference: {fileID: 8235402274398879333, guid: 1f4061cfca997474495da618b01b51e7, type: 3}
+    - target: {fileID: 7260705458479009287, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 110.7227
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260705458479009287, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.0000019073
+      objectReference: {fileID: 0}
     - target: {fileID: 7968019730322570741, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -5768,6 +5806,16 @@ PrefabInstance:
     - target: {fileID: 7968019730322570741, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: build
+      objectReference: {fileID: 0}
+    - target: {fileID: 8139859860519357080, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
+      propertyPath: tipToShow
+      value: 'Water Tower - This Tower increases the storage capacity of water. 0
+        Wood: 20 Iron'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325023247409679371, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
+      propertyPath: tipToShow
+      value: 'Water Pump - This Building sucks water from the atmosphere(can only
+        be placed at the edge). 10 Wood: 20 Iron'
       objectReference: {fileID: 0}
     - target: {fileID: 8341921045483170995, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
       propertyPath: building
