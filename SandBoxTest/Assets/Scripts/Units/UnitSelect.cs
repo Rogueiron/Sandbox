@@ -30,9 +30,9 @@ public class UnitSelect : MonoBehaviour
             if (unitToAdd.tag == "Unit")
             {
                 unitSelected.Add(unitToAdd);
-                if (unitToAdd.GetComponentInParent<EnemyAiMK2>() != null)
+                if (unitToAdd.GetComponentInParent<AiMK2>() != null)
                 {
-                    unitToAdd.GetComponentInParent<EnemyAiMK2>().walkPointRange = 0f;
+                    unitToAdd.GetComponentInParent<AiMK2>().walkPointRange = 0f;
                 }
                 unitToAdd.transform.GetChild(0).gameObject.SetActive(true);
                 unitToAdd.GetComponent<AiMovementPlayer>().enabled = true;
@@ -61,9 +61,9 @@ public class UnitSelect : MonoBehaviour
         {
             if(unitToAdd.tag == "Unit")
             {
-                if (unitToAdd.GetComponentInParent<EnemyAiMK2>() != null)
+                if (unitToAdd.GetComponentInParent<AiMK2>() != null)
                 {
-                    unitToAdd.GetComponentInParent<EnemyAiMK2>().walkPointRange = 0f;
+                    unitToAdd.GetComponentInParent<AiMK2>().walkPointRange = 0f;
                 }
                 unitSelected.Add(unitToAdd);
                 unitToAdd.transform.GetChild(0).gameObject.SetActive(true);
@@ -78,9 +78,9 @@ public class UnitSelect : MonoBehaviour
         {
             if (unit.GetComponent<AiMovementPlayer>() != null)
             {
-                if(unit.GetComponentInParent<EnemyAiMK2>() != null)
+                if(unit.GetComponentInParent<AiMK2>() != null)
                 {
-                    unit.GetComponentInParent<EnemyAiMK2>().walkPointRange = 10f;
+                    unit.GetComponentInParent<AiMK2>().walkPointRange = 10f;
                 }
                 unit.GetComponent<AiMovementPlayer>().enabled = false;
                 unit.transform.GetChild(0).gameObject.SetActive(false);

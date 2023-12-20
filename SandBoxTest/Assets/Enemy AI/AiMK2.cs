@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyAiMK2 : MonoBehaviour
+public class AiMK2 : MonoBehaviour
 {
     public GameObject targetOBJ;
 
@@ -27,6 +27,8 @@ public class EnemyAiMK2 : MonoBehaviour
     //States
     public float sightRange, attackRange;
     public bool targetInSightRange, targetInAttackRange;
+
+    // Sets the sight collider to the correct size using sightRange
     private void Start()
     {
         GetComponentInChildren<SphereCollider>().radius = sightRange;
@@ -38,7 +40,7 @@ public class EnemyAiMK2 : MonoBehaviour
         targetInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsTarget);
         targetInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsTarget);
         
-        
+        // Checks if target is within range and acts accordingly
         if (!targetInSightRange && !targetInAttackRange && patrol)
         {
             Patrolling();
@@ -48,10 +50,13 @@ public class EnemyAiMK2 : MonoBehaviour
         if (targetInSightRange && targetInAttackRange) AttackTarget();
     }
     
+    //Randomly gets a location in range and moves there and then checks to see if it reaches it
     private void Patrolling()
     {
+        // Sets the walk point
         if (!walkPointSet) SearchWalkPoint();
         
+        // Sets the destination to the walk point
         if (walkPointSet)
         {
             agent.SetDestination(walkPoint);
@@ -66,8 +71,10 @@ public class EnemyAiMK2 : MonoBehaviour
         }
     }
 
+    // Follows target
     private void ChaseTarget()
     {
+        // 
         if (targetOBJ != null)
         {
             agent.SetDestination(targetOBJ.transform.position);
