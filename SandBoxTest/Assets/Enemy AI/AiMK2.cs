@@ -74,24 +74,25 @@ public class AiMK2 : MonoBehaviour
     // Follows target
     private void ChaseTarget()
     {
-        // 
+        // Sets destination to target
         if (targetOBJ != null)
         {
             agent.SetDestination(targetOBJ.transform.position);
         }
     }
 
+    // Attacks and deals damage to target
     private void AttackTarget()
     {
-        //Make sure enemy doesn't move
+        // Make sure enemy doesn't move
         agent.SetDestination(transform.position);
 
         transform.LookAt(targetOBJ.transform);
 
+        // Deals damage to target equal to strength
         if (!alreadyAttacked)
         {
             targetOBJ.GetComponent<Stats>().health -= strength;
-            Debug.Log("ATTACKED");
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
@@ -100,9 +101,9 @@ public class AiMK2 : MonoBehaviour
     private void ResetAttack()
     {
         alreadyAttacked = false;
-        Debug.Log("RELOADED");
     }
 
+    // Gets an applicable destination for walk point
     private void SearchWalkPoint()
     {
         //Calculate random point in range
@@ -111,12 +112,14 @@ public class AiMK2 : MonoBehaviour
 
         walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
 
+        // Makes sure the walk point is permitted
         if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
         {
             walkPointSet = true;
         }
     }
 
+    // Sets target when
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.layer == targetType && targetOBJ == null)
@@ -124,6 +127,7 @@ public class AiMK2 : MonoBehaviour
             targetOBJ = other.gameObject;
         }
     }
+    // When target leaves sight range targetObj becomes blank
     private void OnTriggerExit(Collider other)
     {
         if(other.gameObject == targetOBJ)
@@ -132,6 +136,7 @@ public class AiMK2 : MonoBehaviour
         }
     }
 
+    // Only visible in the Scene, and helps to visualize the ranges
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
