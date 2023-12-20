@@ -12,6 +12,7 @@ public class Stats : MonoBehaviour
         die();
     }
 
+    // When health becomes zero it deletes the unit
     private void die()
     {
         if(health <= 0)
