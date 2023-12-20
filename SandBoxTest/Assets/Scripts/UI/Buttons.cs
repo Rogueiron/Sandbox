@@ -20,4 +20,8 @@ public class Buttons : MonoBehaviour
         // Returns the win or lost to the main menu
         SceneManager.LoadScene("MainMenu");
     }
+    public void tutorialonClick()
+    {
+        SceneManager.LoadScene("Tutorial");
+    }
 }
