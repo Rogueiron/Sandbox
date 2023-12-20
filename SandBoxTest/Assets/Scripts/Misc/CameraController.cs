@@ -39,6 +39,14 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
+        if(newPosition.x > 140)
+        {
+            newPosition.x = 140;
+        }
+        else if (newPosition.x < - 140)
+        {
+            newPosition.x = -140;
+        }
         if (followTransform != null)
         {
             transform.position = followTransform.position;

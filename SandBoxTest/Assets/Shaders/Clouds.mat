@@ -33,10 +33,10 @@ Material:
     m_Colors:
     - _Noise_Remap: {r: 0, g: 1, b: -1, a: 1}
     - _Noise_Scale_X: {r: 0.01, g: 0, b: 0, a: 0}
-    - _Peaks: {r: 0.7783019, g: 1, b: 0.9746706, a: 0}
+    - _Peaks: {r: 1, g: 1, b: 1, a: 0}
     - _Rotate: {r: 1, g: 0, b: 0, a: 90}
     - _Speed: {r: 110, g: 0, b: 0, a: 0}
-    - _Valleys: {r: 0.4764151, g: 0.7738639, b: 1, a: 1}
+    - _Valleys: {r: 0.06132078, g: 0.3891136, b: 1, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &6449159282162719002
 MonoBehaviour:

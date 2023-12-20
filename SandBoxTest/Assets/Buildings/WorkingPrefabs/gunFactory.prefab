@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5174969746532087858}
   - component: {fileID: 7316570287688334542}
   - component: {fileID: 2680824351862632119}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: RotaCannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 8423013528800661716}
   - component: {fileID: 467770554522481675}
   - component: {fileID: 1942826696359744172}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: BigCannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -308,7 +308,7 @@ GameObject:
   - component: {fileID: 2355473472350236311}
   - component: {fileID: 5937330493040297599}
   - component: {fileID: 7297055501169356152}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BuildingE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -391,7 +391,7 @@ GameObject:
   - component: {fileID: 8129862000661776316}
   - component: {fileID: 7284223020996443788}
   - component: {fileID: 1702135546413506474}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BuildingC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -475,7 +475,7 @@ GameObject:
   - component: {fileID: 2739410877022360431}
   - component: {fileID: 8758029813837795649}
   - component: {fileID: 3938540334414947584}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP) (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -625,7 +625,7 @@ GameObject:
   - component: {fileID: 5172982276709832502}
   - component: {fileID: 870669509698590351}
   - component: {fileID: 5583337544197998228}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -741,7 +741,7 @@ GameObject:
   - component: {fileID: 6719987601524637897}
   - component: {fileID: 2770672351856487916}
   - component: {fileID: 4999249708324263666}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -889,7 +889,7 @@ GameObject:
   - component: {fileID: 179308680736607027}
   - component: {fileID: 1135102114801226693}
   - component: {fileID: 7660900932119320612}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BuildingR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -972,7 +972,7 @@ GameObject:
   - component: {fileID: 2448247897912667574}
   - component: {fileID: 1855653682975468599}
   - component: {fileID: 653442726595191291}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP) (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1106,7 +1106,7 @@ GameObject:
   - component: {fileID: 8857426248063561142}
   - component: {fileID: 8892537858558171016}
   - component: {fileID: 8569595561359778740}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BuildingL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1190,7 +1190,7 @@ GameObject:
   - component: {fileID: 8876471300922780814}
   - component: {fileID: 1826517684134195423}
   - component: {fileID: 981113363004741510}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP) (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1336,9 +1336,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2274216548819796542}
-  m_Layer: 0
+  - component: {fileID: 4269200059411811700}
+  - component: {fileID: -6653899229083998209}
+  - component: {fileID: 7880680270788636422}
+  m_Layer: 6
   m_Name: gunFactory
-  m_TagString: Untagged
+  m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1363,3 +1366,64 @@ Transform:
   - {fileID: 179308680736607027}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4269200059411811700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8959262330666889093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad4b9687fe04b874884fa7fdfa74cfbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+--- !u!65 &-6653899229083998209
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8959262330666889093}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &7880680270788636422
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8959262330666889093}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
