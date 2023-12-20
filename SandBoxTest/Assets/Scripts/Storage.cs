@@ -25,11 +25,6 @@ public class Storage : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(WoodStorage);
-        Debug.Log(IronStorage);
-        Debug.Log(CoalStorage);
-        Debug.Log(PopCapStorage);
-        Debug.Log(researchStorage);
         UpdateStorageDisplay();
         cap();
         if(SceneManager.GetActiveScene().name== "Tutorial" && start == false)

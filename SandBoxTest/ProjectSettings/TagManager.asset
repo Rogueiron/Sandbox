@@ -13,6 +13,7 @@ TagManager:
   - Wood
   - Unit
   - StorageManager
+  - Database
   layers:
   - Default
   - TransparentFX

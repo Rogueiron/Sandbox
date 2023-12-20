@@ -16,6 +16,7 @@ public class GoToNearestResource : MonoBehaviour
 {
     public GameObject targetOBJ;
     public GameObject storageManager;
+    public GameObject Database;
 
     public GameObject nextResource;
 
@@ -36,6 +37,8 @@ public class GoToNearestResource : MonoBehaviour
 
     public string TAG;
 
+    public string name;
+
     //all upgrade bools
     private bool UpgradedSpeed = false;
     private bool UpgradedAmount = false;
@@ -43,9 +46,13 @@ public class GoToNearestResource : MonoBehaviour
     private int harvestAmountWood = 10;
     private int harvestAmountIron = 5;
 
+    public int ROWID = 0;
+
     private void Start()
     {
         storageManager = GameObject.FindGameObjectWithTag("StorageManager");
+        Database = GameObject.FindGameObjectWithTag("Database");
+        Database.GetComponent<InsertToDB>().Unit(gameObject);
         restart();
         StoreResourceQueue = GetResourceQueue();
         targetOBJ = StoreResourceQueue.Dequeue();

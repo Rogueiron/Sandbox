@@ -21,9 +21,9 @@ public class instDB : MonoBehaviour
         command.ExecuteNonQuery();
         command.CommandText = "CREATE TABLE IF NOT EXISTS resorces (name VARCHAR(20) NOT NULL UNIQUE, Stored INTEGER NOT NULL);";
         command.ExecuteNonQuery();
-        command.CommandText = "CREATE TABLE IF NOT EXISTS building (Id INTEGER NOT NULL UNIQUE, Name VARCHAR(20), xloc REAL, yloc REAL, zloc REAL, PRIMARY KEY(id AUTOINCREMENT));";
+        command.CommandText = "CREATE TABLE IF NOT EXISTS building (Id INTEGER NOT NULL UNIQUE, Name VARCHAR(20), xloc REAL, yloc REAL, zloc REAL, type INTEGER NOT NULL, PRIMARY KEY(id AUTOINCREMENT));";
         command.ExecuteNonQuery();
-        command.CommandText = "CREATE TABLE IF NOT EXISTS units (Id INTEGER NOT NULL UNIQUE, Name VARCHAR(20) NOT NULL UNIQUE, xloc REAL, yloc REAL, zloc REAL, CONSTRAINT id PRIMARY KEY(id AUTOINCREMENT));";
+        command.CommandText = "CREATE TABLE IF NOT EXISTS units (Id INTEGER NOT NULL UNIQUE, Name VARCHAR(20) NOT NULL UNIQUE, xloc REAL, yloc REAL, zloc REAL, type INTEGER NOT NULL, CONSTRAINT id PRIMARY KEY(id AUTOINCREMENT));";
         command.ExecuteNonQuery();
         connection.Close();
     }
