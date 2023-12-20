@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyAiMK2 : MonoBehaviour
+public class AiMK2 : MonoBehaviour
 {
     public GameObject targetOBJ;
 
@@ -27,6 +27,8 @@ public class EnemyAiMK2 : MonoBehaviour
     //States
     public float sightRange, attackRange;
     public bool targetInSightRange, targetInAttackRange;
+
+    // Sets the sight collider to the correct size using sightRange
     private void Start()
     {
         GetComponentInChildren<SphereCollider>().radius = sightRange;
@@ -38,7 +40,7 @@ public class EnemyAiMK2 : MonoBehaviour
         targetInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsTarget);
         targetInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsTarget);
         
-        
+        // Checks if target is within range and acts accordingly
         if (!targetInSightRange && !targetInAttackRange && patrol)
         {
             Patrolling();
@@ -48,10 +50,13 @@ public class EnemyAiMK2 : MonoBehaviour
         if (targetInSightRange && targetInAttackRange) AttackTarget();
     }
     
+    //Randomly gets a location in range and moves there and then checks to see if it reaches it
     private void Patrolling()
     {
+        // Sets the walk point
         if (!walkPointSet) SearchWalkPoint();
         
+        // Sets the destination to the walk point
         if (walkPointSet)
         {
             agent.SetDestination(walkPoint);
@@ -66,25 +71,28 @@ public class EnemyAiMK2 : MonoBehaviour
         }
     }
 
+    // Follows target
     private void ChaseTarget()
     {
+        // Sets destination to target
         if (targetOBJ != null)
         {
             agent.SetDestination(targetOBJ.transform.position);
         }
     }
 
+    // Attacks and deals damage to target
     private void AttackTarget()
     {
-        //Make sure enemy doesn't move
+        // Make sure enemy doesn't move
         agent.SetDestination(transform.position);
 
         transform.LookAt(targetOBJ.transform);
 
+        // Deals damage to target equal to strength
         if (!alreadyAttacked)
         {
             targetOBJ.GetComponent<Stats>().health -= strength;
-            Debug.Log("ATTACKED");
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
@@ -93,9 +101,9 @@ public class EnemyAiMK2 : MonoBehaviour
     private void ResetAttack()
     {
         alreadyAttacked = false;
-        Debug.Log("RELOADED");
     }
 
+    // Gets an applicable destination for walk point
     private void SearchWalkPoint()
     {
         //Calculate random point in range
@@ -104,12 +112,14 @@ public class EnemyAiMK2 : MonoBehaviour
 
         walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
 
+        // Makes sure the walk point is permitted
         if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
         {
             walkPointSet = true;
         }
     }
 
+    // Sets target when an applicable unit or enemy is within range
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.layer == targetType && targetOBJ == null)
@@ -117,6 +127,7 @@ public class EnemyAiMK2 : MonoBehaviour
             targetOBJ = other.gameObject;
         }
     }
+    // When target leaves sight range targetObj becomes blank
     private void OnTriggerExit(Collider other)
     {
         if(other.gameObject == targetOBJ)
@@ -125,6 +136,7 @@ public class EnemyAiMK2 : MonoBehaviour
         }
     }
 
+    // Only visible in the Scene, and helps to visualize the ranges
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
