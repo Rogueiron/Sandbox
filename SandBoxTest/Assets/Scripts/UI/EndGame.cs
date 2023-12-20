@@ -14,8 +14,8 @@ public class EndGame : MonoBehaviour
 
     private void CheckEnd()
     {
-        
-        if(!GameObject.FindWithTag("TownCastle"))
+        // Checks if player lost their castle, sends to failed game if so
+        if(GameObject.FindWithTag("TownCastle"))
         {
             SceneManager.LoadScene("FailedGame");
         }
