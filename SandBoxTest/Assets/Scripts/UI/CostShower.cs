@@ -11,7 +11,7 @@ public class CostShower : MonoBehaviour
 
     void Start()
     {
-        
+           // Grabs the needed value to display to the player the cost of something
         if(isWood)
         {
             GetComponent<TextMeshProUGUI>().SetText(ValueGrabber.GetComponent<UnitToMake>().getWoodCost().ToString());

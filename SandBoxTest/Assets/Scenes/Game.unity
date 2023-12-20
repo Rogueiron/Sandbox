@@ -5911,6 +5911,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: BuildIng, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 1516837153907270767, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
+      propertyPath: tipToShow
+      value: 'Manor - This building supports additional units{units supported}. 10
+        wood: 0 Iron'
+      objectReference: {fileID: 0}
     - target: {fileID: 1562164355167845251, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -5934,6 +5939,11 @@ PrefabInstance:
     - target: {fileID: 3472991303183067193, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 45.205933
+      objectReference: {fileID: 0}
+    - target: {fileID: 3827127804234582477, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
+      propertyPath: tipToShow
+      value: 'Observatory - This building increases the rate that you research. 10
+        Wood: 10 Iron'
       objectReference: {fileID: 0}
     - target: {fileID: 4427568719898101219, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5967,10 +5977,34 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 89.1
       objectReference: {fileID: 0}
+    - target: {fileID: 6599704974911482020, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 109.7475
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599704974911482020, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 60.8006
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599704974911482020, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.5265
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599704974911482020, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -6.788
+      objectReference: {fileID: 0}
     - target: {fileID: 7142870473932272130, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
       propertyPath: building
       value: 
       objectReference: {fileID: 8235402274398879333, guid: 1f4061cfca997474495da618b01b51e7, type: 3}
+    - target: {fileID: 7260705458479009287, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 110.7227
+      objectReference: {fileID: 0}
+    - target: {fileID: 7260705458479009287, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 17.8613
+      objectReference: {fileID: 0}
     - target: {fileID: 7968019730322570741, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -5978,6 +6012,16 @@ PrefabInstance:
     - target: {fileID: 7968019730322570741, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: build
+      objectReference: {fileID: 0}
+    - target: {fileID: 8139859860519357080, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
+      propertyPath: tipToShow
+      value: 'Water Tower - This Tower increases the storage capacity of water. 0
+        Wood: 20 Iron'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325023247409679371, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
+      propertyPath: tipToShow
+      value: 'Water Pump - This Building sucks water from the atmosphere(can only
+        be placed at the edge). 10 Wood: 20 Iron'
       objectReference: {fileID: 0}
     - target: {fileID: 8341921045483170995, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
       propertyPath: building
@@ -8674,46 +8718,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4158915310260595351, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
-      propertyPath: unitToSpawn
-      value: 
-      objectReference: {fileID: 7895197331257113379, guid: 3cbddbf82e3978842a400ddbf341f4e1, type: 3}
-    - target: {fileID: 4309313765436322476, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4527091377979338069, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 344162036}
-    - target: {fileID: 4527091377979338069, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Make
-      objectReference: {fileID: 0}
-    - target: {fileID: 5028708930424335763, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.1499986
-      objectReference: {fileID: 0}
-    - target: {fileID: 5747736830548851798, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 5747736830548851798, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5747736830548851798, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 7.84
-      objectReference: {fileID: 0}
-    - target: {fileID: 6576366979408886063, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
-      propertyPath: m_Carve
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7239094926857272079, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
-      propertyPath: m_Name
-      value: CastleStuff
-      objectReference: {fileID: 0}
     - target: {fileID: 3401400497951348983, guid: 2b7838a5dd66a9c4385bec7eb72d29bd, type: 3}
       propertyPath: m_Name
       value: TownCastle
@@ -8757,6 +8761,46 @@ PrefabInstance:
     - target: {fileID: 6011530634441780400, guid: 2b7838a5dd66a9c4385bec7eb72d29bd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4158915310260595351, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
+      propertyPath: unitToSpawn
+      value: 
+      objectReference: {fileID: 7895197331257113379, guid: 3cbddbf82e3978842a400ddbf341f4e1, type: 3}
+    - target: {fileID: 4309313765436322476, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4527091377979338069, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 344162036}
+    - target: {fileID: 4527091377979338069, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Make
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028708930424335763, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.1499986
+      objectReference: {fileID: 0}
+    - target: {fileID: 5747736830548851798, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5747736830548851798, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5747736830548851798, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 7.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 6576366979408886063, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
+      propertyPath: m_Carve
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7239094926857272079, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
+      propertyPath: m_Name
+      value: CastleStuff
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
