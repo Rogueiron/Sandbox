@@ -6718,6 +6718,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 8235402274398879333, guid: 5cfc8292e3064cb47b6b60019fe90239, type: 3}
+  material: {fileID: 2100000, guid: 153856ebc472a4d47b69a00265a19b78, type: 2}
 --- !u!1 &8377468052295996340
 GameObject:
   m_ObjectHideFlags: 0

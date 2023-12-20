@@ -68,6 +68,7 @@ public class GoToNearestResource : MonoBehaviour
         }
         if(Speed == true && UpgradedSpeed == false)
         {
+            //Checks to see what type of resource is meant to be deposited
             if(TAG == "Wood")
             {
                 harvestTimeReset = 5;
