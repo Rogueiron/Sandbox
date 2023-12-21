@@ -10,9 +10,9 @@ using System.Runtime.CompilerServices;
 using UnityEditor.Experimental.GraphView;
 
 
-public class InsertToDB : MonoBehaviour
+public class InsertIntoDB : MonoBehaviour
 {
-   
+
     private string dbName = "URI=file:game.db";
     public TMP_InputField InputName;
     public UnitToMake unitToMake;
@@ -72,11 +72,11 @@ public class InsertToDB : MonoBehaviour
         using (var command = connction.CreateCommand())
         {
             command.CommandText = "INSERT INTO user (name, xloc, yloc, zloc) VALUES ('" + InputName.text + "' , '" + position[0] + "' , '" + position[1] + "' , '" + position[2] + "');";
-            command.ExecuteNonQuery();     
+            command.ExecuteNonQuery();
 
 
 
-        }   
+        }
         connction.Close();
     }
     // updates unit loc
@@ -86,14 +86,14 @@ public class InsertToDB : MonoBehaviour
         connction.Open();
         using (var command = connction.CreateCommand())
         {
-            foreach(var unit in GameObject.FindGameObjectsWithTag("Unit"))
+            foreach (var unit in GameObject.FindGameObjectsWithTag("Unit"))
             {
                 command.CommandText = "UPDATE units SET xloc = " + unit.transform.position.x + ", yloc = " + unit.transform.position.y + ", zloc = " + unit.transform.position.z + " WHERE ROWID = " + unit.GetComponent<GoToNearestResource>().ROWID + ";";
                 command.ExecuteNonQuery();
             }
-                }
-        connction.Close();
         }
+        connction.Close();
+    }
     // inserts the name and loc and type of the building
     public void Building(GameObject building)
     {
@@ -105,30 +105,30 @@ public class InsertToDB : MonoBehaviour
 
 
             if (building == Observoatory)
-                {
+            {
                 command.CommandText = "INSERT INTO building ( Name, xloc, yloc, zloc, type ) VALUES ('" + Randomname() + "' , '" + movePoint[0] + "' , '" + movePoint[1] + "' , '" + movePoint[2] + "' , '" + 1 + "');";
                 command.ExecuteNonQuery();
-                }
-                else if (building == Manor)
-                {
-                    command.CommandText = "INSERT INTO building ( Name, xloc, yloc, zloc, type ) VALUES ('" + Randomname() + "' , '" + movePoint[0] + "' , '" + movePoint[1] + "' , '" + movePoint[2] + "' , '" + 2 + "');";
-                    command.ExecuteNonQuery();
-                }
-                else if (building == WaterPump)
-                {
-                    command.CommandText = "INSERT INTO building ( Name, xloc, yloc, zloc, type ) VALUES ('" + Randomname() + "' , '" + movePoint[0] + "' , '" + movePoint[1] + "' , '" + movePoint[2] + "' , '" + 3 + "');";
-                    command.ExecuteNonQuery();
-                }
-                else if (building == WaterTower)
-                {
-                    command.CommandText = "INSERT INTO building ( Name, xloc, yloc, zloc, type ) VALUES ('" + Randomname() + "' , '" + movePoint[0] + "' , '" + movePoint[1] + "' , '" + movePoint[2] + "' , '" + 4 + "');";
-                    command.ExecuteNonQuery();
-                }
+            }
+            else if (building == Manor)
+            {
+                command.CommandText = "INSERT INTO building ( Name, xloc, yloc, zloc, type ) VALUES ('" + Randomname() + "' , '" + movePoint[0] + "' , '" + movePoint[1] + "' , '" + movePoint[2] + "' , '" + 2 + "');";
+                command.ExecuteNonQuery();
+            }
+            else if (building == WaterPump)
+            {
+                command.CommandText = "INSERT INTO building ( Name, xloc, yloc, zloc, type ) VALUES ('" + Randomname() + "' , '" + movePoint[0] + "' , '" + movePoint[1] + "' , '" + movePoint[2] + "' , '" + 3 + "');";
+                command.ExecuteNonQuery();
+            }
+            else if (building == WaterTower)
+            {
+                command.CommandText = "INSERT INTO building ( Name, xloc, yloc, zloc, type ) VALUES ('" + Randomname() + "' , '" + movePoint[0] + "' , '" + movePoint[1] + "' , '" + movePoint[2] + "' , '" + 4 + "');";
+                command.ExecuteNonQuery();
+            }
 
-               
-            
-            
-           
+
+
+
+
         }
         connction.Close();
     }
@@ -136,9 +136,9 @@ public class InsertToDB : MonoBehaviour
 
 
 
-public void Units(GameObject unit)
+    public void Units(GameObject unit)
     {
-    ROWIDUNIT += 1;
+        ROWIDUNIT += 1;
         unit.GetComponent<GoToNearestResource>().ROWID = 0;
         unit.GetComponent<GoToNearestResource>().ROWID = ROWIDUNIT;
         unit.GetComponent<UnitToMake>().Make();
@@ -158,31 +158,26 @@ public void Units(GameObject unit)
                     command.CommandText = "INSERT INTO units (Name, xloc, yloc, zloc, type ) VALUES ('" + Randomname() + "' , '" + unit.transform.position.x + "' , '" + unit.transform.position.y + "' , '" + unit.transform.position.z + "' , '" + 2 + "');";
                 }
             }
-            else if(unit.GetComponent<stats>())
+            else if (unit.GetComponent<Stats>())
             {
-                if(unit.GetComponent<stats>().name == "Melee")
+                if (unit.GetComponent<Stats>().name == "Melee")
                 {
                     command.CommandText = "INSERT INTO units (Name, xloc, yloc, zloc, type ) VALUES ('" + Randomname() + "' , '" + unit.transform.position.x + "' , '" + unit.transform.position.y + "' , '" + unit.transform.position.z + "' , '" + 3 + "');";
                 }
-            }
-            else if (unit == cannon)
-            {
-                command.CommandText = "INSERT INTO units (Name, xloc, yloc, zloc, type ) VALUES ('" + Randomname() + "' , '" + unit.transform.position.x + "' , '" + unit.transform.position.y + "' , '" + unit.transform.position.z + "' , '" + 4 + "');";
-
-            }
-
-            else if (unit == rcannon)
-            {
-                command.CommandText = "INSERT INTO units (Name, xloc, yloc, zloc, type ) VALUES ('" + Randomname() + "' , '" + unit.transform.position.x + "' , '" + unit.transform.position.y + "' , '" + unit.transform.position.z + "' , '" + 5 + "');";
+                else if (unit.GetComponent<Stats>().name == "Cannon")
+                {
+                    command.CommandText = "INSERT INTO units (Name, xloc, yloc, zloc, type ) VALUES ('" + Randomname() + "' , '" + unit.transform.position.x + "' , '" + unit.transform.position.y + "' , '" + unit.transform.position.z + "' , '" + 4 + "');";
+                }
+                else if (unit.GetComponent<Stats>().name == "RCannon")
+                {
+                    command.CommandText = "INSERT INTO units (Name, xloc, yloc, zloc, type ) VALUES ('" + Randomname() + "' , '" + unit.transform.position.x + "' , '" + unit.transform.position.y + "' , '" + unit.transform.position.z + "' , '" + 5 + "');";
+                }
             }
             else
             {
                 command.ExecuteNonQuery();
-            }   
-
-            
+            }
         }
-        
         connction.Close();
     }
 
@@ -194,21 +189,21 @@ public void Units(GameObject unit)
         connction.Open();
         using (var command = connction.CreateCommand())
         {
-           
-               
-                command.CommandText = "UPDATE resorces SET Stored=" + WoodStorage + " WHERE ROWID = 1;";
-                command.ExecuteNonQuery();
-                command.CommandText = "UPDATE resorces SET Stored=" + IronStorage + " WHERE ROWID = 2;";
-                command.ExecuteNonQuery();
-                command.CommandText = "UPDATE resorces SET Stored=" + CoalStorage + " WHERE ROWID = 3;";
-                command.ExecuteNonQuery();
-                command.CommandText = "UPDATE resorces SET Stored=" + PopCapStorage + " WHERE ROWID = 4;";
-                command.ExecuteNonQuery();
-                command.CommandText = "UPDATE resorces SET Stored=" + researchStorage + " WHERE ROWID = 5;";
-                command.ExecuteNonQuery();
+
+
+            command.CommandText = "UPDATE resorces SET Stored=" + WoodStorage + " WHERE ROWID = 1;";
+            command.ExecuteNonQuery();
+            command.CommandText = "UPDATE resorces SET Stored=" + IronStorage + " WHERE ROWID = 2;";
+            command.ExecuteNonQuery();
+            command.CommandText = "UPDATE resorces SET Stored=" + CoalStorage + " WHERE ROWID = 3;";
+            command.ExecuteNonQuery();
+            command.CommandText = "UPDATE resorces SET Stored=" + PopCapStorage + " WHERE ROWID = 4;";
+            command.ExecuteNonQuery();
+            command.CommandText = "UPDATE resorces SET Stored=" + researchStorage + " WHERE ROWID = 5;";
+            command.ExecuteNonQuery();
         }
-            
-        
+
+
 
     }
 

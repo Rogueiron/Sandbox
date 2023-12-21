@@ -207,6 +207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetOBJ: {fileID: 0}
   storageManager: {fileID: 0}
+  Database: {fileID: 0}
   nextResource: {fileID: 0}
   storage: 0
   maxStorage: 2
@@ -215,6 +216,8 @@ MonoBehaviour:
   navigation: {fileID: 8384202601168715280}
   StoreResource: []
   TAG: Wood
+  name: Wood
+  ROWID: 0
 --- !u!114 &969861827202099661
 MonoBehaviour:
   m_ObjectHideFlags: 0

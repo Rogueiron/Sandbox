@@ -37,7 +37,7 @@ public class GoToNearestResource : MonoBehaviour
 
     public string TAG;
 
-    public string name;
+    public new string name;
 
     //all upgrade bools
     private bool UpgradedSpeed = false;
@@ -52,7 +52,7 @@ public class GoToNearestResource : MonoBehaviour
     {
         storageManager = GameObject.FindGameObjectWithTag("StorageManager");
         Database = GameObject.FindGameObjectWithTag("Database");
-        Database.GetComponent<InsertToDB>().Unit(gameObject);
+        Database.GetComponent<InsertIntoDB>().Units(gameObject);
         restart();
         StoreResourceQueue = GetResourceQueue();
         targetOBJ = StoreResourceQueue.Dequeue();

@@ -17,7 +17,6 @@ public class readDB : MonoBehaviour
     public TMP_InputField InputName;
     public UnitToMake unitToMake;
     private string dbName = "URI=file:game.db";
-    public BuildIng building;
     [SerializeField] private GameObject Woodh;
     [SerializeField] private GameObject Stoneh;
     [SerializeField] private GameObject closerange;
