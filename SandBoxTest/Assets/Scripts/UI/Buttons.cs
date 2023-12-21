@@ -2,36 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Mono.Data.Sqlite;
-using System.Data;
-using System.Xml.Linq;
 
 public class Buttons : MonoBehaviour
 {
-    private string dbName = "URI=file:game.db";
     public void startonClick()
     {
+        // Goes into the game
         SceneManager.LoadScene("Game");
-    }
-    public void newsaveonClick()
-    {
-        SceneManager.LoadScene("newSave");
-        using var connction = new SqliteConnection(dbName);
-        connction.Open();
-        using (var command = connction.CreateCommand())
-        {
-            command.CommandText = "DROP DATABASE " + dbName + ";";
-            command.ExecuteNonQuery();
-        }
-
-
     }
     public void Quit()
     {
+        // Leaves the application
         Application.Quit();
     }
     public void menuonClick()
     {
-        SceneManager.LoadScene("MainMenu"); 
+        // Returns the win or lost to the main menu
+        SceneManager.LoadScene("MainMenu");
+    }
+    public void tutorialonClick()
+    {
+        SceneManager.LoadScene("Tutorial");
     }
 }

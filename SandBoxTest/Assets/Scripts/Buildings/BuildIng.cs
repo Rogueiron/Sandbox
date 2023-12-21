@@ -6,11 +6,12 @@ using static Storage;
 public class BuildIng : MonoBehaviour
 {
     public GameObject building;
-    [SerializeField] private int woodsNeeded;
-    [SerializeField] private int ironNeeded;
+    public int woodsNeeded;
+    public int ironNeeded;
     Storage storage;
     public void build()
     {
+        //when build runs check to see if it has the cost to build then place building
         if (WoodStorage >= woodsNeeded && IronStorage >= ironNeeded)
         {
             Instantiate(building);

@@ -6690,7 +6690,7 @@ GameObject:
   - component: {fileID: -4864463528987815773}
   m_Layer: 6
   m_Name: Observatory
-  m_TagString: Unit
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
