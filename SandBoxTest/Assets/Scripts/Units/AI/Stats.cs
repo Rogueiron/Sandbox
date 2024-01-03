@@ -6,7 +6,7 @@ using UnityEngine;
 public class Stats : MonoBehaviour
 {
     public int health;
-    public new string name;
+    public string name;
 
     private void Update()
     {
