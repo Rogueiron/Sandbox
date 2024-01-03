@@ -1696,7 +1696,7 @@ GameObject:
   - component: {fileID: 830108541928935002}
   m_Layer: 0
   m_Name: MiniStoneHarvester 2
-  m_TagString: Untagged
+  m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1803,6 +1803,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetOBJ: {fileID: 0}
   storageManager: {fileID: 0}
+  Database: {fileID: 0}
   nextResource: {fileID: 0}
   storage: 0
   maxStorage: 1
@@ -1811,6 +1812,8 @@ MonoBehaviour:
   navigation: {fileID: 7200603737263088257}
   StoreResource: []
   TAG: Iron
+  name: Stone
+  ROWID: 0
 --- !u!114 &2968610381160721680
 MonoBehaviour:
   m_ObjectHideFlags: 0
