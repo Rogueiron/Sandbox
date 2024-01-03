@@ -5,9 +5,9 @@ using UnityEngine;
 public class PlaySound : MonoBehaviour
 {
     private AudioSource sound;
-    // Start is called before the first frame update
     void Start()
     {
+        //try to get the sound componet
         try
         {
             sound = GetComponent<AudioSource>();
@@ -20,12 +20,7 @@ public class PlaySound : MonoBehaviour
     }
     void Awake()
     {
+        //when building placed play sound
         sound.Play();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

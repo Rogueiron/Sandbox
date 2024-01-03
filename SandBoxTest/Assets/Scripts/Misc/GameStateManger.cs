@@ -3,6 +3,7 @@ public class GameStateManager
     private static GameStateManager _instance;
     public static GameStateManager Instance
     {
+        //if there is now game state manager make one
         get
         {
             if (_instance == null)

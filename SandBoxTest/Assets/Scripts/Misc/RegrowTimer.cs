@@ -9,11 +9,13 @@ public class RegrowTimer : MonoBehaviour
 
     public void time()
     {
+        //when timer is zero place a new prefab
         Invoke(nameof(SpawnResource), timer);
     }
 
     public void SpawnResource()
     {
+        //makes the new prefab
         Instantiate(Resource, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
     }
 }

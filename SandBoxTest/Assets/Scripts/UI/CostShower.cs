@@ -8,17 +8,35 @@ public class CostShower : MonoBehaviour
 {
     [SerializeField] bool isWood;
     [SerializeField] Button ValueGrabber;
+    private TextMeshProUGUI text;
 
     void Start()
     {
-           // Grabs the needed value to display to the player the cost of something
-        if(isWood)
+        text = GetComponent<TextMeshProUGUI>();
+
+        if(ValueGrabber.GetComponent<BuildIng>())
         {
-            GetComponent<TextMeshProUGUI>().SetText(ValueGrabber.GetComponent<UnitToMake>().getWoodCost().ToString());
+            if (isWood)
+            {
+                text.SetText(ValueGrabber.GetComponent<BuildIng>().woodsNeeded.ToString());
+            }
+            else
+            {
+                text.SetText(ValueGrabber.GetComponent<BuildIng>().ironNeeded.ToString());
+            }
+                
         }
         else
         {
-            GetComponent<TextMeshProUGUI>().SetText(ValueGrabber.GetComponent<UnitToMake>().getIronCost().ToString());
+            if (isWood)
+            {
+                text.SetText(ValueGrabber.GetComponent<UnitToMake>().getWoodCost().ToString());
+            }
+            else
+            {
+                text.SetText(ValueGrabber.GetComponent<UnitToMake>().getIronCost().ToString());
+            }
         }
+
     }
 }

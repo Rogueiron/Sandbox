@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WaterPower
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 28caf6c653a88c74aa7ddd4c26332138, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -66,6 +70,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 28caf6c653a88c74aa7ddd4c26332138, type: 3}
       insertIndex: -1
       addedObject: {fileID: -6877485711719180402}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 28caf6c653a88c74aa7ddd4c26332138, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -4870215713586896896}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 28caf6c653a88c74aa7ddd4c26332138, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4935509695291958322}
   m_SourcePrefab: {fileID: 100100000, guid: 28caf6c653a88c74aa7ddd4c26332138, type: 3}
 --- !u!1 &3331349676943495491 stripped
 GameObject:
@@ -98,3 +108,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 6559478005365529386, guid: 616b7963b3b03534cb3148c1ec995a2d, type: 3}
   material: {fileID: 2100000, guid: 153856ebc472a4d47b69a00265a19b78, type: 2}
+--- !u!65 &-4870215713586896896
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3331349676943495491}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.5278522, y: 4.4986143, z: 1.5307469}
+  m_Center: {x: -0.0368917, y: 2.0176406, z: 0.092552334}
+--- !u!54 &4935509695291958322
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3331349676943495491}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 2

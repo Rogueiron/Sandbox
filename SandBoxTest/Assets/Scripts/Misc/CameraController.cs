@@ -47,6 +47,14 @@ public class CameraController : MonoBehaviour
         {
             newPosition.x = -140;
         }
+        if(newPosition.z > 200)
+        {
+            newPosition.z = 200;
+        }
+        else if(newPosition.z < -140)
+        {
+            newPosition.z = -140;
+        }
         if (followTransform != null)
         {
             transform.position = followTransform.position;

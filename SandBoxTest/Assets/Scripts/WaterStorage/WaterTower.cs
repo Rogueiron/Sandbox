@@ -7,6 +7,7 @@ public class WaterTower : MonoBehaviour
 {
     public void Start()
     {
+        //if watertower place increase make water
         MaxwaterStorage += 20;
     }
 }

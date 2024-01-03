@@ -15,6 +15,7 @@ public class WaterStorage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //used to make water storage and has max storage
         if (Waterstorage > MaxwaterStorage)
         {
             Waterstorage = MaxwaterStorage;
