@@ -4979,6 +4979,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1082386419260068217, guid: caf746618d1f41e4cb343ad03abee6dd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1315484629}
+    - targetCorrespondingSourceObject: {fileID: 1082386419260068217, guid: caf746618d1f41e4cb343ad03abee6dd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1315484631}
   m_SourcePrefab: {fileID: 100100000, guid: caf746618d1f41e4cb343ad03abee6dd, type: 3}
 --- !u!1 &1315484624 stripped
 GameObject:
@@ -5046,6 +5049,33 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!114 &1315484631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315484624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc19aa008d1c1bb459ddf1249f29b005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followTransform: {fileID: 0}
+  cameraTransform: {fileID: 0}
+  normalSpeed: 0.5
+  fastSpeed: 2
+  movementSpeed: 1
+  movementTime: 5
+  rotationAmount: 0.5
+  zoomAmount: {x: 0, y: -1, z: 1}
+  newPosition: {x: 0, y: 0, z: 0}
+  newRotation: {x: 0, y: 0, z: 0, w: 0}
+  newZoom: {x: 0, y: 0, z: 0}
+  dragStartPosition: {x: 0, y: 0, z: 0}
+  dragCurrentPosition: {x: 0, y: 0, z: 0}
+  rotateStartPosition: {x: 0, y: 0, z: 0}
+  rotateCurrentPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1322691087
 GameObject:
   m_ObjectHideFlags: 0
@@ -5539,6 +5569,10 @@ PrefabInstance:
     - target: {fileID: 2340836579080300076, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8132255489395185980, guid: e38911a0920f3a94f91943f442630a6c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -10.699829
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7795,6 +7829,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9128068810449970681, guid: 2b7838a5dd66a9c4385bec7eb72d29bd, type: 3}
+      propertyPath: unitToSpawn
+      value: 
+      objectReference: {fileID: 7895197331257113379, guid: 812c9180f4fa18f4db2b3fdf74400b5d, type: 3}
     - target: {fileID: 4158915310260595351, guid: 471f783cff85b1b4ea2091020393211e, type: 3}
       propertyPath: unitToSpawn
       value: 
