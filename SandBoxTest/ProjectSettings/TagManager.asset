@@ -15,6 +15,10 @@ TagManager:
   - StorageManager
   - Enemy
   - TownCastle
+<<<<<<< Updated upstream
+=======
+  - Database
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
