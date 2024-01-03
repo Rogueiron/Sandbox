@@ -15,6 +15,7 @@ TagManager:
   - StorageManager
   - Enemy
   - TownCastle
+  - DataBase
   layers:
   - Default
   - TransparentFX
