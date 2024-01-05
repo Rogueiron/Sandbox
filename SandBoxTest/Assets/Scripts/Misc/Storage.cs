@@ -7,8 +7,8 @@ using static WaterStorage;
 
 public class Storage : MonoBehaviour
 {
-    public static int WoodStorage = 70;
-    public static int IronStorage = 50;
+    public static int WoodStorage = 100;
+    public static int IronStorage = 100;
     public static int CoalStorage = 150;
     public static int PopCapStorage = 5;
     public static int researchStorage = 0;

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -111769366281227362}
   - component: {fileID: 1298620555352423196}
   - component: {fileID: 3352721611245577079}
+  - component: {fileID: -6400817535983983347}
   m_Layer: 6
   m_Name: WaterPump
   m_TagString: Building
@@ -99,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  name: 
 --- !u!65 &1298620555352423196
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -147,3 +149,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-6400817535983983347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3136277488792953579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65fafe0450e6644489f2196562e006f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 1
