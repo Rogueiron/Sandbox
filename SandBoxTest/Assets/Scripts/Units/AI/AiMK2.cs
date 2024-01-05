@@ -65,7 +65,7 @@ public class AiMK2 : MonoBehaviour
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
         //WalkPoint reached
-        if (distanceToWalkPoint.magnitude < .75f)
+        if (distanceToWalkPoint.magnitude < 3f)
         {
             walkPointSet = false;
         }
