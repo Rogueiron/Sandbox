@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4278139651107603356}
-  - component: {fileID: 4552233823531575758}
   m_Layer: 0
   m_Name: CameraRig 1
   m_TagString: Untagged
@@ -33,33 +32,6 @@ Transform:
   - {fileID: 8193225375143635120}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4552233823531575758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1082386419260068217}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc19aa008d1c1bb459ddf1249f29b005, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followTransform: {fileID: 0}
-  cameraTransform: {fileID: 8193225375143635120}
-  normalSpeed: 0.5
-  fastSpeed: 2
-  movementSpeed: 1
-  movementTime: 5
-  rotationAmount: 0.5
-  zoomAmount: {x: 0, y: -1, z: 1}
-  newPosition: {x: 0, y: 0, z: 0}
-  newRotation: {x: 0, y: 0, z: 0, w: 0}
-  newZoom: {x: 0, y: 0, z: 0}
-  dragStartPosition: {x: 0, y: 0, z: 0}
-  dragCurrentPosition: {x: 0, y: 0, z: 0}
-  rotateStartPosition: {x: 0, y: 0, z: 0}
-  rotateCurrentPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &8180994418372104730
 GameObject:
   m_ObjectHideFlags: 0

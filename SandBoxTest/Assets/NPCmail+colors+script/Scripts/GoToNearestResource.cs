@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Threading;
 using TMPro;
+using Unity.VisualScripting;
 using Unity.VisualScripting.FullSerializer;
 using UnityEditor;
 using UnityEngine;
@@ -16,6 +17,7 @@ public class GoToNearestResource : MonoBehaviour
 {
     public GameObject targetOBJ;
     public GameObject storageManager;
+    public GameObject Database;
 
     public GameObject nextResource;
 
@@ -36,12 +38,16 @@ public class GoToNearestResource : MonoBehaviour
 
     public string TAG;
 
+    public new string name;
+
     //all upgrade bools
     private bool UpgradedSpeed = false;
     private bool UpgradedAmount = false;
 
     private int harvestAmountWood = 10;
     private int harvestAmountIron = 5;
+
+    public int ROWID = 0;
 
     private void Start()
     {
@@ -50,6 +56,11 @@ public class GoToNearestResource : MonoBehaviour
         StoreResourceQueue = GetResourceQueue();
         targetOBJ = StoreResourceQueue.Dequeue();
         speration();
+    }
+    public void OnSave()
+    {
+        Database = GameObject.FindGameObjectWithTag("Database");
+        Database.GetComponent<InsertIntoDB>().Units(gameObject);
     }
     public void FixedUpdate()
     {
