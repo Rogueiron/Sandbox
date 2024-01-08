@@ -88,7 +88,7 @@ public class InsertIntoDB : MonoBehaviour
         {
             foreach (var unit in GameObject.FindGameObjectsWithTag("Unit"))
             {
-                command.CommandText = "UPDATE units SET xloc = " + unit.transform.position.x + ", yloc = " + unit.transform.position.y + ", zloc = " + unit.transform.position.z + " WHERE ROWID = " + unit.GetComponent<GoToNearestResource>().ROWID + ";";
+                command.CommandText = "UPDATE units SET xloc = " + unit.transform.position.x + ", yloc = " + 0.9f + ", zloc = " + unit.transform.position.z + " WHERE ROWID = " + unit.GetComponent<GoToNearestResource>().ROWID + ";";
                 command.ExecuteNonQuery();
             }
         }
@@ -104,24 +104,24 @@ public class InsertIntoDB : MonoBehaviour
         {
 
 
-            if (building == Observoatory)
+            if (building.GetComponent<Stats>().name == "Observatory")
             {
-                command.CommandText = "INSERT INTO building ( Name, xloc, yloc, zloc, type ) VALUES ('" + Randomname() + "' , '" + movePoint[0] + "' , '" + movePoint[1] + "' , '" + movePoint[2] + "' , '" + 1 + "');";
+                command.CommandText = "INSERT INTO building ( Name, xloc, yloc, zloc, type ) VALUES ('" + Randomname() + "' , '" + building.transform.position.x + "' , '" + building.transform.position.y + "' , '" + building.transform.position.z + "' , '" + 1 + "');";
                 command.ExecuteNonQuery();
             }
-            else if (building == Manor)
+            else if (building.GetComponent<Stats>().name == "Manor")
             {
-                command.CommandText = "INSERT INTO building ( Name, xloc, yloc, zloc, type ) VALUES ('" + Randomname() + "' , '" + movePoint[0] + "' , '" + movePoint[1] + "' , '" + movePoint[2] + "' , '" + 2 + "');";
+                command.CommandText = "INSERT INTO building ( Name, xloc, yloc, zloc, type ) VALUES ('" + Randomname() + "' , '" + building.transform.position.x + "' , '" + building.transform.position.y + "' , '" + building.transform.position.z + "' , '" + 2 + "');";
                 command.ExecuteNonQuery();
             }
-            else if (building == WaterPump)
+            else if (building.GetComponent<Stats>().name == "WaterPump")
             {
-                command.CommandText = "INSERT INTO building ( Name, xloc, yloc, zloc, type ) VALUES ('" + Randomname() + "' , '" + movePoint[0] + "' , '" + movePoint[1] + "' , '" + movePoint[2] + "' , '" + 3 + "');";
+                command.CommandText = "INSERT INTO building ( Name, xloc, yloc, zloc, type ) VALUES ('" + Randomname() + "' , '" + building.transform.position.x + "' , '" + building.transform.position.y + "' , '" + building.transform.position.z + "' , '" + 3 + "');";
                 command.ExecuteNonQuery();
             }
-            else if (building == WaterTower)
+            else if (building.GetComponent<Stats>().name == "WaterTower")
             {
-                command.CommandText = "INSERT INTO building ( Name, xloc, yloc, zloc, type ) VALUES ('" + Randomname() + "' , '" + movePoint[0] + "' , '" + movePoint[1] + "' , '" + movePoint[2] + "' , '" + 4 + "');";
+                command.CommandText = "INSERT INTO building ( Name, xloc, yloc, zloc, type ) VALUES ('" + Randomname() + "' , '" + building.transform.position.x + "' , '" + building.transform.position.y + "' , '" + building.transform.position.z + "' , '" + 4 + "');";
                 command.ExecuteNonQuery();
             }
 
@@ -141,7 +141,6 @@ public class InsertIntoDB : MonoBehaviour
         ROWIDUNIT += 1;
         unit.GetComponent<GoToNearestResource>().ROWID = 0;
         unit.GetComponent<GoToNearestResource>().ROWID = ROWIDUNIT;
-        unit.GetComponent<UnitToMake>().Make();
         using var connction = new SqliteConnection(dbName);
         connction.Open();
         using (var command = connction.CreateCommand())
@@ -151,32 +150,32 @@ public class InsertIntoDB : MonoBehaviour
             {
                 if (unit.GetComponent<GoToNearestResource>().name == "Wood")
                 {
-                    command.CommandText = "INSERT INTO units (Name, xloc, yloc, zloc, type ) VALUES ('" + Randomname() + "' , '" + unit.transform.position.x + "' , '" + unit.transform.position.y + "' , '" + unit.transform.position.z + "' , '" + 1 + "');";
+                    command.CommandText = "INSERT INTO units (Name, xloc, yloc, zloc, type ) VALUES ('" + Randomname() + "' , '" + unit.transform.position.x + "' , '" + 0.9f + "' , '" + unit.transform.position.z + "' , '" + 1 + "');";
                 }
                 else if (unit.GetComponent<GoToNearestResource>().name == "Stone")
                 {
-                    command.CommandText = "INSERT INTO units (Name, xloc, yloc, zloc, type ) VALUES ('" + Randomname() + "' , '" + unit.transform.position.x + "' , '" + unit.transform.position.y + "' , '" + unit.transform.position.z + "' , '" + 2 + "');";
+                    command.CommandText = "INSERT INTO units (Name, xloc, yloc, zloc, type ) VALUES ('" + Randomname() + "' , '" + unit.transform.position.x + "' , '" + 0.9f + "' , '" + unit.transform.position.z + "' , '" + 2 + "');";
                 }
             }
             else if (unit.GetComponent<Stats>())
             {
                 if (unit.GetComponent<Stats>().name == "Melee")
                 {
-                    command.CommandText = "INSERT INTO units (Name, xloc, yloc, zloc, type ) VALUES ('" + Randomname() + "' , '" + unit.transform.position.x + "' , '" + unit.transform.position.y + "' , '" + unit.transform.position.z + "' , '" + 3 + "');";
+                    command.CommandText = "INSERT INTO units (Name, xloc, yloc, zloc, type ) VALUES ('" + Randomname() + "' , '" + unit.transform.position.x + "' , '" + 0.9f + "' , '" + unit.transform.position.z + "' , '" + 3 + "');";
                 }
                 else if (unit.GetComponent<Stats>().name == "Cannon")
                 {
-                    command.CommandText = "INSERT INTO units (Name, xloc, yloc, zloc, type ) VALUES ('" + Randomname() + "' , '" + unit.transform.position.x + "' , '" + unit.transform.position.y + "' , '" + unit.transform.position.z + "' , '" + 4 + "');";
+                    command.CommandText = "INSERT INTO units (Name, xloc, yloc, zloc, type ) VALUES ('" + Randomname() + "' , '" + unit.transform.position.x + "' , '" + 0.9f + "' , '" + unit.transform.position.z + "' , '" + 4 + "');";
                 }
                 else if (unit.GetComponent<Stats>().name == "RCannon")
                 {
                     command.CommandText = "INSERT INTO units (Name, xloc, yloc, zloc, type ) VALUES ('" + Randomname() + "' , '" + unit.transform.position.x + "' , '" + unit.transform.position.y + "' , '" + unit.transform.position.z + "' , '" + 5 + "');";
                 }
             }
-            else
-            {
+            
+            
                 command.ExecuteNonQuery();
-            }
+            
         }
         connction.Close();
     }

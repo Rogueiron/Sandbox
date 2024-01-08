@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Threading;
 using TMPro;
+using Unity.VisualScripting;
 using Unity.VisualScripting.FullSerializer;
 using UnityEditor;
 using UnityEngine;
@@ -51,12 +52,15 @@ public class GoToNearestResource : MonoBehaviour
     private void Start()
     {
         storageManager = GameObject.FindGameObjectWithTag("StorageManager");
-        Database = GameObject.FindGameObjectWithTag("Database");
-        Database.GetComponent<InsertIntoDB>().Units(gameObject);
         restart();
         StoreResourceQueue = GetResourceQueue();
         targetOBJ = StoreResourceQueue.Dequeue();
         speration();
+    }
+    public void OnSave()
+    {
+        Database = GameObject.FindGameObjectWithTag("Database");
+        Database.GetComponent<InsertIntoDB>().Units(gameObject);
     }
     public void FixedUpdate()
     {
