@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/newsave.unity
     guid: d77202744af526742a77269d32ba9241
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/saveselect.unity
     guid: 7a60471ae055ac34393f5fb5e5506c74
   - enabled: 1
