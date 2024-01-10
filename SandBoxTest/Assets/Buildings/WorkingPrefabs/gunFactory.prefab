@@ -93,9 +93,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   woodCost: 15
   ironCost: 25
+  waterCost: 5
   spawnLocation: {x: 2, y: 2, z: 0}
   spawnRotations: {x: 0, y: 0, z: 0, w: 0}
-  unitToSpawn: {fileID: 7895197331257113379, guid: e2a7bb46712e5384e8fdcdd6b7cb9a24, type: 3}
+  unitToSpawn: {fileID: 347621485283724501, guid: 665311a7d5c13c64a8ed930ed213c86b, type: 3}
   maker: {fileID: 2833472084492770853}
 --- !u!114 &2680824351862632119
 MonoBehaviour:
@@ -140,7 +141,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5174969746532087858}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7316570287688334542}
+        m_TargetAssemblyTypeName: UnitToMake, Assembly-CSharp
+        m_MethodName: Make
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &206233710526411725
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,7 +167,6 @@ GameObject:
   - component: {fileID: 5897384423726355583}
   - component: {fileID: 8423013528800661716}
   - component: {fileID: 467770554522481675}
-  - component: {fileID: 1942826696359744172}
   m_Layer: 6
   m_Name: BigCannon
   m_TagString: Untagged
@@ -235,9 +247,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   woodCost: 15
   ironCost: 20
+  waterCost: 5
   spawnLocation: {x: 2, y: 2, z: 0}
   spawnRotations: {x: 0, y: 0, z: 0, w: 0}
-  unitToSpawn: {fileID: 7895197331257113379, guid: 8bd5dde26ae2d764db2509d5cfa82c3c, type: 3}
+  unitToSpawn: {fileID: 347621485283724501, guid: baad9dee53b5b764bb450b9e1acd9a3b, type: 3}
   maker: {fileID: 2833472084492770853}
 --- !u!114 &467770554522481675
 MonoBehaviour:
@@ -282,21 +295,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5897384423726355583}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
---- !u!114 &1942826696359744172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 206233710526411725}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 476260bfd54faa740b3f4f05b794873d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isWood: 0
-  ValueGrabber: {fileID: 467770554522481675}
+      m_Calls:
+      - m_Target: {fileID: 8423013528800661716}
+        m_TargetAssemblyTypeName: UnitToMake, Assembly-CSharp
+        m_MethodName: Make
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &639214104176459038
 GameObject:
   m_ObjectHideFlags: 0
@@ -645,6 +656,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 195073824353459960}
+  - {fileID: 2002855475957970186}
   - {fileID: 5218030431355130056}
   m_Father: {fileID: 2274216548819796542}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -972,6 +984,7 @@ GameObject:
   - component: {fileID: 2448247897912667574}
   - component: {fileID: 1855653682975468599}
   - component: {fileID: 653442726595191291}
+  - component: {fileID: 8444063120325577601}
   m_Layer: 6
   m_Name: Text (TMP) (1)
   m_TagString: Untagged
@@ -1095,6 +1108,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8444063120325577601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6725045062006449937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 476260bfd54faa740b3f4f05b794873d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isWood: 0
+  ValueGrabber: {fileID: 467770554522481675}
 --- !u!1 &7065510969365147146
 GameObject:
   m_ObjectHideFlags: 0
@@ -1339,6 +1366,7 @@ GameObject:
   - component: {fileID: 4269200059411811700}
   - component: {fileID: -6653899229083998209}
   - component: {fileID: 7880680270788636422}
+  - component: {fileID: 7455799170106530002}
   m_Layer: 6
   m_Name: gunFactory
   m_TagString: Building
@@ -1379,6 +1407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  name: 
 --- !u!65 &-6653899229083998209
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1427,3 +1456,54 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!208 &7455799170106530002
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8959262330666889093}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 5, y: 0.5, z: 6}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
+--- !u!1 &9090691495171589215
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2002855475957970186}
+  m_Layer: 6
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2002855475957970186
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9090691495171589215}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -9.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7508234203660620621}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 1.45, y: -7.76}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}

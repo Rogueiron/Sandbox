@@ -40,9 +40,17 @@ PrefabInstance:
       propertyPath: whatIsTarget.m_Bits
       value: 4096
       objectReference: {fileID: 0}
+    - target: {fileID: 2240545919128974651, guid: 05c2734b5518eb74e97a27b8b1d8cf36, type: 3}
+      propertyPath: m_Radius
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2240545919128974651, guid: 05c2734b5518eb74e97a27b8b1d8cf36, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 2302332229156129318, guid: 05c2734b5518eb74e97a27b8b1d8cf36, type: 3}
       propertyPath: m_Name
-      value: RotaryAIUnit 2
+      value: RotaryAIUnit
       objectReference: {fileID: 0}
     - target: {fileID: 2302332229156129318, guid: 05c2734b5518eb74e97a27b8b1d8cf36, type: 3}
       propertyPath: m_Layer
