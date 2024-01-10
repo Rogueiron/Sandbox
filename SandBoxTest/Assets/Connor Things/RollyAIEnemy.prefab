@@ -34,7 +34,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1360797182132393822, guid: 05c2734b5518eb74e97a27b8b1d8cf36, type: 3}
       propertyPath: walkPointRange
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1360797182132393822, guid: 05c2734b5518eb74e97a27b8b1d8cf36, type: 3}
       propertyPath: timeBetweenAttacks
