@@ -10,9 +10,9 @@ public class CompleteLevel : MonoBehaviour
     [SerializeField] private int wood;
     [SerializeField] private int iron;
 
+    // When material cost is met and the button is pressed start next level
     public void NextLevel()
     {
-        Debug.Log("Pressed");
         if (WoodStorage >= wood && IronStorage >= iron)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

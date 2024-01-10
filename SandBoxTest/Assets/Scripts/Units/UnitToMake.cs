@@ -11,7 +11,7 @@ public class UnitToMake : MonoBehaviour
     [SerializeField] int waterCost;
     public Vector3 spawnLocation = new Vector3(0, 0, 0);
     [SerializeField] Quaternion spawnRotations = new Quaternion(0, 0, 0, 0);
-    [SerializeField] GameObject unitToSpawn;
+    public GameObject unitToSpawn;
     [SerializeField] GameObject maker;
 
     public int getWoodCost()

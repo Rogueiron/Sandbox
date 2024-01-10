@@ -6,7 +6,14 @@ using UnityEngine;
 public class Stats : MonoBehaviour
 {
     public int health;
-    public string name;
+    public new string name;
+    private GameObject Database;
+
+
+    public void Start()
+    {
+        GameObject.FindGameObjectWithTag("Database").GetComponent<InsertIntoDB>().Building(this.gameObject);
+    }
 
     private void Update()
     {
@@ -21,4 +28,20 @@ public class Stats : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    public void OnSave()
+    {
+        if(gameObject.tag == "Unit")
+        {
+            Database = GameObject.FindGameObjectWithTag("Database");
+            Database.GetComponent<InsertIntoDB>().Units(gameObject);
+        }
+        else if (gameObject.tag == "Building")
+        {
+            Database = GameObject.FindGameObjectWithTag("Database");
+            Database.GetComponent<InsertIntoDB>().Building(gameObject);
+        }
+    }
+
+
+
 }
