@@ -44,8 +44,8 @@ public class GoToNearestResource : MonoBehaviour
     private bool UpgradedSpeed = false;
     private bool UpgradedAmount = false;
 
-    private int harvestAmountWood = 10;
-    private int harvestAmountIron = 5;
+    private int harvestAmountWood = 5;
+    private int harvestAmountIron = 3;
 
     public int ROWID = 0;
 
@@ -85,8 +85,8 @@ public class GoToNearestResource : MonoBehaviour
         }
         if (Amount == true && UpgradedAmount == false)
         {
-            harvestAmountWood = 15;
-            harvestAmountIron = 10;
+            harvestAmountWood = 10;
+            harvestAmountIron = 5;
             UpgradedAmount = true;
         }
     }
