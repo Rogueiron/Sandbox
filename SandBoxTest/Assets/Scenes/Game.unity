@@ -1434,6 +1434,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   woodCost: 0
   ironCost: 0
+  waterCost: 0
   spawnLocation: {x: 0, y: 0, z: 0}
   spawnRotations: {x: 0, y: 0, z: 0, w: 0}
   unitToSpawn: {fileID: 0}
@@ -1583,6 +1584,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   woodCost: 50
   ironCost: 75
+  waterCost: 0
   spawnLocation: {x: 2, y: 2, z: 0}
   spawnRotations: {x: 0, y: 0, z: 0, w: 0}
   unitToSpawn: {fileID: 1986042837862581056, guid: 0de98106c53c9e04c90a43df428f9579, type: 3}
