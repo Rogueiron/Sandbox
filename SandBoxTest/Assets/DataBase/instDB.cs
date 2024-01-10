@@ -6,7 +6,7 @@ public class instDB : MonoBehaviour
 {
     private string dbName = "URI=file:game.db";
     
-    // Start is called before the first frame update
+    // Creates all the tables and there info that can be minitpulated 
     void Start()
     {
      CreateDB();

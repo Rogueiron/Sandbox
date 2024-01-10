@@ -49,11 +49,13 @@ public class readDB : MonoBehaviour
         connction.Open();
         using (var command = connction.CreateCommand())
         {
+            // This gets the x y and z then makes the prefab based on the type number based on when it was inserted in the DB and what the reader reads and compare to type from the DB that was set in insertintoDB
             command.CommandText = "SELECT xloc, yloc, zloc, type FROM building;";
             using (IDataReader reader = command.ExecuteReader())
             {
                 while (reader.Read())
                 {
+                    // this reads the type column in the DB for ever instance and then compare it to the type it was given in insertintoDB
                     type = reader.GetInt32(3);
                     if (type == 1)
                     {
@@ -84,6 +86,7 @@ public class readDB : MonoBehaviour
     {
         using var connction = new SqliteConnection(dbName);
         connction.Open();
+        // reads all the data from the resorces table
         using (var command = connction.CreateCommand())
         {
             command.CommandText = "SELECT * FROM resorces;";
@@ -97,9 +100,11 @@ public class readDB : MonoBehaviour
         connction.Open();
         using (var command = connction.CreateCommand())
         {
+            // This gets the x y and z then makes the prefab based on the type number based on when it was inserted in the db and what the reader reads and compare to type from the DB that was set in insertintoDB
             command.CommandText = "SELECT ROWID, xloc, yloc, zloc, type FROM units;";
             using (IDataReader reader = command.ExecuteReader())
             {
+                // this reads the type column in the DB for ever instance and then compare it to the type it was given in insertintoDB
                 while (reader.Read())
                 {
                     type = reader.GetInt32(4);
@@ -111,25 +116,25 @@ public class readDB : MonoBehaviour
 
                     else if (type == 2)
                     {
-                        Instantiate(Stoneh, new Vector3(reader.GetFloat(0), reader.GetFloat(1), reader.GetFloat(2)), Quaternion.identity);
+                        Instantiate(Stoneh, new Vector3(reader.GetFloat(0), 0.9f, reader.GetFloat(2)), Quaternion.identity);
                     }
 
 
                     else if (type == 3)
                     {
                         
-                        Instantiate(closerange, new Vector3(reader.GetFloat(0), reader.GetFloat(1), reader.GetFloat(2)), Quaternion.identity);
+                        Instantiate(closerange, new Vector3(reader.GetFloat(0), 0.9f, reader.GetFloat(2)), Quaternion.identity);
                     }
 
 
                     else if (type == 4)
                     {
-                        Instantiate(cannon, new Vector3(reader.GetFloat(0), reader.GetFloat(1), reader.GetFloat(2)), Quaternion.identity);
+                        Instantiate(cannon, new Vector3(reader.GetFloat(0), 0.9f, reader.GetFloat(2)), Quaternion.identity);
                     }
 
                     else if (type == 5)
                     {
-                        Instantiate(rcannon, new Vector3(reader.GetFloat(0), reader.GetFloat(1), reader.GetFloat(2)), Quaternion.identity);
+                        Instantiate(rcannon, new Vector3(reader.GetFloat(0), 0.9f, reader.GetFloat(2)), Quaternion.identity);
                     }
                     }
             reader.Close();

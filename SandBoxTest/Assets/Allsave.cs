@@ -14,7 +14,7 @@ public class Allsave : MonoBehaviour
         UnitSave();
         buildingSave();
     }
-
+    // inserts the units data the x, y, z, random name, on the name in stats
     public void UnitSave()
     {
         foreach (GameObject bots in GameObject.FindGameObjectsWithTag("Unit"))
@@ -22,6 +22,7 @@ public class Allsave : MonoBehaviour
             bots.GetComponent<Stats>().OnSave();
         }
     }
+    // inserts the building data the x, y, z, random name, on the name in stats
     public void buildingSave()
     {
         foreach (GameObject building in GameObject.FindGameObjectsWithTag("Building"))
@@ -29,12 +30,13 @@ public class Allsave : MonoBehaviour
             building.GetComponent<Stats>().OnSave();
         }
     }
-
+    // finds the location to make the new DB
     public void NewSave()
     {
         GameObject.FindGameObjectWithTag("Database").GetComponent<instDB>().CreateDB();
 
     }
+   // Dropes(Deletes) all the tables in the DB and gets rid of all the old data
     public void DeleteOld()
     {
         using var connection = new SqliteConnection(dbName);

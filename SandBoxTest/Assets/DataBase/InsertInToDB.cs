@@ -12,13 +12,19 @@ using UnityEditor.Experimental.GraphView;
 
 public class InsertIntoDB : MonoBehaviour
 {
-
+    // the conection string
     private string dbName = "URI=file:game.db";
+    // in put a name to the save 
     public TMP_InputField InputName;
+    // helps access the info of the unit prefabs
     public UnitToMake unitToMake;
+    // counts the auto increment for the buildings
     private int lastIndex = 0;
+    // counts the auto increment for the units
     private int ROWIDUNIT = 0;
+    // the string form of ROWIDUNIT
     private string ROWIDDATA;
+    // this is so the script can compare the difference prefabs
     [SerializeField] private GameObject Manor;
     [SerializeField] private GameObject WaterPump;
     [SerializeField] private GameObject WaterTower;
@@ -28,10 +34,6 @@ public class InsertIntoDB : MonoBehaviour
     [SerializeField] private GameObject closerange;
     [SerializeField] private GameObject cannon;
     [SerializeField] private GameObject rcannon;
-
-    // "','" + playerloc.x + "','" + playerloc.y + "','" + playerloc.z + "' 
-
-
     // Genartes a randomname for units and building 
     private string Randomname(int namelangth = 10)
     {
@@ -48,6 +50,7 @@ public class InsertIntoDB : MonoBehaviour
     {
         using var connction = new SqliteConnection(dbName);
         connction.Open();
+        // makes valid locations to keep the difference resorces
         using (var command = connction.CreateCommand())
         {
             command.CommandText = "INSERT INTO resorces ( name, Stored ) VALUES ('wood'," + WoodStorage + ");";
@@ -97,9 +100,11 @@ public class InsertIntoDB : MonoBehaviour
     // inserts the name and loc and type of the building
     public void Building(GameObject building)
     {
+        // this is to help fined what to inserte based on the auto increment id number
         lastIndex += 1;
         using var connction = new SqliteConnection(dbName);
         connction.Open();
+        // finds what the loc of the building is and sets an type number based on what prefab it is and that type number is read by readDB.
         using (var command = connction.CreateCommand())
         {
 
@@ -135,14 +140,16 @@ public class InsertIntoDB : MonoBehaviour
 
 
 
-
+    // inserts the name and loc and type of the units
     public void Units(GameObject unit)
     {
+        // this is to help fined what to inserte based on the auto increment id number
         ROWIDUNIT += 1;
         unit.GetComponent<GoToNearestResource>().ROWID = 0;
         unit.GetComponent<GoToNearestResource>().ROWID = ROWIDUNIT;
         using var connction = new SqliteConnection(dbName);
         connction.Open();
+        // finds what the loc of the units is and sets an type number based on what prefab it is that is found by the name property in Stats that is read by readDB.
         using (var command = connction.CreateCommand())
         {
 
@@ -150,6 +157,7 @@ public class InsertIntoDB : MonoBehaviour
             {
                 if (unit.GetComponent<GoToNearestResource>().name == "Wood")
                 {
+                    // the 0.9f is to help combat the space invater bug when they spawn back unity and SQL have a issue understaning each other like a bad marriage. 
                     command.CommandText = "INSERT INTO units (Name, xloc, yloc, zloc, type ) VALUES ('" + Randomname() + "' , '" + unit.transform.position.x + "' , '" + 0.9f + "' , '" + unit.transform.position.z + "' , '" + 1 + "');";
                 }
                 else if (unit.GetComponent<GoToNearestResource>().name == "Stone")
@@ -180,7 +188,7 @@ public class InsertIntoDB : MonoBehaviour
         connction.Close();
     }
 
-    // updates all the data 
+    // updates all the data in resorces based on there location in the DB
     public void DBupdate()
 
     {
