@@ -5,7 +5,7 @@ using static WaterStorage;
 
 public class WaterCollector : MonoBehaviour
 {
-    public float timer = 1f;
+    [SerializeField] private float timer;
     // Update is called once per frame
     void FixedUpdate()
     {

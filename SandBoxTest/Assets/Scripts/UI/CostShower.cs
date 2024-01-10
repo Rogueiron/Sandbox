@@ -26,6 +26,17 @@ public class CostShower : MonoBehaviour
             }
                 
         }
+        else if(ValueGrabber.GetComponent<CompleteLevel>())
+        {
+            if(isWood)
+            {
+                text.SetText(ValueGrabber.GetComponent<CompleteLevel>().wood.ToString());
+            }
+            else
+            {
+                text.SetText(ValueGrabber.GetComponent<CompleteLevel>().iron.ToString());
+            }
+        }
         else
         {
             if (isWood)

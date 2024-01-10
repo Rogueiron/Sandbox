@@ -7,9 +7,9 @@ using static WaterStorage;
 
 public class Storage : MonoBehaviour
 {
-    public static int WoodStorage = 100;
-    public static int IronStorage = 100;
-    public static int CoalStorage = 150;
+    public static int WoodStorage = 20;
+    public static int IronStorage = 20;
+    public static int CoalStorage = 0;
     public static int PopCapStorage = 5;
     public static int researchStorage = 0;
     public static int Population = 0;
@@ -39,9 +39,9 @@ public class Storage : MonoBehaviour
     private void OnDestroy()
     {
         //when ganeobject with script is destory reset resources
-        WoodStorage = 70;
-        IronStorage = 50;
-        CoalStorage = 150;
+        WoodStorage = 20;
+        IronStorage = 20;
+        CoalStorage = 0;
         PopCapStorage = 5;
         researchStorage = 0;
         Population = 0;
