@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine; 
@@ -83,13 +84,20 @@ public class OutlineBuild : MonoBehaviour
             Instantiate(prefab, movePoint, transform.rotation);
             Destroy(gameObject);
         }
-        if (hit.transform.gameObject.layer != LayerMask.NameToLayer("Ground"))
+        try
         {
-            material.color = new Color(1, 0, 0, .3f);
+            if (hit.transform.gameObject.layer != LayerMask.NameToLayer("Ground"))
+            {
+                material.color = new Color(1, 0, 0, .3f);
+            }
+            else
+            {
+                material.color = new Color(0, 0, 1, .3f);
+            }
         }
-        else
+        catch(NullReferenceException)
         {
-            material.color = new Color(0, 0, 1, .3f);
+            
         }
     }
 }
