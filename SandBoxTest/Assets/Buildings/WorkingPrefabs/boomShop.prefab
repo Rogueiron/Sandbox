@@ -1368,7 +1368,7 @@ GameObject:
   - component: {fileID: 7880680270788636422}
   - component: {fileID: 7455799170106530002}
   m_Layer: 6
-  m_Name: gunFactory
+  m_Name: boomShop
   m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
