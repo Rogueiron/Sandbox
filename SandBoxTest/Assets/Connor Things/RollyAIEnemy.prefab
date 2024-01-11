@@ -33,8 +33,8 @@ PrefabInstance:
       value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 1360797182132393822, guid: 05c2734b5518eb74e97a27b8b1d8cf36, type: 3}
-      propertyPath: walkPointRange
-      value: 1
+      propertyPath: targetType.m_Bits
+      value: 2112
       objectReference: {fileID: 0}
     - target: {fileID: 1360797182132393822, guid: 05c2734b5518eb74e97a27b8b1d8cf36, type: 3}
       propertyPath: timeBetweenAttacks
@@ -42,11 +42,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1360797182132393822, guid: 05c2734b5518eb74e97a27b8b1d8cf36, type: 3}
       propertyPath: whatIsTarget.m_Bits
-      value: 2048
+      value: 2112
       objectReference: {fileID: 0}
     - target: {fileID: 2240545919128974651, guid: 05c2734b5518eb74e97a27b8b1d8cf36, type: 3}
       propertyPath: m_Speed
-      value: 100
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2302332229156129318, guid: 05c2734b5518eb74e97a27b8b1d8cf36, type: 3}
       propertyPath: m_Name
