@@ -31,8 +31,8 @@ public class Upgrades : MonoBehaviour
         }
         if(SceneManager.GetActiveScene().name == "Tutorial")
         {
-            Bool = false;
-            step = 5;
+            tutorial.Once = false;
+            step++;
         }
 
     }

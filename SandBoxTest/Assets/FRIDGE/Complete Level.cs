@@ -7,8 +7,8 @@ using static Storage;
 
 public class CompleteLevel : MonoBehaviour
 {
-    [SerializeField] private int wood;
-    [SerializeField] private int iron;
+    [SerializeField] public int wood;
+    [SerializeField] public int iron;
 
     // When material cost is met and the button is pressed start next level
     public void NextLevel()

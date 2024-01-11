@@ -174,7 +174,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1360797182132393822, guid: 05c2734b5518eb74e97a27b8b1d8cf36, type: 3}
       propertyPath: walkPointRange
-      value: 0
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1360797182132393822, guid: 05c2734b5518eb74e97a27b8b1d8cf36, type: 3}
+      propertyPath: targetType.m_Bits
+      value: 4096
       objectReference: {fileID: 0}
     - target: {fileID: 1360797182132393822, guid: 05c2734b5518eb74e97a27b8b1d8cf36, type: 3}
       propertyPath: timeBetweenAttacks
@@ -183,6 +187,14 @@ PrefabInstance:
     - target: {fileID: 1360797182132393822, guid: 05c2734b5518eb74e97a27b8b1d8cf36, type: 3}
       propertyPath: whatIsTarget.m_Bits
       value: 4096
+      objectReference: {fileID: 0}
+    - target: {fileID: 2240545919128974651, guid: 05c2734b5518eb74e97a27b8b1d8cf36, type: 3}
+      propertyPath: m_Radius
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2240545919128974651, guid: 05c2734b5518eb74e97a27b8b1d8cf36, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 2302332229156129318, guid: 05c2734b5518eb74e97a27b8b1d8cf36, type: 3}
       propertyPath: m_Name
