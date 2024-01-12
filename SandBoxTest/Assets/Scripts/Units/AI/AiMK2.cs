@@ -122,8 +122,9 @@ public class AiMK2 : MonoBehaviour
     // Sets target when an applicable unit or enemy is within range
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.layer == targetType && targetOBJ == null)
+        if((1 << other.gameObject.layer & targetType) != 0 && targetOBJ == null)
         {
+            Debug.Log("IM ALIVE");
             targetOBJ = other.gameObject;
         }
     }
