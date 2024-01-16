@@ -44,7 +44,7 @@ public class tutorial : MonoBehaviour
                 }
                 if(IronStorage <= 0)
                 {
-                    Tutorialtext.text = "Waterpumps help get water which you need to get power to make bots. All bots take 5 water look in the bottom left conner to see the resources. The onw on top is wood to the left in the middle is water and finally the last one is iron.";
+                    Tutorialtext.text = "Waterpumps help get water which you need to get power to make bots. All bots take 5 water look in the bottom left conner to see the resources. The one on top is wood to the left in the middle is water and finally the last one is iron.";
                 }
                 if(Waterstorage >= 10)
                 {

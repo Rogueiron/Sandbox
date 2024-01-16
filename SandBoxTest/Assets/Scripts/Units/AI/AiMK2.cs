@@ -21,7 +21,7 @@ public class AiMK2 : MonoBehaviour
 
     //Attacking
     public float timeBetweenAttacks;
-    bool alreadyAttacked;
+    public bool alreadyAttacked;
     public int strength;
 
     //States
@@ -87,14 +87,12 @@ public class AiMK2 : MonoBehaviour
         // Make sure enemy doesn't move
         agent.SetDestination(transform.position);
 
-        transform.LookAt(targetOBJ.transform);
-
         // Deals damage to target equal to strength
-        if (!alreadyAttacked)
+        if (alreadyAttacked == false)
         {
+            Invoke("ResetAttack", timeBetweenAttacks);
             targetOBJ.GetComponent<Stats>().health -= strength;
             alreadyAttacked = true;
-            Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
     }
 

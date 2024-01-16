@@ -1,7 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine; 
+using UnityEngine;
 
 public class OutlineBuild : MonoBehaviour
 {
@@ -13,7 +11,7 @@ public class OutlineBuild : MonoBehaviour
     {
         //get the screenpoint and use that to move the outline of the building to that spot
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray,out hit))
+        if (Physics.Raycast(ray, out hit))
         {
             transform.position = movePoint;
         }
@@ -21,7 +19,7 @@ public class OutlineBuild : MonoBehaviour
     private void FixedUpdate()
     {
         //checks to see if waterpump is the building else run normal build
-        if(gameObject.tag == "Waterpump")
+        if (gameObject.tag == "Waterpump")
         {
             Waterpump();
         }
@@ -52,13 +50,20 @@ public class OutlineBuild : MonoBehaviour
             Instantiate(prefab, movePoint, transform.rotation);
             Destroy(gameObject);
         }
-        if(hit.transform.gameObject.layer != LayerMask.NameToLayer("Edge"))
+        try
+        {
+            if (hit.transform.gameObject.layer != LayerMask.NameToLayer("Edge"))
+            {
+                material.color = new Color(1, 0, 0, .3f);
+            }
+            else
+            {
+                material.color = new Color(0, 0, 1, .3f);
+            }
+        }
+        catch(NullReferenceException)
         {
             material.color = new Color(1, 0, 0, .3f);
-        }
-        else
-        {
-            material.color = new Color(0, 0, 1, .3f);
         }
 
     }
@@ -95,9 +100,9 @@ public class OutlineBuild : MonoBehaviour
                 material.color = new Color(0, 0, 1, .3f);
             }
         }
-        catch(NullReferenceException)
+        catch (NullReferenceException)
         {
-            
+            material.color = new Color(1, 0, 0, .3f);
         }
     }
 }

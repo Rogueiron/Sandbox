@@ -211,6 +211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   woodCost: 0
   ironCost: 10
+  waterCost: 0
   spawnLocation: {x: 2, y: 2, z: 0}
   spawnRotations: {x: 0, y: 0, z: 0, w: 0}
   unitToSpawn: {fileID: 1986042837862581056, guid: 0de98106c53c9e04c90a43df428f9579, type: 3}
@@ -504,7 +505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad4b9687fe04b874884fa7fdfa74cfbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 200
   name: 
 --- !u!65 &-8584238777923511176
 BoxCollider:
@@ -1228,6 +1229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   woodCost: 10
   ironCost: 0
+  waterCost: 0
   spawnLocation: {x: 2, y: 2, z: 0}
   spawnRotations: {x: 0, y: 0, z: 0, w: 0}
   unitToSpawn: {fileID: 7895197331257113379, guid: 3cbddbf82e3978842a400ddbf341f4e1, type: 3}
@@ -1437,3 +1439,4 @@ MonoBehaviour:
   main: {fileID: 0}
   pause: {fileID: 0}
   research: {fileID: 0}
+  DB: {fileID: 0}

@@ -592,7 +592,6 @@ GameObject:
   - component: {fileID: 2255379042556785594}
   - component: {fileID: 481643847618374113}
   - component: {fileID: -2965037428996096142}
-  - component: {fileID: 231925054515115913}
   - component: {fileID: -3503099768198133098}
   - component: {fileID: -1888754920314362596}
   m_Layer: 6
@@ -667,19 +666,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: -0.0307045, y: 1.631575, z: -0.03653526}
   m_TimeToStationary: 0.5
---- !u!114 &231925054515115913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7465725327062242156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad4b9687fe04b874884fa7fdfa74cfbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
 --- !u!65 &-3503099768198133098
 BoxCollider:
   m_ObjectHideFlags: 0

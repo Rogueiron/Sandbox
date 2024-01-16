@@ -18,6 +18,7 @@ public class Stats : MonoBehaviour
     private void Update()
     {
         die();
+        Debug.Log(health);
     }
 
     // Removes gameObject when health becomes zero
